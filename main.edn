@@ -3,7 +3,7 @@
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
 
  :main [
-  {:des "spacebar = spacebar(click) | L-shift(hold)"
+  {:des "SandS"
    :rules [[:spacebar :left_shift nil {:alone :spacebar}]]}
 
   {:des "L-Command -> English / R-Command -> Japanese"
@@ -17,36 +17,78 @@
 
   {:des "Delete + F7-F12 for Media Keys"
    :rules [
-    [:f7 :rewind :delete-layer] [:f8 :play_or_pause :delete-layer]
-    [:f9 :fast_forward :delete-layer] [:f10 :mute :delete-layer]
-    [:f11 :volume_decrement :delete-layer] [:f12 :volume_increment :delete-layer]
+    [:f7 :rewind :delete-layer] [:f8 :play_or_pause :delete-layer] [:f9 :fast_forward :delete-layer]
+    [:f10 :mute :delete-layer] [:f11 :volume_decrement :delete-layer] [:f12 :volume_increment :delete-layer]
    ]}
 
   {:des "Hyper Application (original)"
    :rules [
-    ;; E, R, T, Y row (Browsers/Tools)
-    [:!QWERe  ["open -a Arc"]] [:!QWERCe ["open -a 'Google Chrome'"]] [:!QWEROe ["open -a Safari"]]
-    [:!QWERr  ["open -a Finder"]] [:!QWERCr ["open -a Terminal"]] [:!QWEROr ["open -a Preview"]]
-    [:!QWERt  ["open -a 'Visual Studio Code'"]] [:!QWERCt ["open -a Notes"]] [:!QWEROt ["open -a Freeform"]]
-    [:!QWERy  ["open -a Reminders"]] [:!QWERCy ["open -a Mail"]] [:!QWEROy ["open -a Calendar"]]
-    ;; D, F, G row (Productivity/AI)
-    [:!QWERd  ["open -a Notion"]] [:!QWERCd ["open 'raycast://extensions/notion/notion/quick-capture'"]] [:!QWEROd ["open 'raycast://extensions/raycast/raycast-ai/ai-chat?context=%7B%22preset%22:%22CF1E4494-871F-435E-9134-25B51A75517D%22%7D'"]]
-    [:!QWERf  ["open -a Raycast"]] [:!QWERCf ["open -a 'Karabiner-Elements'"]] [:!QWEROf ["open -a 'Maccy'"]]
-    [:!QWERg  ["open -a Gemini"]] [:!QWERCg ["open -a Claude"]] [:!QWEROg ["open -a ChatGPT"]]
+    [:!QWERe  ["open -a Arc"]]
+    [:!QWERCe ["open -a 'Google Chrome'"]]
+    [:!QWEROe ["open -a Safari"]]
+    [:!QWERSe  ["open -a Cursor"]]
+    [:!QWERSCe ["open -a 'Visual Studio Code'"]]
+
+    [:!QWERr  ["open -a Finder"]]
+    [:!QWERCr ["open -a Preview"]]
+    [:!QWERSr ["open -a iTerm"]]
+    [:!QWERSCr ["open -a Terminal"]]
+
+    [:!QWERy  ["open -a Reminders"]]
+    [:!QWERCy ["open -a Mail"]]
+    [:!QWEROy ["open -a Calendar"]]
+
+    [:!QWERCd  ["open -a Obsidian"]]
+    [:!QWERCd  ["open -a Bear"]]
+    [:!QWERCd  ["open -a Logseq"]]
+    [:!QWERSCd  ["open -a Notion"]]
+
+    [:!QWERf  ["open -a Raycast"]]
+    [:!QWERCf ["open -a 'Karabiner-Elements'"]]
+    [:!QWEROf ["open -a 'Maccy'"]]
+
+    [:!QWERg  ["open -a Claude"]]
+    [:!QWERCg ["open -a ChatGPT"]] 
+    [:!QWEROg ["open -a Gemini"]]
+    [:!QWERSg  ["open -a Ollama"]]
+    [:!QWERSCg  ["open -a 'LM Studio'"]]
+
     ;; Z, X, C, V, A, B row (AI/Utility)
-    [:!QWERz  ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]] [:!QWERCz ["open 'raycast://ai-commands/request-a-commentary'"]] [:!QWEROz ["open 'raycast://ai-commands/summarize-3-points'"]]
-    [:!QWERx  ["open 'raycast://extensions/mooxl/deepcast/index'"]] [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%e22%22%7D'"]] [:!QWEROx ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]
-    [:!QWERc  ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
+    [:!QWERz  ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]]
+    [:!QWERCz ["open 'raycast://ai-commands/request-a-commentary'"]]
+    [:!QWEROz ["open 'raycast://ai-commands/summarize-3-points'"]]
+    [:!QWERx  ["open 'raycast://extensions/mooxl/deepcast/index'"]]
+    [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%e22%22%7D'"]]
+    [:!QWEROx ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]
+    [:!QWERc  ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]]
+    [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
     [:!QWERv  ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]]
-    [:!QWERa  ["open -a Rectangle"]]
-    [:!QWERb  ["open -a Ollama"]] [:!QWERCb  ["open -a 'LM Studio'"]]
+    [:!QWERb  ["open -a Ollama"]]
+    [:!QWERCb  ["open -a 'LM Studio'"]]
    ]}
 
   {:des "Hyper Return(;) & Symbols(', /) (original)"
    :rules [
-    [:!QWERquote :!Sreturn_or_enter] [:!QWERCquote :!Creturn_or_enter] [:!QWERTquote :!Treturn_or_enter] [:!QWERSquote :return_or_enter] [:!QWEROquote :!Oreturn_or_enter]
-    [:!QWERsemicolon :hyphen] [:!QWERSsemicolon :!Shyphen] [:!QWERCsemicolon :equal_sign] [:!QWEROsemicolon :!Sequal_sign]
-    [:!QWERCslash :!S1] [:!QWERTslash :!S2] [:!QWERSslash :!S3] [:!QWEROslash :!S4] [:!QWERCTslash :!S5] [:!QWERCSslash :!S6] [:!QWERCOslash :!S7] [:!QWERTSslash :!S8]
+    [:!QWERquote :return_or_enter]
+    [:!QWERCquote :!Creturn_or_enter]
+    [:!QWERTquote :!Treturn_or_enter]
+    [:!QWERSquote :!Sreturn_or_enter]
+    [:!QWEROquote :!Oreturn_or_enter]
+
+    [:!QWERsemicolon :return_or_enter]
+    [:!QWERCsemicolon :!Creturn_or_enter]
+    [:!QWERTsemicolon :!Treturn_or_enter]
+    [:!QWERSsemicolon :!Sreturn_or_enter]
+    [:!QWEROsemicolon :!Oreturn_or_enter]
+
+    [:!QWERCslash :!S1]
+    [:!QWERTslash :!S2]
+    [:!QWERSslash :!S3]
+    [:!QWEROslash :!S4]
+    [:!QWERCTslash :!S5]
+    [:!QWERCSslash :!S6]
+    [:!QWERCOslash :!S7]
+    [:!QWERTSslash :!S8]
    ]}
 
   {:des "Raycast Window Management (original)"
