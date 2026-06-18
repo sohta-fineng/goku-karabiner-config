@@ -1,5 +1,10 @@
 {
  :simlayers {:delete-layer {:key :delete_or_backspace}}
+ :input-sources {
+   :greek {
+     :input_source_id "com.apple.keylayout.Greek"
+   }
+  }
  :main [
   {:des "Delete + F7-F12 for Media Keys"
    :rules [
@@ -9,6 +14,26 @@
     [:f10 :mute             :delete-layer]
     [:f11 :volume_decrement :delete-layer]
     [:f12 :volume_increment :delete-layer]
+   ]
+  }
+  {:des "spacebar = spacebar(click) | L-shift(hold)"
+  :rules [
+    [:spacebar :left_shift nil {:alone :spacebar}]
+  ]
+  }
+  {:des "L-Command -> English"
+   :rules [
+    [:left_command  :left_command nil {:alone :japanese_eisuu}]
+   ]
+  }
+  {:des "R-Command -> Japanese"
+   :rules [
+    [:right_command  :right_command nil {:alone :japanese_kana}]
+   ]
+  }
+  {:des "L-Option -> Greek"
+   :rules [
+    [:left_option  :left_option nil {:alone :greek}]
    ]
   }
   {
