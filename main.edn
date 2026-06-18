@@ -4,7 +4,7 @@
 
  :main [
   {:des "SandS"
-   :rules [[:spacebar :left_shift nil {:alone :spacebar}]]}
+   :rules [[:##spacebar :left_shift nil {:alone :spacebar}]]}
 
   {:des "L-Command -> English / R-Command -> Japanese"
    :rules [
@@ -21,6 +21,14 @@
     [:f10 :mute :delete-layer] [:f11 :volume_decrement :delete-layer] [:f12 :volume_increment :delete-layer]
    ]}
 
+  {:des "CapsLock to Hyper"
+   :rules [
+    [:##caps_lock :!QWEright_shift nil {:alone :escape}]
+    [:!QWER#Pescape :caps_lock]
+    [:!QWERspacebar :!Tspacebar]
+    [:!QWERCspacebar ["open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]]
+   ]}
+
   {:des "Hyper Application (original)"
    :rules [
     [:!QWERe  ["open -a Arc"]]
@@ -28,6 +36,7 @@
     [:!QWEROe ["open -a Safari"]]
     [:!QWERSe  ["open -a Cursor"]]
     [:!QWERSCe ["open -a 'Visual Studio Code'"]]
+    [:!QWERSOe ["open -a Notes"]]
 
     [:!QWERr  ["open -a Finder"]]
     [:!QWERCr ["open -a Preview"]]
@@ -39,35 +48,32 @@
     [:!QWEROy ["open -a Calendar"]]
 
     [:!QWERCd  ["open -a Obsidian"]]
-    [:!QWERCd  ["open -a Bear"]]
-    [:!QWERCd  ["open -a Logseq"]]
-    [:!QWERSCd  ["open -a Notion"]]
+    [:!QWERCb  ["open -a Bear"]]
+    [:!QWERCl  ["open -a Logseq"]]
+    [:!QWERSCd ["open -a Notion"]]
 
     [:!QWERf  ["open -a Raycast"]]
     [:!QWERCf ["open -a 'Karabiner-Elements'"]]
     [:!QWEROf ["open -a 'Maccy'"]]
 
-    [:!QWERg  ["open -a Claude"]]
-    [:!QWERCg ["open -a ChatGPT"]] 
-    [:!QWEROg ["open -a Gemini"]]
+    [:!QWERg   ["open -a Claude"]]
+    [:!QWERCg  ["open -a ChatGPT"]]
+    [:!QWEROg  ["open -a Gemini"]]
     [:!QWERSg  ["open -a Ollama"]]
-    [:!QWERSCg  ["open -a 'LM Studio'"]]
+    [:!QWERSCg ["open -a 'LM Studio'"]]
 
-    ;; Z, X, C, V, A, B row (AI/Utility)
     [:!QWERz  ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]]
     [:!QWERCz ["open 'raycast://ai-commands/request-a-commentary'"]]
     [:!QWEROz ["open 'raycast://ai-commands/summarize-3-points'"]]
     [:!QWERx  ["open 'raycast://extensions/mooxl/deepcast/index'"]]
-    [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%e22%22%7D'"]]
+    [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]]
     [:!QWEROx ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]
     [:!QWERc  ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]]
     [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
     [:!QWERv  ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]]
-    [:!QWERb  ["open -a Ollama"]]
-    [:!QWERCb  ["open -a 'LM Studio'"]]
    ]}
 
-  {:des "Hyper Return(;) & Symbols(', /) (original)"
+  {:des "Hyper Return (original)"
    :rules [
     [:!QWERquote :return_or_enter]
     [:!QWERCquote :!Creturn_or_enter]
@@ -80,7 +86,10 @@
     [:!QWERTsemicolon :!Treturn_or_enter]
     [:!QWERSsemicolon :!Sreturn_or_enter]
     [:!QWEROsemicolon :!Oreturn_or_enter]
+   ]}
 
+  {:des "Hyper Symbols (Original)"
+   :rules [
     [:!QWERCslash :!S1]
     [:!QWERTslash :!S2]
     [:!QWERSslash :!S3]

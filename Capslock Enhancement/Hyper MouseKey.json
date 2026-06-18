@@ -1,0 +1,797 @@
+{
+    "description": "Hyper MouseKey",
+    "manipulators": [
+        {
+            "description": "keypad0 = mouse left click",
+            "from": {
+                "key_code": "keypad_0",
+                "modifiers": {
+                    "mandatory": ["right_command", "right_control", "right_shift", "right_option"],
+                    "optional": ["left_shift", "left_command", "left_option", "left_control"]
+                }
+            },
+            "to": [{ "pointing_button": "button1" }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad_enter = mouse right click",
+            "from": {
+                "key_code": "keypad_enter",
+                "modifiers": {
+                    "mandatory": ["right_command", "right_control", "right_shift", "right_option"],
+                    "optional": ["left_shift", "left_command", "left_option", "left_control"]
+                }
+            },
+            "to": [{ "pointing_button": "button2" }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad. = mouse middle click",
+            "from": {
+                "key_code": "keypad_period",
+                "modifiers": {
+                    "mandatory": ["right_command", "right_control", "right_shift", "right_option"],
+                    "optional": ["left_shift", "left_command", "left_option", "left_control"]
+                }
+            },
+            "to": [{ "pointing_button": "button3" }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad+ = mouse button 5 forward",
+            "from": {
+                "key_code": "keypad_plus",
+                "modifiers": {
+                    "mandatory": ["right_command", "right_control", "right_shift", "right_option"],
+                    "optional": ["left_shift", "left_command", "left_option", "left_control"]
+                }
+            },
+            "to": [{ "pointing_button": "button5" }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad- = mouse button 4 back",
+            "from": {
+                "key_code": "keypad_hyphen",
+                "modifiers": {
+                    "mandatory": ["right_command", "right_control", "right_shift", "right_option"],
+                    "optional": ["left_shift", "left_command", "left_option", "left_control"]
+                }
+            },
+            "to": [{ "pointing_button": "button4" }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad_num_lock = mouse wheel left",
+            "from": {
+                "key_code": "keypad_num_lock",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": -32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad_equal_sign = slow mouse wheel down",
+            "from": {
+                "key_code": "keypad_equal_sign",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": 32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad_slash = slow mouse wheel up",
+            "from": {
+                "key_code": "keypad_slash",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": -32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "keypad_asterisk = mouse wheel right",
+            "from": {
+                "key_code": "keypad_asterisk",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": 32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 1 = wheel ↙️",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 45,
+                        "vertical_wheel": 45
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 2 = wheel ⬇️️",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": 64 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 3 = wheel ↘️️️",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -45,
+                        "vertical_wheel": 45
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 4 = wheel ⬅️",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": 64 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 5 = wheel ·",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 0,
+                        "vertical_wheel": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 6 = wheel ➡️",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": -64 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 7 = wheel ↖️",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 45,
+                        "vertical_wheel": -45
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 8 = wheel ⬆️",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": -64 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + 9 = wheel ↗️️",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -45,
+                        "vertical_wheel": -45
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 1 = wheel ↙️",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 23,
+                        "vertical_wheel": 23
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 2 = wheel ⬇️️",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": 32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 3 = wheel ↘️️️",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -23,
+                        "vertical_wheel": 23
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 4 = wheel ⬅️",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": 32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 5 = wheel ·",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 0,
+                        "vertical_wheel": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 6 = wheel ➡️",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": -32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 7 = wheel ↖️",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 23,
+                        "vertical_wheel": -23
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 8 = wheel ⬆️",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": -32 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + option + 9 = wheel ↗️️",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["left_shift", "left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -23,
+                        "vertical_wheel": -23
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 1 = wheel ↙️",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 91,
+                        "vertical_wheel": 91
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 2 = wheel ⬇️️",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": 128 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 3 = wheel ↘️️️",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -91,
+                        "vertical_wheel": 91
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 4 = wheel ⬅️",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": 128 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 5 = wheel ·",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 0,
+                        "vertical_wheel": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 6 = wheel ➡️",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "horizontal_wheel": -128 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 7 = wheel ↖️",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": 91,
+                        "vertical_wheel": -91
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 8 = wheel ⬆️",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "vertical_wheel": -128 } }],
+            "type": "basic"
+        },
+        {
+            "description": "shift + command + 9 = wheel ↗️️",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["left_shift", "left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "horizontal_wheel": -91,
+                        "vertical_wheel": -91
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + 1 = ↙️ slow",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -561,
+                        "y": 561
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + 2 = ⬇️️ slow",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": 800 } }],
+            "type": "basic"
+        },
+        {
+            "description": "option + 3 = ↘️️️ slow",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 561,
+                        "y": 561
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + 4 = ⬅️ slow",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": -800 } }],
+            "type": "basic"
+        },
+        {
+            "description": "option + 5 = · slow",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 0,
+                        "y": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + 6 = ➡️ slow",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": 800 } }],
+            "type": "basic"
+        },
+        {
+            "description": "option + 7 = ↖️ slow",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -561,
+                        "y": -561
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + 8 = ⬆️ slow",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": -800 } }],
+            "type": "basic"
+        },
+        {
+            "description": "option + 9 = ↗️️ slow",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 561,
+                        "y": -561
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + 1 = ↙️ fast",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -2262,
+                        "y": 2262
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + 2 = ⬇️️ fast",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": 3200 } }],
+            "type": "basic"
+        },
+        {
+            "description": "command + 3 = ↘️️️ fast",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 2262,
+                        "y": 2262
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + 4 = ⬅️ fast",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": -3200 } }],
+            "type": "basic"
+        },
+        {
+            "description": "command + 5 = · fast",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 0,
+                        "y": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + 6 = ➡️ fast",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": 3200 } }],
+            "type": "basic"
+        },
+        {
+            "description": "command + 7 = ↖️ fast",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -2262,
+                        "y": -2262
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + 8 = ⬆️ fast",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": -3200 } }],
+            "type": "basic"
+        },
+        {
+            "description": "command + 9 = ↗️️ fast",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 2262,
+                        "y": -2262
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "1 = ↙️",
+            "from": {
+                "key_code": "keypad_1",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -1131,
+                        "y": 1131
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "2 = ⬇️️",
+            "from": {
+                "key_code": "keypad_2",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": 1600 } }],
+            "type": "basic"
+        },
+        {
+            "description": "3 = ↘️️️",
+            "from": {
+                "key_code": "keypad_3",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 1131,
+                        "y": 1131
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "4 = ⬅️",
+            "from": {
+                "key_code": "keypad_4",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": -1600 } }],
+            "type": "basic"
+        },
+        {
+            "description": "5 = ·",
+            "from": {
+                "key_code": "keypad_5",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 0,
+                        "y": 0
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "6 = ➡️",
+            "from": {
+                "key_code": "keypad_6",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "x": 1600 } }],
+            "type": "basic"
+        },
+        {
+            "description": "7 = ↖️",
+            "from": {
+                "key_code": "keypad_7",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": -1131,
+                        "y": -1131
+                    }
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "8 = ⬆️",
+            "from": {
+                "key_code": "keypad_8",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "mouse_key": { "y": -1600 } }],
+            "type": "basic"
+        },
+        {
+            "description": "9 = ↗️️",
+            "from": {
+                "key_code": "keypad_9",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "mouse_key": {
+                        "x": 1131,
+                        "y": -1131
+                    }
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}

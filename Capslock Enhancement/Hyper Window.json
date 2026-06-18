@@ -1,0 +1,251 @@
+{
+    "description": "Hyper Window",
+    "manipulators": [
+        {
+            "description": "shift + tab = alter tab",
+            "from": {
+                "key_code": "tab",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "tab",
+                    "modifiers": ["left_control"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + tab = alter desktop",
+            "from": {
+                "key_code": "tab",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_control"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command tab = alter app rev",
+            "from": {
+                "key_code": "tab",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "tab",
+                    "modifiers": ["left_command", "left_shift"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "tab = alter app",
+            "from": {
+                "key_code": "tab",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "tab",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "control + q = lock screen",
+            "from": {
+                "key_code": "q",
+                "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "q",
+                    "modifiers": ["left_control", "left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + q = logout",
+            "from": {
+                "key_code": "q",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "q",
+                    "modifiers": ["left_shift", "left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + q = force close app",
+            "from": {
+                "key_code": "q",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "q",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "q = close app",
+            "from": {
+                "key_code": "q",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "q",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "shift + w = sleep",
+            "from": {
+                "key_code": "w",
+                "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "shell_command": "pmset sleepnow" }],
+            "type": "basic"
+        },
+        {
+            "description": "option + w = display sleep",
+            "from": {
+                "key_code": "w",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "shell_command": "pmset displaysleepnow" }],
+            "type": "basic"
+        },
+        {
+            "description": "command + w = close all tab of app",
+            "from": {
+                "key_code": "w",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "w",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "w = close tab",
+            "from": {
+                "key_code": "w",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "w",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "control + a = launchpad",
+            "from": {
+                "key_code": "a",
+                "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "shell_command": "open -a 'Launchpad'" }],
+            "type": "basic"
+        },
+        {
+            "description": "option + a = show desktop",
+            "from": {
+                "key_code": "a",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [{ "key_code": "f11" }],
+            "type": "basic"
+        },
+        {
+            "description": "command + a = expose all",
+            "from": {
+                "key_code": "a",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "up_arrow",
+                    "modifiers": ["left_control"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "control + s = alter app-win rev",
+            "from": {
+                "key_code": "s",
+                "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": ["left_command", "left_shift"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "option + s = alter app-win",
+            "from": {
+                "key_code": "s",
+                "modifiers": { "mandatory": ["left_option", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "command + s = alter tab sheet rev",
+            "from": {
+                "key_code": "s",
+                "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "tab",
+                    "modifiers": ["left_control", "left_shift"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "description": "s = alter tab sheet",
+            "from": {
+                "key_code": "s",
+                "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
+            },
+            "to": [
+                {
+                    "key_code": "tab",
+                    "modifiers": ["left_control"]
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
