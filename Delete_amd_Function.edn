@@ -1,0 +1,15 @@
+{
+ :simlayers {:delete-layer {:key :delete_or_backspace}}
+ :main [
+  {:des "Delete + F7-F12 for Media Keys"
+   :rules [
+    [:f7  :rewind           :delete-layer]     ;; Delete + F7 -> 巻き戻し
+    [:f8  :play_or_pause    :delete-layer]     ;; Delete + F8 -> 再生/一時停止
+    [:f9  :fast_forward     :delete-layer]     ;; Delete + F9 -> 早送り
+    [:f10 :mute             :delete-layer]     ;; Delete + F10 -> ミュート
+    [:f11 :volume_decrement :delete-layer]     ;; Delete + F11 -> 音量下げる
+    [:f12 :volume_increment :delete-layer]     ;; Delete + F12 -> 音量上げる
+   ]
+  }
+ ]
+}

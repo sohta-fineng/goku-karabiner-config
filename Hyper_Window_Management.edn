@@ -1,0 +1,18 @@
+{:main
+ [ {:des "Raycast Window Management (original)"
+    :rules
+    [ [:!QWERCTh ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]
+      [:!QWERCTl ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
+      [:!QWERCTk ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]
+      [:!QWERCTj ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]
+
+      [:!QWERCTu ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
+      [:!QWERCTi ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
+      [:!QWERCTo ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
+      [:!QWERCTp ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
+      
+      [:!QWERCTspacebar ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
+   ]
+  }
+ ]
+}
