@@ -1,4 +1,5 @@
-{:inclusions ["Hyper_Application.edn"
+{:profile "Default"
+ :inclusions ["Hyper_Application.edn"
               "Delete_cmd_Function.edn"
               "Hyper_Return_Symbols.edn"
               "Hyper_Window_Management.edn"]
