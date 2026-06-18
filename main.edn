@@ -1,6 +1,109 @@
-{:profile "Default"
- :inclusions ["Hyper_Application.edn"
-              "Delete_cmd_Function.edn"
-              "Hyper_Return_Symbols.edn"
-              "Hyper_Window_Management.edn"]
- :main []}
+{
+ :simlayers {:delete-layer {:key :delete_or_backspace}}
+ :main [
+  {:des "Delete + F7-F12 for Media Keys"
+   :rules [
+    [:f7  :rewind           :delete-layer]
+    [:f8  :play_or_pause    :delete-layer]
+    [:f9  :fast_forward     :delete-layer]
+    [:f10 :mute             :delete-layer]
+    [:f11 :volume_decrement :delete-layer]
+    [:f12 :volume_increment :delete-layer]
+   ]
+  }
+  {
+   :des "Hyper Application (original)"
+   :rules [
+    ;; E, R, T, Y row
+    [:!QWERe  ["open -a Arc"]]
+    [:!QWERCe ["open -a 'Google Chrome'"]]
+    [:!QWEROe ["open -a Safari"]]
+    
+    [:!QWERr  ["open -a Finder"]]
+    [:!QWERCr ["open -a Terminal"]]
+    [:!QWEROr ["open -a Preview"]]
+    
+    [:!QWERt  ["open -a 'Visual Studio Code'"]]
+    [:!QWERCt ["open -a Notes"]]
+    [:!QWEROt ["open -a Freeform"]]
+    
+    [:!QWERy  ["open -a Reminders"]]
+    [:!QWERCy ["open -a Mail"]]
+    [:!QWEROy ["open -a Calendar"]]
+    
+    ;; D, F, G row
+    [:!QWERd  ["open -a Notion"]]
+    [:!QWERCd ["open 'raycast://extensions/notion/notion/quick-capture'"]]    
+    [:!QWEROd ["open 'raycast://extensions/raycast/raycast-ai/ai-chat?context=%7B%22preset%22:%22CF1E4494-871F-435E-9134-25B51A75517D%22%7D'"]]
+
+    [:!QWERf  ["open -a Raycast"]]
+    [:!QWERCf ["open -a 'Karabiner-Elements'"]]
+    [:!QWEROf ["open -a 'Maccy'"]]
+    
+    [:!QWERg  ["open -a Gemini"]]
+    [:!QWERCg ["open -a Claude"]]
+    [:!QWEROg ["open -a ChatGPT"]]
+    
+    ;; Z, X, C row (Raycast extensions)
+    [:!QWERz  ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]]
+    [:!QWERCz ["open 'raycast://ai-commands/request-a-commentary'"]]
+    [:!QWEROz ["open 'raycast://ai-commands/summarize-3-points'"]]
+    
+    [:!QWERx  ["open 'raycast://extensions/mooxl/deepcast/index'"]]
+    [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%e22%22%7D'"]]
+    [:!QWEROx ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]
+
+    [:!QWERc  ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]]
+    [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
+    
+    [:!QWERv  ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]]
+
+    ;; A Key
+    [:!QWERa  ["open -a Rectangle"]]
+
+    [:!QWERb  ["open -a Ollama"]]
+    [:!QWERCb  ["open -a 'LM Studio'"]]
+   ]
+  }
+  {
+   :des "Hyper Return(;) & Symbols(', /) (original)"
+   :rules [
+    [:!QWERquote       :!Sreturn_or_enter]
+    [:!QWERCquote      :!Creturn_or_enter]
+    [:!QWERTquote      :!Treturn_or_enter]
+    [:!QWERSquote      :return_or_enter]
+    [:!QWEROquote      :!Oreturn_or_enter]
+    
+    [:!QWERsemicolon   :hyphen]
+    [:!QWERSsemicolon  :!Shyphen]
+    [:!QWERCsemicolon  :equal_sign]
+    [:!QWEROsemicolon  :!Sequal_sign]
+
+    [:!QWERCslash      :!S1]
+    [:!QWERTslash      :!S2]
+    [:!QWERSslash      :!S3]
+    [:!QWEROslash      :!S4]
+    [:!QWERCTslash     :!S5]
+    [:!QWERCSslash     :!S6]
+    [:!QWERCOslash     :!S7]
+    [:!QWERTSslash     :!S8]
+   ]
+  }
+  {
+    :des "Raycast Window Management (original)"
+    :rules
+    [ [:!QWERCTh ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]
+      [:!QWERCTl ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
+      [:!QWERCTk ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]
+      [:!QWERCTj ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]
+
+      [:!QWERCTu ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
+      [:!QWERCTi ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
+      [:!QWERCTo ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
+      [:!QWERCTp ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
+      
+      [:!QWERCTspacebar ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
+   ]
+  }
+ ]
+}
