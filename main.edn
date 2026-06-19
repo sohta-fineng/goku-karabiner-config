@@ -11,6 +11,11 @@
     [:##spacebar   :left_shift    nil {:alone :spacebar}]       ;; スペース単押しでスペース、他キー同時押しで左Shift（SandS） [cite: 1]
    ]}
 
+  {:des "a to bbb"
+   :rules [
+    [:a [:b :b :b]]
+   ]}
+
   {:des "L-Command -> English / R-Command -> Japanese"
    :rules [
     [:left_command  :left_command  nil {:alone :japanese_eisuu}] ;; 左Command単押しで「英数」モードへ切り替え [cite: 1]
@@ -257,8 +262,8 @@
 
     ;; --- command (C) + Hyper ---
     [:!QWERCn     [:!CSleft_arrow :delete_or_backspace]]         ;; Cmd + Hyper + n で カーソルより前を行削除 [cite: 28]
-    [:!QWERCm     [[:delete_or_backspace] [:delete_or_backspace] [:delete_or_backspace]]]                        
-    [:!QWERCcomma [[:delete_forward] [:delete_forward] [:delete_forward]]]                             
+    [:!QWERCm     [:delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace]]                        
+    [:!QWERCcomma [:delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward]]                             
     [:!QWERCperiod [:!CSright_arrow :delete_or_backspace]]       ;; Cmd + Hyper + . で カーソルより後を行削除 [cite: 31]
 
     ;; --- Pure Hyper ---
