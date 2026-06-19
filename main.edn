@@ -257,8 +257,8 @@
 
     ;; --- command (C) + Hyper ---
     [:!QWERCn     [:!CSleft_arrow :delete_or_backspace]]         ;; Cmd + Hyper + n で カーソルより前を行削除 [cite: 28]
-    [:!QWERCm     :!Odelete_or_backspace]                        ;; Cmd + Hyper + m で 前の単語を削除 (Opt + Backspace) [cite: 29]
-    [:!QWERCcomma :!Odelete_forward]                             ;; Cmd + Hyper + , で 後の単語を削除 (Opt + Delete) [cite: 30]
+    [:!QWERCm     [[:delete_or_backspace] [:delete_or_backspace] [:delete_or_backspace]]]                        
+    [:!QWERCcomma [[:delete_forward] [:delete_forward] [:delete_forward]]]                             
     [:!QWERCperiod [:!CSright_arrow :delete_or_backspace]]       ;; Cmd + Hyper + . で カーソルより後を行削除 [cite: 31]
 
     ;; --- Pure Hyper ---
@@ -333,7 +333,7 @@
 
     ;; --- A キー操作 ---
     [:!QWERa         :launchpad]  
-    [:!QWERTa        :launchpad]                    ;; Ctrl + Hyper + a で Launchpad を開く [cite: 59]
+    [:!QWERTa        :launchpad]
     [:!QWEROa        :f11]                                       ;; Opt + Hyper + a で デスクトップを表示 [cite: 60]
     [:!QWERCa        :!Cup_arrow]                                ;; Cmd + Hyper + a で 全ウィンドウ表示 (Expose All) [cite: 61]
 
