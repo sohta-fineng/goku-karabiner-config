@@ -1,5 +1,8 @@
 {
- :simlayers {:delete-layer {:key :delete_or_backspace}}
+ :simlayers {
+  :delete-layer     {:key :delete_or_backspace}
+  :semicolon-layer  {:key :semicolon}
+ }
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
 
  :main [
