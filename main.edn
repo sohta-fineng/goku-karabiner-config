@@ -11,8 +11,9 @@
     [:##fn            :left_control]
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
-    [:##right_shift :!Sreturn_or_enter]
-    [:##right_option "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"] 
+    [:##right_shift   :!Sreturn_or_enter]
+    [:##right_option  "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]
+    [:!!QWERspacebar  :spacebar] 
    ]}
 
   {:des "Fn Number"
@@ -352,41 +353,44 @@
    ]}
 
   ;; =======================================================================
-  ;; Hyper Return [cite: 193]
+  ;; Hyper Return & Symbols
   ;; =======================================================================
-  {:des "Hyper Return (original)"
+  {:des "Hyper Return & Symbols"
    :rules [
-    ;; --- Quote (') キーを Return に割り当て --- [cite: 194]
-    [:!QWERquote      :return_or_enter]                                  ;; Hyper + ': Return を送信 [cite: 195]
-    [:!QWERCquote     :!Creturn_or_enter]                                ;; Cmd + Hyper + ': Cmd + Return を送信 [cite: 196]
-    [:!QWERTquote     :!Treturn_or_enter]                                ;; Ctrl + Hyper + ': Ctrl + Return を送信 [cite: 197]
-    [:!QWEROquote     :!Oreturn_or_enter]                                ;; Opt + Hyper + ': Opt + Return を送信 [cite: 199]
+    [:!QWERSp              :grave_accent_and_tilde]
 
-    ;; --- Semicolon (;) キーを Hyphen に割り当て --- [cite: 200]
-    [:!QWERsemicolon  :return_or_enter]                                           ;; Hyper + ;: ハイフン を送信 [cite: 201]
-    [:!QWERCsemicolon :!Creturn_or_enter]                                ;; Cmd + Hyper + ;: Cmd + Return を送信 [cite: 202]
-    [:!QWERTsemicolon :!Treturn_or_enter]                                ;; Ctrl + Hyper + ;: Ctrl + Return を送信 [cite: 203]
-    [:!QWEROsemicolon :!Oreturn_or_enter]                                ;; Opt + Hyper + ;: Opt + Return を送信 [cite: 205]
-   ]}
+    [:!QWERopen_bracket   :!S9]
+    [:!QWERSopen_bracket  :!Sopen_bracket]
+    [:!QWERCopen_bracket  :!Scomma]
+    [:!QWEROopen_bracket  :hyphen]
+    [:!QWERTopen_bracket  :!Shyphen]
 
-  ;; =======================================================================
-  ;; シンボル拡張 (Hyper Symbols) [cite: 206]
-  ;; =======================================================================
-  {:des "Hyper Symbols (Original)"
-   :rules [
-    [:!QWERopen_bracket :!S9]
-    [:!QWERSopen_bracket :!Sopen_bracket]
-    [:!QWERCopen_bracket :!Scomma]
-    [:!QWERclose_bracket :!S9]
+    [:!QWERclose_bracket  :!S9]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
+    [:!QWEROclose_bracket :equal_sign]
+    [:!QWERTclose_bracket :!Sequal_sign]
 
-    [:!QWERSsemicolon :!Ssemicolon]
-    [:!QWERSquote :!Squote]
+    [:!QWERsemicolon      :return_or_enter]
+    [:!QWERSsemicolon     :!Ssemicolon]
+    [:!QWERCsemicolon     :!Creturn_or_enter]
+    [:!QWEROsemicolon     :!Oreturn_or_enter]
+    [:!QWERTsemicolon     :!Treturn_or_enter]
 
-    [:!QWERSslash :!Sslash]
-    [:!QWERslash     :hyphen]
-    [:!QWERCslash     :!Shyphen]
+    [:!QWERquote          :return_or_enter]
+    [:!QWERSquote         :!Squote]
+    [:!QWERCquote         :!Creturn_or_enter]
+    [:!QWEROquote         :!Oreturn_or_enter]
+    [:!QWERTquote         :!Treturn_or_enter]
+
+    [:!QWERslash          :!Cslash]
+    [:!QWERCslash         :!S1]
+    [:!QWEROslash         :!S3]
+    [:!QWERTslash         :!S4]
+    [:!QWERSslash         :!Sslash]
+    [:!QWERSCslash        :!S8]
+    [:!QWERSOslash        :!S7]
+    [:!QWERSTslash        :!S6]
    ]}
 
   ;; =======================================================================
