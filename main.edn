@@ -71,15 +71,15 @@
    :rules [
     ;; --- a / s ---
     [:!QWERa          :!Copen_bracket]
-    [:!QWERCa         :!Ttab]
-    [:!QWEROa         :!OTbackslash]
-    [:!QWERSa         :!Ctab]
-    [:!QWERTa         :!Tleft_arrow]
+    [:!QWERCa         :!STtab]
+    [:!QWEROa         :!SOTbackslash]
+    [:!QWERSa         :!SCtab]
+    [:!QWERTa         :!Tright_arrow]
     [:!QWERs          :!Cclose_bracket]
-    [:!QWERCs         :!STtab]
-    [:!QWEROs         :!SOTbackslash]
-    [:!QWERSs         :!CStab]
-    [:!QWERTs         :!Tright_arrow]
+    [:!QWERCs         :!Ttab]
+    [:!QWEROs         :!OTbackslash]
+    [:!QWERSs         :!Ctab]
+    [:!QWERTs         :!Tleft_arrow]
 
     ;; --- h ---
     [:!QWERh          :left_arrow]
@@ -171,8 +171,9 @@
     [:!QWERv          :!Cv]
 
     ;; --- tab ---
-    [:!QWERtab        "open -g 'raycast://extensions/raycast/window-management/maximize'"]
-    [:!QWERCtab       :!CTf]
+    [:!QWERtab        :f6]
+    [:!QWERCtab       :!Sf6]
+    [:!QWERTtab       :!CTf]
     [:!QWEROtab       :!Ch]
     [:!QWERStab       :launchpad]
     [:!QWERSCtab      :!Tup_arrow]
@@ -351,6 +352,11 @@
     [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
     [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
     [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
+    [:!QWERCTq        ["open -g 'raycast://extensions/raycast/window-management/top-left-sixth'"]]
+    [:!QWERCTw        ["open -g 'raycast://extensions/raycast/window-management/top-right-sixth'"]]
+    [:!QWERCTa        ["open -g 'raycast://extensions/raycast/window-management/bottom-left-sixth'"]]
+    [:!QWERCTs        ["open -g 'raycast://extensions/raycast/window-management/bottom-right-sixth'"]]
+    [:!QWERCTtab      ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
    ]}
  ]
 }
