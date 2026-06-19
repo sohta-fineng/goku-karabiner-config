@@ -63,7 +63,11 @@
     [:!QWERr    ["open -a Finder"]]                              ;; Hyper + r で Finder を起動/切り替え [cite: 3]
     [:!QWERCr   ["open -a Preview"]]                             ;; Cmd + Hyper + r で プレビュー(Preview) を起動/切り替え [cite: 3]
     [:!QWERSr   ["open -a iTerm"]]                               ;; Shift + Hyper + r で iTerm を起動/切り替え [cite: 3]
-    [:!QWERSCr  ["open -a Terminal"]]                            ;; Shift + Cmd + Hyper + r で ターミナル を起動/切り替え [cite: 3]
+    [:!QWERSCr  ["open -a Terminal"]]   
+    
+    ;; 連絡ツール系
+    [:!QWERt    ["open -a Slack"]]
+    [:!QWERCt   ["open -a Discord"]]
 
     ;; PIM (スケジュール・タスク・メール) 系
     [:!QWERy    ["open -a Reminders"]]                           ;; Hyper + y で リマインダー を起動/切り替え [cite: 3]
