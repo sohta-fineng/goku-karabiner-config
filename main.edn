@@ -13,7 +13,7 @@
 
   {:des "a to bbb"
    :rules [
-    [:a [:b :b :b]]
+    [:a :a]
    ]}
 
   {:des "L-Command -> English / R-Command -> Japanese"
@@ -203,14 +203,6 @@
     [:!QWERSTp  {:mouse_key {:horizontal_wheel 64}}]             ;; Shift + Ctrl + Hyper + p で 左へスクロール [cite: 13]
     [:!QWERSCp  {:mouse_key {:horizontal_wheel 128}}]            ;; Shift + Cmd + Hyper + p で 左へ高速スクロール [cite: 13]
 
-    ;; --- Return/Enter (Mouse Clicks) ---
-    [:!QWERreturn_or_enter   [[:pointing_button] [:button1]]]    ;; Hyper + Return で 左クリック [cite: 14]
-    [:!QWERSTreturn_or_enter [[:pointing_button] [:button1]]]    ;; Shift + Ctrl + Hyper + Return で 左クリック [cite: 14]
-    [:!QWERCreturn_or_enter  [[:pointing_button] [:button2]]]    ;; Cmd + Hyper + Return で 右クリック [cite: 14]
-    [:!QWEROreturn_or_enter  [[:pointing_button] [:button3]]]    ;; Opt + Hyper + Return で ミドルクリック [cite: 14]
-    [:!QWERSreturn_or_enter  [[:pointing_button] [:button4]]]    ;; Shift + Hyper + Return で マウスボタン4 [cite: 14]
-    [:!QWERTreturn_or_enter  [[:pointing_button] [:button5]]]    ;; Ctrl + Hyper + Return で マウスボタン5 [cite: 14]
-
     ;; --- Arrows (Mouse Wheel & Cursor Move) ---
     ;; Normal Wheel (Shift)
     [:!QWERSup_arrow     {:mouse_key {:vertical_wheel -64}}]     ;; Shift + Hyper + 上矢印 で 上スクロール [cite: 16]
@@ -318,9 +310,9 @@
    :rules [
     ;; --- Tab キー操作 ---
     [:!QWERtab       :!Ctab]                                     ;; Hyper + Tab で アプリケーションの切り替え [cite: 50]
-    [:!QWERCtab      :!Tright_arrow]                             ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
-    [:!QWERStab      :!Ctab]
-    [:!QWERSCtab     :!CStab]
+    [:!QWERCtab      :!CStab]                             ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
+    [:!QWERStab      :!Ttab]
+    [:!QWERSCtab     :!TStab]
     [:!QWEROtab      :!Tright_arrow]
     [:!QWEROCtab     :!Tleft_arrow]                                  
 
