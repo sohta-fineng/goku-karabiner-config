@@ -53,7 +53,7 @@
     [:!QWERm    :delete_or_backspace]
    ]}
 
-{:des "Semicolon NumPad"
+  {:des "Semicolon NumPad"
    :rules [
     [:j   :1   :semicolon-layer]
     [:k   :2   :semicolon-layer]
@@ -67,6 +67,16 @@
     [:n   :0   :semicolon-layer]
     [:m   :delete_or_backspace   :semicolon-layer]
    ]}
+
+  {:des "Command"
+   :rules [
+    [:!QWERz   :!Cz]
+    [:!QWERCz  :!CSz]
+    [:!QWERx   :!Cx]
+    [:!QWERc   :!Cc]
+    [:!QWERv   :!Cv]
+   ]}
+
 
 
   ;; =======================================================================
@@ -157,13 +167,10 @@
     [:!QWERSCg        ["open -a 'LM Studio'"]]                           ;; Shift + Cmd + Hyper + g: LM Studio を起動 / 最前面へ [cite: 44]
 
     ;; --- Raycast拡張機能系 --- [cite: 45]
-    [:!QWERz          ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]] ;; Hyper + z: Raycast AI チャットを開く [cite: 46]
-    [:!QWERCz         ["open 'raycast://ai-commands/request-a-commentary'"]]       ;; Cmd + Hyper + z: Raycast AIに「解説」を要求 [cite: 47]
-    [:!QWEROz         ["open 'raycast://ai-commands/summarize-3-points'"]]         ;; Opt + Hyper + z: Raycast AIに「3ポイント要約」を要求 [cite: 48]
-    [:!QWERx          ["open 'raycast://extensions/mooxl/deepcast/index'"]]       ;; Hyper + x: Deepcast (翻訳) を開く [cite: 49]
+    [:!QWERSx          ["open 'raycast://extensions/mooxl/deepcast/index'"]]       ;; Hyper + x: Deepcast (翻訳) を開く [cite: 49]
     [:!QWERCx         ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]] ;; Cmd + Hyper + x: 英語(US)翻訳を実行 [cite: 50]
     [:!QWEROx         ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x: 日本語翻訳を実行 [cite: 51]
-    [:!QWERc          ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c: Raycast Notes を開く [cite: 52]
+    [:!QWERCc          ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c: Raycast Notes を開く [cite: 52]
    ]}
 
   ;; =======================================================================
@@ -358,7 +365,7 @@
    ]}
 
   ;; =======================================================================
-  ;; Return / Hyphen キー拡張 (Hyper Return) [cite: 193]
+  ;; Hyper Return [cite: 193]
   ;; =======================================================================
   {:des "Hyper Return (original)"
    :rules [
@@ -370,7 +377,7 @@
     [:!QWEROquote     :!Oreturn_or_enter]                                ;; Opt + Hyper + ': Opt + Return を送信 [cite: 199]
 
     ;; --- Semicolon (;) キーを Hyphen に割り当て --- [cite: 200]
-    [:!QWERsemicolon  :hyphen]                                           ;; Hyper + ;: ハイフン を送信 [cite: 201]
+    [:!QWERsemicolon  :return_or_enter]                                           ;; Hyper + ;: ハイフン を送信 [cite: 201]
     [:!QWERCsemicolon :!Creturn_or_enter]                                ;; Cmd + Hyper + ;: Cmd + Return を送信 [cite: 202]
     [:!QWERTsemicolon :!Treturn_or_enter]                                ;; Ctrl + Hyper + ;: Ctrl + Return を送信 [cite: 203]
     [:!QWERSsemicolon :!Sreturn_or_enter]                                ;; Shift + Hyper + ;: Shift + Return を送信 [cite: 204]
@@ -382,14 +389,16 @@
   ;; =======================================================================
   {:des "Hyper Symbols (Original)"
    :rules [
-    [:!QWERCslash     :!S1]                                              ;; Cmd + Hyper + /: ! (Shift + 1) を入力 [cite: 207]
-    [:!QWERTslash     :!S2]                                              ;; Ctrl + Hyper + /: @ (Shift + 2) を入力 [cite: 208]
-    [:!QWERSslash     :!S3]                                              ;; Shift + Hyper + /: # (Shift + 3) を入力 [cite: 209]
-    [:!QWEROslash     :!S4]                                              ;; Opt + Hyper + /: $ (Shift + 4) を入力 [cite: 210]
-    [:!QWERCTslash    :!S5]                                              ;; Cmd + Ctrl + Hyper + /: % (Shift + 5) を入力 [cite: 211]
-    [:!QWERCSslash    :!S6]                                              ;; Cmd + Shift + Hyper + /: ^ (Shift + 6) を入力 [cite: 212]
-    [:!QWERCOslash    :!S7]                                              ;; Cmd + Opt + Hyper + /: & (Shift + 7) を入力 [cite: 213]
-    [:!QWERTSslash    :!S8]                                              ;; Ctrl + Shift + Hyper + /: * (Shift + 8) を入力 [cite: 214]
+    [:!QWERopen_bracket :!S9]
+    [:!QWERSopen_bracket :!Sopen_bracket]
+    [:!QWERCopen_bracket :!Scomma]
+
+    [:!QWERclose_bracket :!S9]
+    [:!QWERSclose_bracket :!Sclose_bracket]
+    [:!QWERCclose_bracket :!Speriod]
+
+    [:!QWERslash     :hyphen]
+    [:!QWERCslash     :!Shyphen]
    ]}
 
   ;; =======================================================================
