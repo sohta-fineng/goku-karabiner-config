@@ -72,6 +72,65 @@
     [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
     [:!QWERv  ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]]
    ]}
+   
+  {:des "Hyper Navigation"
+   :rules [
+    [:!QWERSh    :!Sleft_arrow]
+    [:!QWEROCSh  :!SOleft_arrow]
+    [:!QWERSTSh  :!CStab]
+    [:!QWERTTSh  :!Cleft_arrow]
+    [:!QWERSh    :left_arrow]
+    
+    [:!QWERSj    :!Sdown_arrow]
+    [:!QWEROCj   [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]]
+    [:!QWERSTj   :!Ctab]
+    [:!QWERTTj   :!Tdown_arrow]
+    [:!QWERj     :down_arrow]
+
+    [:!QWERSk    :!Sup_arrow]
+    [:!QWEROCk   [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]
+    [:!QWERSTk   :!SCtab]
+    [:!QWERTTk   :!Cup_arrow]
+    [:!QWERk     :up_arrow]
+
+    [:!QWERSl    :!Sright_arrow]
+    [:!QWEROCSl  :!SOright_arrow]
+    [:!QWERSTl   :!Ctab]
+    [:!QWERTTl   :!Cright_arrow]
+    [:!QWERl     :right_arrow]
+
+    [:!QWERSu    :!Spage_up]
+    [:!QWEROCu   :!Spage_up]
+    [:!QWERSTu   :!OChyphen]
+    [:!QWERTTu   :!CTf]
+    [:!QWEROu    [[:pointing_button] [:button1]]]
+    [:!QWERSOu   [[:pointing_button] [:button1]]]
+    [:!QWERu     :page_up]
+
+    [:!QWERSi    :!Shome]
+    [:!QWEROCi   [[:end] [:Shome] [:Shome]]]
+    [:!QWERSTi   :!CSgrave_accent_and_tilde]
+    [:!QWERTTi   :!Ch]
+    [:!QWEROi    [[:pointing_button] [:button2]]]
+    [:!QWERSOi   [[:pointing_button] [:button2]]]
+    [:!QWERi     :home]
+
+    [:!QWERSo    :!Send]
+    [:!QWEROCo   [[:home] [:!Send]]]
+    [:!QWERSTo   :!Cgrave_accent_and_tilde]
+    [:!QWERTTo   :!Tup_arrow]
+    [:!QWEROo    [[:pointing_button] [:button4]]]
+    [:!QWERSOo   [[:pointing_button] [:button4]]]
+    [:!QWERo     :end]
+
+    [:!QWERSp    :!Spage_down]
+    [:!QWEROCp   :!Spage_down]
+    [:!QWERSTp   :!COequal_sign]
+    [:!QWERTTp   "open -a 'Launchpad'"]
+    [:!QWEROp    [[:pointing_button] [:button5]]]
+    [:!QWERSOp   [[:pointing_button] [:button5]]]
+    [:!QWERp     :page_down]
+  ]}
 
   {:des "Hyper Return (original)"
    :rules [
