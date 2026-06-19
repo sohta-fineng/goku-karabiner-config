@@ -54,7 +54,8 @@
 
     [:!QWERf  ["open -a Raycast"]]
     [:!QWERCf ["open -a 'Karabiner-Elements'"]]
-    [:!QWEROf ["open -a 'Maccy'"]]
+    [:!QWEROf ["open -a 'Karabiner-EventViewer'"]]
+    [:!QWERSf ["open -a 'Maccy'"]]
 
     [:!QWERg   ["open -a Claude"]]
     [:!QWERCg  ["open -a ChatGPT"]]
@@ -65,72 +66,258 @@
     [:!QWERz  ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]]
     [:!QWERCz ["open 'raycast://ai-commands/request-a-commentary'"]]
     [:!QWEROz ["open 'raycast://ai-commands/summarize-3-points'"]]
+
     [:!QWERx  ["open 'raycast://extensions/mooxl/deepcast/index'"]]
     [:!QWERCx ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]]
     [:!QWEROx ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]
+
     [:!QWERc  ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]]
-    [:!QWERCc ["open 'raycast://extensions/raycast/raycast-notes/create-note'"]]
+  
     [:!QWERv  ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]]
    ]}
-   
-  {:des "Hyper Navigation"
+
+{:des "Hyper Navigation"
    :rules [
-    [:!QWERSh    :!Sleft_arrow]
-    [:!QWEROCSh  :!SOleft_arrow]
-    [:!QWERSTSh  :!CStab]
-    [:!QWERTTSh  :!Cleft_arrow]
-    [:!QWERSh    :left_arrow]
-    
-    [:!QWERSj    :!Sdown_arrow]
-    [:!QWEROCj   [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]]
-    [:!QWERSTj   :!Ctab]
-    [:!QWERTTj   :!Tdown_arrow]
-    [:!QWERj     :down_arrow]
+    ;; --- h (Left / Prev) ---
+    [:!QWERCh   :!Sleft_arrow]
+    [:!QWEROCh  :!SOleft_arrow]
+    [:!QWERSh   :!TStab]
+    [:!QWERTh   :!Tleft_arrow]
+    [:!QWEROh   {:mouse_key {:x -1600}}]
+    [:!QWERSOh  {:mouse_key {:x -3200}}]
+    [:!QWERSTh  {:mouse_key {:horizontal_wheel 64}}]
+    [:!QWERSCh  {:mouse_key {:horizontal_wheel 128}}]
+    [:!QWERh    :left_arrow]
 
-    [:!QWERSk    :!Sup_arrow]
-    [:!QWEROCk   [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]
-    [:!QWERSTk   :!SCtab]
-    [:!QWERTTk   :!Cup_arrow]
-    [:!QWERk     :up_arrow]
+    ;; --- j (Down / Focus) ---
+    [:!QWERCj   :!Sdown_arrow]
+    [:!QWEROCj  [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]]
+    [:!QWERSj   :!Ctab]
+    [:!QWERTj   :!Tdown_arrow]
+    [:!QWEROj   {:mouse_key {:y 1600}}]
+    [:!QWERSOj  {:mouse_key {:y 3200}}]
+    [:!QWERSTj  {:mouse_key {:vertical_wheel 64}}]
+    [:!QWERSCj  {:mouse_key {:vertical_wheel 128}}]
+    [:!QWERj    :down_arrow]
 
-    [:!QWERSl    :!Sright_arrow]
-    [:!QWEROCSl  :!SOright_arrow]
-    [:!QWERSTl   :!Ctab]
-    [:!QWERTTl   :!Cright_arrow]
-    [:!QWERl     :right_arrow]
+    ;; --- k (Up / Expose) ---
+    [:!QWERCk   :!Sup_arrow]
+    [:!QWEROCk  [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]
+    [:!QWERSk   :!CStab]
+    [:!QWERTk   :!Tup_arrow]
+    [:!QWEROk   {:mouse_key {:y -1600}}]
+    [:!QWERSOk  {:mouse_key {:y -3200}}]
+    [:!QWERSTk  {:mouse_key {:vertical_wheel -64}}]
+    [:!QWERSCk  {:mouse_key {:vertical_wheel -128}}]
+    [:!QWERk    :up_arrow]
 
-    [:!QWERSu    :!Spage_up]
-    [:!QWEROCu   :!Spage_up]
-    [:!QWERSTu   :!OChyphen]
-    [:!QWERTTu   :!CTf]
-    [:!QWEROu    [[:pointing_button] [:button1]]]
-    [:!QWERSOu   [[:pointing_button] [:button1]]]
-    [:!QWERu     :page_up]
+    ;; --- l (Right / Next) ---
+    [:!QWERCl   :!Sright_arrow]
+    [:!QWEROCl  :!SOright_arrow]
+    [:!QWERSl   :!Ttab]
+    [:!QWERTl   :!Tright_arrow]
+    [:!QWEROl   {:mouse_key {:x 1600}}]
+    [:!QWERSOl  {:mouse_key {:x 3200}}]
+    [:!QWERSTl  {:mouse_key {:horizontal_wheel -64}}]
+    [:!QWERSCl  {:mouse_key {:horizontal_wheel -128}}]
+    [:!QWERl    :right_arrow]
 
-    [:!QWERSi    :!Shome]
-    [:!QWEROCi   [[:end] [:Shome] [:Shome]]]
-    [:!QWERSTi   :!CSgrave_accent_and_tilde]
-    [:!QWERTTi   :!Ch]
-    [:!QWEROi    [[:pointing_button] [:button2]]]
-    [:!QWERSOi   [[:pointing_button] [:button2]]]
-    [:!QWERi     :home]
+    ;; --- u (Page Up / Zoom Out / Left Click) ---
+    [:!QWERCu   :!Spage_up]
+    [:!QWEROCu  :!Spage_up]
+    [:!QWERSu   :!COhyphen]
+    [:!QWERTu   :!CTf]
+    [:!QWEROu   [[:pointing_button] [:button1]]]
+    [:!QWERSOu  [[:pointing_button] [:button1]]]
+    [:!QWERSTu  {:mouse_key {:horizontal_wheel -64}}]
+    [:!QWERSCu  {:mouse_key {:horizontal_wheel -128}}]
+    [:!QWERu    :page_up]
 
-    [:!QWERSo    :!Send]
-    [:!QWEROCo   [[:home] [:!Send]]]
-    [:!QWERSTo   :!Cgrave_accent_and_tilde]
-    [:!QWERTTo   :!Tup_arrow]
-    [:!QWEROo    [[:pointing_button] [:button4]]]
-    [:!QWERSOo   [[:pointing_button] [:button4]]]
-    [:!QWERo     :end]
+    ;; --- i (Home / Prev Window / Right Click) ---
+    [:!QWERCi   :!Shome]
+    [:!QWEROCi  [[:end] [:!Shome] [:!Shome]]]
+    [:!QWERSi   :!CSgrave_accent_and_tilde]
+    [:!QWERTi   :!Ch]
+    [:!QWEROi   [[:pointing_button] [:button2]]]
+    [:!QWERSOi  [[:pointing_button] [:button2]]]
+    [:!QWERSTi  {:mouse_key {:vertical_wheel -64}}]
+    [:!QWERSCi  {:mouse_key {:vertical_wheel -128}}]
+    [:!QWERi    :home]
 
-    [:!QWERSp    :!Spage_down]
-    [:!QWEROCp   :!Spage_down]
-    [:!QWERSTp   :!COequal_sign]
-    [:!QWERTTp   "open -a 'Launchpad'"]
-    [:!QWEROp    [[:pointing_button] [:button5]]]
-    [:!QWERSOp   [[:pointing_button] [:button5]]]
-    [:!QWERp     :page_down]
-  ]}
+    ;; --- o (End / Next Window / Backward) ---
+    [:!QWERCo   :!Send]
+    [:!QWEROCo  [[:home] [:!Send]]]
+    [:!QWERSo   :!Cgrave_accent_and_tilde]
+    [:!QWERTo   :!Tup_arrow]
+    [:!QWEROo   [[:pointing_button] [:button4]]]
+    [:!QWERSOo  [[:pointing_button] [:button4]]]
+    [:!QWERSTo  {:mouse_key {:vertical_wheel 64}}]
+    [:!QWERSCo  {:mouse_key {:vertical_wheel 128}}]
+    [:!QWERo    :end]
+
+    ;; --- p (Page Down / Zoom In / LaunchPad / Forward) ---
+    [:!QWERCp   :!Spage_down]
+    [:!QWEROCp  :!Spage_down]
+    [:!QWERSp   :!COequal_sign]
+    [:!QWERTp   ["open -a 'Launchpad'"]]
+    [:!QWEROp   [[:pointing_button] [:button5]]]
+    [:!QWERSOp  [[:pointing_button] [:button5]]]
+    [:!QWERSTp  {:mouse_key {:horizontal_wheel 64}}]
+    [:!QWERSCp  {:mouse_key {:horizontal_wheel 128}}]
+    [:!QWERp    :page_down]
+
+    ;; --- Return/Enter (Mouse Clicks) ---
+    [:!QWERSTreturn_or_enter [[:pointing_button] [:button1]]]
+    [:!QWERreturn_or_enter   [[:pointing_button] [:button1]]]
+    [:!QWERCreturn_or_enter  [[:pointing_button] [:button2]]]
+    [:!QWEROreturn_or_enter  [[:pointing_button] [:button3]]]
+    [:!QWERSreturn_or_enter  [[:pointing_button] [:button4]]]
+    [:!QWERTreturn_or_enter  [[:pointing_button] [:button5]]]
+
+    ;; --- Arrows (Mouse Wheel & Cursor Move) ---
+    ;; Normal Wheel (Shift)
+    [:!QWERSup_arrow     {:mouse_key {:vertical_wheel -64}}]
+    [:!QWERSdown_arrow   {:mouse_key {:vertical_wheel 64}}]
+    [:!QWERSleft_arrow   {:mouse_key {:horizontal_wheel 64}}]
+    [:!QWERSright_arrow  {:mouse_key {:horizontal_wheel -64}}]
+
+    ;; Slow Wheel (Shift + Option)
+    [:!QWERSOup_arrow    {:mouse_key {:vertical_wheel -32}}]
+    [:!QWERSOdown_arrow  {:mouse_key {:vertical_wheel 32}}]
+    [:!QWERSOleft_arrow  {:mouse_key {:horizontal_wheel 32}}]
+    [:!QWERSOright_arrow {:mouse_key {:horizontal_wheel -32}}]
+
+    ;; Fast Wheel (Shift + Command) - ※JSONの指定通り、数値を256/-256で反映しています
+    [:!QWERSCup_arrow    {:mouse_key {:vertical_wheel 256}}]
+    [:!QWERSCdown_arrow  {:mouse_key {:vertical_wheel -256}}]
+    [:!QWERSCleft_arrow  {:mouse_key {:horizontal_wheel 256}}]
+    [:!QWERSCright_arrow {:mouse_key {:horizontal_wheel -256}}]
+
+    ;; Slow Move (Option)
+    [:!QWEROup_arrow     {:mouse_key {:y -800}}]
+    [:!QWEROdown_arrow   {:mouse_key {:y 800}}]
+    [:!QWEROleft_arrow   {:mouse_key {:x -800}}]
+    [:!QWEROright_arrow  {:mouse_key {:x 800}}]
+
+    ;; Fast Move (Command)
+    [:!QWERCup_arrow     {:mouse_key {:y -4200}}]
+    [:!QWERCdown_arrow   {:mouse_key {:y 4200}}]
+    [:!QWERCleft_arrow   {:mouse_key {:x -4200}}]
+    [:!QWERCright_arrow  {:mouse_key {:x 4200}}]
+
+    ;; Normal Move (Hyper only)
+    [:!QWERup_arrow      {:mouse_key {:y -1600}}]
+    [:!QWERdown_arrow    {:mouse_key {:y 1600}}]
+    [:!QWERleft_arrow    {:mouse_key {:x -1600}}]
+    [:!QWERright_arrow   {:mouse_key {:x 1600}}]
+   ]}
+
+  {:des "Hyper Deletion"
+   :rules [
+    ;; --- option (O) + Hyper ---
+    ;; option + n = delete whole line (Cmd + Backspace)
+    [:!QWEROn :!Cdelete_or_backspace]
+    ;; option + m = move line down (Opt + Shift + Down)
+    [:!QWEROm :!OSdown_arrow]
+    ;; option + , = move line up (Opt + Shift + Up)
+    [:!QWEROcomma :!OSup_arrow]
+    ;; option + . = delete whole line (Cmd + Backspace)
+    [:!QWEROperiod :!Cdelete_or_backspace]
+
+    ;; --- command (C) + Hyper ---
+    ;; command + n = delete whole line ahead (Cmd + Shift + Left -> Backspace)
+    [:!QWERCn [:!CSleft_arrow :delete_or_backspace]]
+    ;; command + m = delete word ahead (Opt + Backspace)
+    [:!QWERCm :!Odelete_or_backspace]
+    ;; command + , = delete word after (Opt + Forward Delete)
+    [:!QWERCcomma :!Odelete_forward]
+    ;; command + . = delete whole line after (Cmd + Shift + Right -> Backspace)
+    [:!QWERCperiod [:!CSright_arrow :delete_or_backspace]]
+
+    ;; --- Pure Hyper ---
+    ;; n = delete a word ahead (Opt + Backspace)
+    [:!QWERn :!Odelete_or_backspace]
+    ;; m = delete a char ahead (Backspace)
+    [:!QWERm :delete_or_backspace]
+    ;; , = delete a char after (Forward Delete)
+    [:!QWERcomma :delete_forward]
+    ;; . = delete a word after (Opt + Forward Delete)
+    [:!QWERperiod :!Odelete_forward]
+   ]}
+
+  {:des "Hyper Functional - Media & System Keys"
+   :rules [
+    [:!QWERf1  :display_brightness_decrement]
+    [:!QWERf2  :display_brightness_increment]
+    [:!QWERf3  :!Tup_arrow] 
+    [:!QWERf4  :launchpad]
+    [:!QWERf5  :illumination_decrement]
+    [:!QWERf6  :illumination_increment]
+    [:!QWERf7  :rewind]
+    [:!QWERf8  :play_or_pause]
+    [:!QWERf9  :fast_forward]
+    [:!QWERf10 :mute]
+    [:!QWERf11 :volume_decrement]
+    [:!QWERf12 :volume_increment]
+   ]}
+
+  {:des "Hyper Functional - Screen Capture & Screenshots"
+   :rules [
+    ;; --- ` (Grave Accent) ---
+    [:!QWERCgrave_accent_and_tilde :!CS4]  ; Cmd + Hyper + ~ -> Cmd + Shift + 4 (File)
+    [:!QWERgrave_accent_and_tilde  :!CTS4] ; Hyper + ~ -> Cmd + Ctrl + Shift + 4 (Clipboard)
+
+    ;; --- F13 ---
+    [:!QWERCf13 :!CS3]  ; Cmd + Hyper + F13 -> Cmd + Shift + 3
+    [:!QWERf13  :!CTS3] ; Hyper + F13 -> Cmd + Ctrl + Shift + 3
+
+    ;; --- F14 / F15 ---
+    [:!QWERCf14 :!CS6] ; Cmd + Hyper + F14 -> Cmd + Shift + 6
+    [:!QWERf14  :!CS5] ; Hyper + F14 -> Cmd + Shift + 5 (Screen Video Capture)
+    [:!QWERf15  :play_or_pause]
+   ]}
+
+   {:des "Hyper Window Management"
+   :rules [
+    ;; --- Tab キー操作 ---
+    [:!QWERStab      :!Ttab]                             ;; shift + tab = alter tab
+    [:!QWEROtab      :!Tright_arrow]                     ;; option + tab = alter desktop
+    [:!QWERCtab      :!CStab]                            ;; command + tab = alter app rev
+    [:!QWERtab       :!Ctab]                             ;; tab = alter app
+
+    ;; --- Q キー操作 ---
+    [:!QWERTq        :!CTq]                              ;; control + q = lock screen
+    [:!QWERSq        :!CSq]                              ;; shift + q = logout
+    [:!QWERCq        :!Cq]                               ;; command + q = force close app (※注)
+    [:!QWERq         :!Cq]                               ;; q = close app
+
+    ;; --- W キー操作 ---
+    [:!QWERSw        ["pmset sleepnow"]]                 ;; shift + w = sleep
+    [:!QWEROw        ["pmset displaysleepnow"]]          ;; option + w = display sleep
+    [:!QWERCw        :!Cw]                               ;; command + w = close all tab of app (※注)
+    [:!QWERw         :!Cw]                               ;; w = close tab
+
+    ;; --- A キー操作 ---
+    [:!QWERTa        ["open -a 'Launchpad'"]]            ;; control + a = launchpad
+    [:!QWEROa        :f11]                               ;; option + a = show desktop
+    [:!QWERCa        :!Cup_arrow]                        ;; command + a = expose all
+
+    ;; --- S キー操作 ---
+    [:!QWERTs        :!CSgrave_accent_and_tilde]         ;; control + s = alter app-win rev
+    [:!QWEROs        :!Cgrave_accent_and_tilde]          ;; option + s = alter app-win
+    [:!QWERCs        :!CStab]                            ;; command + s = alter tab sheet rev
+    [:!QWERs         :!Ttab]                             ;; s = alter tab sheet
+   ]}
+
+  {:des "Hyper Functional - Navigation Key Controls (Fine Tuning)"
+   :rules [
+    [:!QWERinsert         :!OSdisplay_brightness_increment] ; Shift + Opt + Brightness Up
+    [:!QWERdelete_forward :!OSdisplay_brightness_decrement] ; Shift + Opt + Brightness Down
+    [:!QWERhome           :!OSillumination_increment]       ; Shift + Opt + Illumination Up
+    [:!QWERend            :!OSillumination_decrement]       ; Shift + Opt + Illumination Down
+    [:!QWERpage_up        :!OSvolume_increment]             ; Shift + Opt + Volume Up
+    [:!QWERpage_down      :!OSvolume_decrement]             ; Shift + Opt + Volume Down
+   ]}
 
   {:des "Hyper Return (original)"
    :rules [
@@ -140,7 +327,7 @@
     [:!QWERSquote :!Sreturn_or_enter]
     [:!QWEROquote :!Oreturn_or_enter]
 
-    [:!QWERsemicolon :return_or_enter]
+    [:!QWERsemicolon :hyphen]
     [:!QWERCsemicolon :!Creturn_or_enter]
     [:!QWERTsemicolon :!Treturn_or_enter]
     [:!QWERSsemicolon :!Sreturn_or_enter]
