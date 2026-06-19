@@ -321,15 +321,15 @@
 
     ;; --- Q キー操作 ---
     [:!QWERq         :!Cq]                                       ;; Hyper + q で アプリを終了 (Cmd + q) [cite: 54]
-    [:!QWERTq        :!CTq]                                      ;; Ctrl + Hyper + q で 画面をロック [cite: 51]
-    [:!QWERSq        :!CSq]                                      ;; Shift + Hyper + q で ログアウト [cite: 52]
-    [:!QWERCq        :!Cq]                                       ;; Cmd + Hyper + q で アプリを強制終了 (Cmd + q 同様) [cite: 53]
+    [:!QWERSq        ["osascript -e 'tell app \"System Events\" to restart'"]]
+    [:!QWERSCq       ["osascript -e 'tell app \"System Events\" to shut down'"]]
+    [:!QWERSOq        :!CSq]                                      ;; Shift + Hyper + q で ログアウト [cite: 52]
 
     ;; --- W キー操作 ---
     [:!QWERw         :!Cw]                                       ;; Hyper + w で タブを閉じる (Cmd + w) [cite: 58]
-    [:!QWERSw        ["pmset sleepnow"]]                         ;; Shift + Hyper + w で スリープ [cite: 55]
-    [:!QWEROw        ["pmset displaysleepnow"]]                  ;; Opt + Hyper + w で ディスプレイスリープ [cite: 56]
     [:!QWERCw        :!Cw]                                       ;; Cmd + Hyper + w で 全てのタブを閉じる (アプリによる) [cite: 57]
+    [:!QWERSw       :!CTq]                                       ;;画面をロック
+    [:!QWERSCw        ["pmset sleepnow"]]                        ;; Shift + Hyper + w で スリープ [cite: 55]
 
     ;; --- A キー操作 ---
     [:!QWERa         :launchpad]  
