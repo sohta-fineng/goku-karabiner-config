@@ -6,6 +6,14 @@
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
 
  :main [
+  {:des "Replace Modifier Keys"
+   :rules [
+    [:##fn            :left_control]
+    [:##caps_lock     :!QWEright_shift nil {:alone :escape}]             ;; CapsLock単押しでEscape、同時押しでHyper(Cmd+Opt+Ctrl+Shift) [cite: 10]
+    [:!QWER#Pescape   :caps_lock]
+    [:##right_option :f19]
+    [:##right_shift :f20] 
+   ]}
 
   {:des "Fn Number"
    :rules [
@@ -75,6 +83,7 @@
     [:!QWERx   :!Cx]
     [:!QWERc   :!Cc]
     [:!QWERv   :!Cv]
+    [:!QWERf20   :!Cslash]
    ]}
 
 
@@ -106,17 +115,6 @@
     [:f10             :mute             :delete-layer]                   ;; Delete + F10: ミュート [cite: 7]
     [:f11             :volume_decrement :delete-layer]                   ;; Delete + F11: 音量を下げる [cite: 8]
     [:f12             :volume_increment :delete-layer]                   ;; Delete + F12: 音量を上げる [cite: 9]
-   ]}
-
-  {:des "CapsLock to Hyper"
-   :rules [
-    [:##caps_lock     :!QWEright_shift nil {:alone :escape}]             ;; CapsLock単押しでEscape、同時押しでHyper(Cmd+Opt+Ctrl+Shift) [cite: 10]
-    [:!QWER#Pescape   :caps_lock]                                        ;; Hyper + Escape: 本来のCapsLockをトグル切り替え [cite: 11]
-   ]}
-
-  {:des "Fn to Ctrl"
-   :rules [
-    [:##fn            :left_control]                                     ;; Fnキーを左Ctrlとして動作させる [cite: 11]
    ]}
 
   ;; =======================================================================
