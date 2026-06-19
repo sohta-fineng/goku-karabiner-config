@@ -18,8 +18,8 @@
 
   {:des "L-Command -> English / R-Command -> Japanese"
    :rules [
-    [:left_command  :left_command  nil {:alone :japanese_eisuu}] ;; 左Command単押しで「英数」モードへ切り替え [cite: 1]
-    [:right_command :right_command nil {:alone :japanese_kana}]  ;; 右Command単押しで「かな」モードへ切り替え [cite: 1]
+    [:##left_command  :left_command  nil {:alone :japanese_eisuu}] ;; 左Command単押しで「英数」モードへ切り替え [cite: 1]
+    [:##right_command :right_command nil {:alone :japanese_kana}]  ;; 右Command単押しで「かな」モードへ切り替え [cite: 1]
    ]}
 
   {:des "L-Option -> Greek"
@@ -41,8 +41,6 @@
    :rules [
     [:##caps_lock   :!QWEright_shift nil {:alone :escape}]       ;; CapsLockをHyper化（Cmd+Opt+Ctrl+Shift）。単押しはEscape [cite: 2]
     [:!QWER#Pescape :caps_lock]                                  ;; Hyper + Escape で本来のCapsLockをトグル [cite: 2]
-    [:!QWERspacebar :!Tspacebar]                                 ;; Hyper + Space で Ctrl + Space を送信 [cite: 2]
-    [:!QWERCspacebar ["open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]] ;; Cmd + Hyper + Space で Raycast 絵文字検索を開く [cite: 2]
    ]}
 
   {:des "Fn to Ctrl"
@@ -174,7 +172,7 @@
     [:!QWERi    :home]                                           ;; Hyper + i で Home [cite: 11]
     [:!QWERCi   :!Shome]                                         ;; Cmd + Hyper + i で Home まで選択 [cite: 11]
     [:!QWEROCi  [[:end] [:!Shome] [:!Shome]]]                     ;; Opt + Cmd + Hyper + i で 行全体選択 [cite: 11]
-    [:!QWERSi   :!CSgrave_accent_and_tilde]                      ;; Shift + Hyper + i で 前のウィンドウへ [cite: 11]
+    [:!QWERSi   :!SOTbackslash]                      ;; Shift + Hyper + i で 前のウィンドウへ [cite: 11]
     [:!QWERTi   :!Ch]                                            ;; Ctrl + Hyper + i で ウィンドウを隠す (Cmd + h) [cite: 11]
     [:!QWEROi   [[:pointing_button] [:button2]]]                 ;; Opt + Hyper + i で 右クリック [cite: 11]
     [:!QWERSOi  [[:pointing_button] [:button2]]]                 ;; Shift + Opt + Hyper + i で 右クリック [cite: 11]
@@ -185,7 +183,7 @@
     [:!QWERo    :end]                                            ;; Hyper + o で End [cite: 12]
     [:!QWERCo   :!Send]                                          ;; Cmd + Hyper + o で End まで選択 [cite: 12]
     [:!QWEROCo  [[:home] [:!Send]]]                              ;; Opt + Cmd + Hyper + o で 行全体選択 [cite: 12]
-    [:!QWERSo   :!Cgrave_accent_and_tilde]                       ;; Shift + Hyper + o で 次のウィンドウへ [cite: 12]
+    [:!QWERSo   :!OTbackslash]                       ;; Shift + Hyper + o で 次のウィンドウへ [cite: 12]
     [:!QWERTo   :!Tup_arrow]                                     ;; Ctrl + Hyper + o で Mission Control [cite: 12]
     [:!QWEROo   [[:pointing_button] [:button4]]]                 ;; Opt + Hyper + o で マウスボタン4 (戻る) [cite: 12]
     [:!QWERSOo  [[:pointing_button] [:button4]]]                 ;; Shift + Opt + Hyper + o で マウスボタン4 (戻る) [cite: 12]
@@ -202,43 +200,6 @@
     [:!QWERSOp  [[:pointing_button] [:button5]]]                 ;; Shift + Opt + Hyper + p で マウスボタン5 (進む) [cite: 13]
     [:!QWERSTp  {:mouse_key {:horizontal_wheel 64}}]             ;; Shift + Ctrl + Hyper + p で 左へスクロール [cite: 13]
     [:!QWERSCp  {:mouse_key {:horizontal_wheel 128}}]            ;; Shift + Cmd + Hyper + p で 左へ高速スクロール [cite: 13]
-
-    ;; --- Arrows (Mouse Wheel & Cursor Move) ---
-    ;; Normal Wheel (Shift)
-    [:!QWERSup_arrow     {:mouse_key {:vertical_wheel -64}}]     ;; Shift + Hyper + 上矢印 で 上スクロール [cite: 16]
-    [:!QWERSdown_arrow   {:mouse_key {:vertical_wheel 64}}]      ;; Shift + Hyper + 下矢印 で 下スクロール [cite: 16]
-    [:!QWERSleft_arrow   {:mouse_key {:horizontal_wheel 64}}]    ;; Shift + Hyper + 左矢印 で 左スクロール [cite: 16]
-    [:!QWERSright_arrow  {:mouse_key {:horizontal_wheel -64}}]   ;; Shift + Hyper + 右矢印 で 右スクロール [cite: 16]
-
-    ;; Slow Wheel (Shift + Option)
-    [:!QWERSOup_arrow    {:mouse_key {:vertical_wheel -32}}]     ;; Shift + Opt + Hyper + 上矢印 で ゆっくり上スクロール [cite: 17]
-    [:!QWERSOdown_arrow  {:mouse_key {:vertical_wheel 32}}]      ;; Shift + Opt + Hyper + 下矢印 で ゆっくり下スクロール [cite: 17]
-    [:!QWERSOleft_arrow  {:mouse_key {:horizontal_wheel 32}}]    ;; Shift + Opt + Hyper + 左矢印 で ゆっくり左スクロール [cite: 17]
-    [:!QWERSOright_arrow {:mouse_key {:horizontal_wheel -32}}]   ;; Shift + Opt + Hyper + 右矢印 で ゆっくり右スクロール [cite: 17]
-
-    ;; Fast Wheel (Shift + Command) ※JSON指定通り数値を256/-256反映
-    [:!QWERSCup_arrow    {:mouse_key {:vertical_wheel 256}}]     ;; Shift + Cmd + Hyper + 上矢印 で 高速下スクロール(※数値指定準拠) [cite: 18]
-    [:!QWERSCdown_arrow  {:mouse_key {:vertical_wheel -256}}]    ;; Shift + Cmd + Hyper + 下矢印 で 高速上スクロール(※数値指定準拠) [cite: 18]
-    [:!QWERSCleft_arrow  {:mouse_key {:horizontal_wheel 256}}]   ;; Shift + Cmd + Hyper + 左矢印 で 高速左スクロール [cite: 18]
-    [:!QWERSCright_arrow {:mouse_key {:horizontal_wheel -256}}]  ;; Shift + Cmd + Hyper + 右矢印 で 高速右スクロール [cite: 18]
-
-    ;; Slow Move (Option)
-    [:!QWEROup_arrow     {:mouse_key {:y -800}}]                 ;; Opt + Hyper + 上矢印 で カーソルゆっくり上移動 [cite: 19]
-    [:!QWEROdown_arrow   {:mouse_key {:y 800}}]                  ;; Opt + Hyper + 下矢印 で カーソルゆっくり下移動 [cite: 19]
-    [:!QWEROleft_arrow   {:mouse_key {:x -800}}]                 ;; Opt + Hyper + 左矢印 で カーソルゆっくり左移動 [cite: 19]
-    [:!QWEROright_arrow  {:mouse_key {:x 800}}]                  ;; Opt + Hyper + 右矢印 で カーソルゆっくり右移動 [cite: 19]
-
-    ;; Fast Move (Command)
-    [:!QWERCup_arrow     {:mouse_key {:y -4200}}]                ;; Cmd + Hyper + 上矢印 で カーソル高速上移動 [cite: 20]
-    [:!QWERCdown_arrow   {:mouse_key {:y 4200}}]                 ;; Cmd + Hyper + 下矢印 で カーソル高速下移動 [cite: 20]
-    [:!QWERCleft_arrow   {:mouse_key {:x -4200}}]                ;; Cmd + Hyper + 左矢印 で カーソル高速左移動 [cite: 20]
-    [:!QWERCright_arrow  {:mouse_key {:x 4200}}]                 ;; Cmd + Hyper + 右矢印 で カーソル高速右移動 [cite: 20]
-
-    ;; Normal Move (Hyper only)
-    [:!QWERup_arrow      {:mouse_key {:y -1600}}]                ;; Hyper + 上矢印 で カーソル通常上移動 [cite: 21]
-    [:!QWERdown_arrow    {:mouse_key {:y 1600}}]                 ;; Hyper + 下矢印 で カーソル通常下移動 [cite: 21]
-    [:!QWERleft_arrow    {:mouse_key {:x -1600}}]                ;; Hyper + 左矢印 で カーソル通常左移動 [cite: 21]
-    [:!QWERright_arrow   {:mouse_key {:x 1600}}]                 ;; Hyper + 右矢印 で カーソル通常右移動 [cite: 21]
    ]}
 
   ;; =======================================================================
@@ -311,10 +272,8 @@
     ;; --- Tab キー操作 ---
     [:!QWERtab       :!Ctab]                                     ;; Hyper + Tab で アプリケーションの切り替え [cite: 50]
     [:!QWERCtab      :!CStab]                             ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
-    [:!QWERStab      :!Ttab]
-    [:!QWERSCtab     :!TStab]
-    [:!QWEROtab      :!Tright_arrow]
-    [:!QWEROCtab     :!Tleft_arrow]                                  
+    [:!QWERStab      :!Tright_arrow]
+    [:!QWERSCtab     :!Tleft_arrow]                                  
 
     ;; --- Q キー操作 ---
     [:!QWERq         :!Cq]                                       ;; Hyper + q で アプリを終了 (Cmd + q) [cite: 54]
@@ -329,17 +288,19 @@
     [:!QWERSCw        ["pmset sleepnow"]]                        ;; Shift + Hyper + w で スリープ [cite: 55]
 
     ;; --- A キー操作 ---
-    [:!QWERa         :launchpad]  
-    [:!QWERTa        :launchpad]
-    [:!QWEROa        :f11]                                       ;; Opt + Hyper + a で デスクトップを表示 [cite: 60]
-    [:!QWERCa        :!Cup_arrow]                                ;; Cmd + Hyper + a で 全ウィンドウ表示 (Expose All) [cite: 61]
+    [:!QWERa         "open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]
+    [:!QWERCa         :!CTf]
+    [:!QWEROa         :!Ch]
+    [:!QWERSa         :launchpad]
+    [:!QWERSCa         :!Tup_arrow]
+    [:!QWERSOa         :!Tdown_arrow]
 
     ;; --- S キー操作 ---
-    [:!QWERs         :!Ttab]                                     ;; Hyper + s で タブシート切り替え [cite: 66]
-    [:!QWERTs        :!CSgrave_accent_and_tilde]                 ;; Ctrl + Hyper + s で アプリ内ウィンドウ切り替え (逆順) [cite: 62, 63]
-    [:!QWEROs        :!Cgrave_accent_and_tilde]                  ;; Opt + Hyper + s で アプリ内ウィンドウ切り替え [cite: 64]
-    [:!QWERCs        :!CStab]                                    ;; Cmd + Hyper + s で タブシート切り替え (逆順) [cite: 65]
-   ]}
+    [:!QWERs         :!Ttab] 
+    [:!QWERCs        :!STtab]
+    [:!QWERSs        :!SOTbackslash]
+    [:!QWERSCs       :!OTbackslash]
+    ]}
 
   ;; =======================================================================
   ;; 微調整コントロール (Navigation Key Controls Fine Tuning)
@@ -402,7 +363,6 @@
     [:!QWERCTi       ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]     ;; Cmd+Ctrl+Hyper+i で ウィンドウを拡大
     [:!QWERCTo       ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]    ;; Cmd+Ctrl+Hyper+o で ウィンドウを縮小
     [:!QWERCTp       ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]] ;; Cmd+Ctrl+Hyper+p で ウィンドウを適度なサイズに
-    [:!QWERCTspacebar ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]] ;; Cmd+Ctrl+Hyper+Space で ウィンドウをほぼ最大化
    ]}
  ]
 }
