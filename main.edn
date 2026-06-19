@@ -4,365 +4,357 @@
 
  :main [
   ;; =======================================================================
-  ;; 基本修飾キー・レイヤー設定
+  ;; 基本修飾キー・レイヤー設定 [cite: 1]
   ;; =======================================================================
-  {:des "SandS"
+  {:des "SandS (Space and Shift)"
    :rules [
-    [:##spacebar   :left_shift    nil {:alone :spacebar}]
-   ]}
-
-  {:des "a to bbb"
-   :rules [
-    [:a :a]
+    [:##spacebar      :left_shift    nil {:alone :spacebar}]             ;; Space単押しでSpace、他キーとの同時押しで左Shift [cite: 2]
    ]}
 
   {:des "L-Command -> English / R-Command -> Japanese"
    :rules [
-    [:##left_command  :left_command  nil {:alone :japanese_eisuu}]
-    [:##right_command :right_command nil {:alone :japanese_kana}]
+    [:##left_command  :left_command  nil {:alone :japanese_eisuu}]       ;; 左Cmd単押しで「英数」、同時押しで左Cmd [cite: 2]
+    [:##right_command :right_command nil {:alone :japanese_kana}]        ;; 右Cmd単押しで「かな」、同時押しで右Cmd [cite: 2]
    ]}
 
   {:des "L-Option -> Greek"
    :rules [
-    [:left_option   :left_option   nil {:alone :greek}]
+    [:left_option     :left_option   nil {:alone :greek}]                ;; 左Opt単押しでギリシャ語キーボードへ切り替え [cite: 2]
    ]}
 
   {:des "Delete + F7-F12 for Media Keys"
    :rules [
-    [:f7  :rewind           :delete-layer]                       ;; Delete + F7 で巻き戻し [cite: 1]
-    [:f8  :play_or_pause    :delete-layer]                       ;; Delete + F8 で再生/一時停止 [cite: 1]
-    [:f9  :fast_forward     :delete-layer]                       ;; Delete + F9 で早送り [cite: 1]
-    [:f10 :mute             :delete-layer]                       ;; Delete + F10 でミュート [cite: 1]
-    [:f11 :volume_decrement :delete-layer]                       ;; Delete + F11 で音量ダウン [cite: 1, 2]
-    [:f12 :volume_increment :delete-layer]                       ;; Delete + F12 で音量アップ [cite: 2]
+    [:f7              :rewind           :delete-layer]                   ;; Delete + F7: 巻き戻し [cite: 3, 4]
+    [:f8              :play_or_pause    :delete-layer]                   ;; Delete + F8: 再生 / 一時停止 [cite: 5]
+    [:f9              :fast_forward     :delete-layer]                   ;; Delete + F9: 早送り [cite: 6]
+    [:f10             :mute             :delete-layer]                   ;; Delete + F10: ミュート [cite: 7]
+    [:f11             :volume_decrement :delete-layer]                   ;; Delete + F11: 音量を下げる [cite: 8]
+    [:f12             :volume_increment :delete-layer]                   ;; Delete + F12: 音量を上げる [cite: 9]
    ]}
 
   {:des "CapsLock to Hyper"
    :rules [
-    [:##caps_lock   :!QWEright_shift nil {:alone :escape}]       ;; CapsLockをHyper化（Cmd+Opt+Ctrl+Shift）。単押しはEscape [cite: 2]
-    [:!QWER#Pescape :caps_lock]                                  ;; Hyper + Escape で本来のCapsLockをトグル [cite: 2]
+    [:##caps_lock     :!QWEright_shift nil {:alone :escape}]             ;; CapsLock単押しでEscape、同時押しでHyper(Cmd+Opt+Ctrl+Shift) [cite: 10]
+    [:!QWER#Pescape   :caps_lock]                                        ;; Hyper + Escape: 本来のCapsLockをトグル切り替え [cite: 11]
    ]}
 
   {:des "Fn to Ctrl"
    :rules [
-    [:##fn :left_control]
+    [:##fn            :left_control]                                     ;; Fnキーを左Ctrlとして動作させる [cite: 11]
    ]}
 
-
   ;; =======================================================================
-  ;; アプリケーション起動・フォーカス (Hyper Application)
+  ;; アプリケーション起動・フォーカス (Hyper Application) [cite: 12]
   ;; =======================================================================
   {:des "Hyper Application (original)"
    :rules [
-    ;; ブラウザ・エディタ系
-    [:!QWERe    ["open -a Arc"]]                                 ;; Hyper + e で Arcブラウザ を起動/切り替え [cite: 2]
-    [:!QWERCe   ["open -a 'Google Chrome'"]]                     ;; Cmd + Hyper + e で Google Chrome を起動/切り替え [cite: 2]
-    [:!QWEROe   ["open -a Safari"]]                              ;; Opt + Hyper + e で Safari を起動/切り替え [cite: 2]
-    [:!QWERSe   ["open -a Cursor"]]                              ;; Shift + Hyper + e で Cursor を起動/切り替え [cite: 2]
-    [:!QWERSCe  ["open -a 'Visual Studio Code'"]]                ;; Shift + Cmd + Hyper + e で VS Code を起動/切り替え [cite: 2]
-    [:!QWERSOe  ["open -a Notes"]]                               ;; Shift + Opt + Hyper + e で メモ(Notes) を起動/切り替え [cite: 2]
+    ;; --- ブラウザ・エディタ系 --- [cite: 13]
+    [:!QWERe          ["open -a Arc"]]                                   ;; Hyper + e: Arc ブラウザを起動 / 最前面へ [cite: 14]
+    [:!QWERCe         ["open -a 'Google Chrome'"]]                       ;; Cmd + Hyper + e: Google Chrome を起動 / 最前面へ [cite: 15]
+    [:!QWEROe         ["open -a Safari"]]                                ;; Opt + Hyper + e: Safari を起動 / 最前面へ [cite: 16]
+    [:!QWERSe         ["open -a Cursor"]]                                ;; Shift + Hyper + e: Cursor を起動 / 最前面へ [cite: 17]
+    [:!QWERSCe        ["open -a 'Visual Studio Code'"]]                  ;; Shift + Cmd + Hyper + e: VS Code を起動 / 最前面へ [cite: 18]
+    [:!QWERSOe        ["open -a Notes"]]                                 ;; Shift + Opt + Hyper + e: メモ(Notes) を起動 / 最前面へ [cite: 19]
 
-    ;; ユーティリティ・ターミナル系
-    [:!QWERr    ["open -a Finder"]]                              ;; Hyper + r で Finder を起動/切り替え [cite: 3]
-    [:!QWERCr   ["open -a Preview"]]                             ;; Cmd + Hyper + r で プレビュー(Preview) を起動/切り替え [cite: 3]
-    [:!QWERSr   ["open -a iTerm"]]                               ;; Shift + Hyper + r で iTerm を起動/切り替え [cite: 3]
-    [:!QWERSCr  ["open -a Terminal"]]   
+    ;; --- ユーティリティ・ターミナル系 --- [cite: 20]
+    [:!QWERr          ["open -a Finder"]]                                ;; Hyper + r: Finder を起動 / 最前面へ [cite: 21]
+    [:!QWERCr         ["open -a Preview"]]                               ;; Cmd + Hyper + r: プレビュー(Preview) を起動 / 最前面へ [cite: 22]
+    [:!QWERSr         ["open -a iTerm"]]                                 ;; Shift + Hyper + r: iTerm を起動 / 最前面へ [cite: 23]
+    [:!QWERSCr        ["open -a Terminal"]]                              ;; Shift + Cmd + Hyper + r: Terminal を起動 / 最前面へ [cite: 23]
     
-    ;; 連絡ツール系
-    [:!QWERt    ["open -a Slack"]]
-    [:!QWERCt   ["open -a Discord"]]
+    ;; --- 連絡ツール系 --- [cite: 24]
+    [:!QWERt          ["open -a Slack"]]                                 ;; Hyper + t: Slack を起動 / 最前面へ [cite: 24]
+    [:!QWERCt         ["open -a Discord"]]                               ;; Cmd + Hyper + t: Discord を起動 / 最前面へ [cite: 24]
 
-    ;; PIM (スケジュール・タスク・メール) 系
-    [:!QWERy    ["open -a Reminders"]]                           ;; Hyper + y で リマインダー を起動/切り替え [cite: 3]
-    [:!QWERCy   ["open -a Mail"]]                                ;; Cmd + Hyper + y で メール(Mail) を起動/切り替え [cite: 3]
-    [:!QWEROy   ["open -a Calendar"]]                            ;; Opt + Hyper + y で カレンダー を起動/切り替え [cite: 3]
+    ;; --- PIM (スケジュール・タスク・メール) 系 --- [cite: 25]
+    [:!QWERy          ["open -a Reminders"]]                             ;; Hyper + y: リマインダー を起動 / 最前面へ [cite: 26]
+    [:!QWERCy         ["open -a Mail"]]                                  ;; Cmd + Hyper + y: メール(Mail) を起動 / 最前面へ [cite: 27]
+    [:!QWEROy         ["open -a Calendar"]]                              ;; Opt + Hyper + y: カレンダー を起動 / 最前面へ [cite: 28]
 
-    ;; ドキュメント・ノート系
-    [:!QWERd    ["open -a Obsidian"]]                            ;; Cmd + Hyper + d で Obsidian を起動/切り替え [cite: 3]
-    [:!QWERCd   ["open -a Bear"]]                                ;; Cmd + Hyper + b で Bear を起動/切り替え [cite: 3]
-    [:!QWEROd   ["open -a Logseq"]]                              ;; Cmd + Hyper + l で Logseq を起動/切り替え [cite: 3]
-    [:!QWERSd   ["open -a Notion"]]                              ;; Shift + Cmd + Hyper + d で Notion を起動/切り替え [cite: 3]
+    ;; --- ドキュメント・ノート系 --- [cite: 29]
+    [:!QWERd          ["open -a Obsidian"]]                              ;; Hyper + d: Obsidian を起動 / 最前面へ [cite: 30]
+    [:!QWERCd         ["open -a Bear"]]                                  ;; Cmd + Hyper + d: Bear を起動 / 最前面へ [cite: 31]
+    [:!QWEROd         ["open -a Logseq"]]                                ;; Opt + Hyper + d: Logseq を起動 / 最前面へ [cite: 32]
+    [:!QWERSd         ["open -a Notion"]]                                ;; Shift + Hyper + d: Notion を起動 / 最前面へ [cite: 33]
 
-    ;; ツール・システム系
-    [:!QWERf    ["open -a Raycast"]]                             ;; Hyper + f で Raycast を起動/切り替え [cite: 3]
-    [:!QWERCf   ["open -a 'Karabiner-Elements'"]]                ;; Cmd + Hyper + f で Karabiner-Elements を起動 [cite: 3]
-    [:!QWEROf   ["open -a 'Karabiner-EventViewer'"]]             ;; Opt + Hyper + f で Karabiner-EventViewer を起動 [cite: 3, 4]
-    [:!QWERSf   ["open -a 'Maccy'"]]                             ;; Shift + Hyper + f で クリップボード拡張(Maccy) を起動 [cite: 4]
+    ;; --- ツール・システム系 --- [cite: 34]
+    [:!QWERf          ["open -a Raycast"]]                               ;; Hyper + f: Raycast を起動 / 最前面へ [cite: 35]
+    [:!QWERCf         ["open -a 'Karabiner-Elements'"]]                  ;; Cmd + Hyper + f: Karabiner-Elements を起動 [cite: 36]
+    [:!QWEROf         ["open -a 'Karabiner-EventViewer'"]]               ;; Opt + Hyper + f: Karabiner-EventViewer を起動 [cite: 37]
+    [:!QWERSf         ["open -a 'Maccy'"]]                               ;; Shift + Hyper + f: クリップボード拡張(Maccy) を起動 [cite: 38]
 
-    ;; AI系
-    [:!QWERg    ["open -a Claude"]]                              ;; Hyper + g で Claude アプリを起動/切り替え [cite: 4]
-    [:!QWERCg   ["open -a ChatGPT"]]                             ;; Cmd + Hyper + g で ChatGPT アプリを起動/切り替え [cite: 4]
-    [:!QWEROg   ["open -a Gemini"]]                              ;; Opt + Hyper + g で Gemini アプリを起動/切り替え [cite: 4]
-    [:!QWERSg   ["open -a Ollama"]]                              ;; Shift + Hyper + g で Ollama アプリを起動/切り替え [cite: 4]
-    [:!QWERSCg  ["open -a 'LM Studio'"]]                         ;; Shift + Cmd + Hyper + g で LM Studio を起動/切り替え [cite: 4]
+    ;; --- AI系 --- [cite: 39]
+    [:!QWERg          ["open -a Claude"]]                                ;; Hyper + g: Claude アプリを起動 / 最前面へ [cite: 40]
+    [:!QWERCg         ["open -a ChatGPT"]]                               ;; Cmd + Hyper + g: ChatGPT アプリを起動 / 最前面へ [cite: 41]
+    [:!QWEROg         ["open -a Gemini"]]                                ;; Opt + Hyper + g: Gemini アプリを起動 / 最前面へ [cite: 42]
+    [:!QWERSg         ["open -a Ollama"]]                                ;; Shift + Hyper + g: Ollama アプリを起動 / 最前面へ [cite: 43]
+    [:!QWERSCg        ["open -a 'LM Studio'"]]                           ;; Shift + Cmd + Hyper + g: LM Studio を起動 / 最前面へ [cite: 44]
 
-    ;; Raycast拡張機能系
-    [:!QWERz    ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]] ;; Hyper + z で Raycast AI チャットを開く [cite: 4]
-    [:!QWERCz   ["open 'raycast://ai-commands/request-a-commentary'"]]       ;; Cmd + Hyper + z で AIに解説を要求 [cite: 4]
-    [:!QWEROz   ["open 'raycast://ai-commands/summarize-3-points'"]]         ;; Opt + Hyper + z で AIに3ポイント要約を要求 [cite: 4]
-
-    [:!QWERx    ["open 'raycast://extensions/mooxl/deepcast/index'"]]       ;; Hyper + x で Deepcast (翻訳) を開く [cite: 4]
-    [:!QWERCx   ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]] ;; Cmd + Hyper + x で 英語(US)翻訳 [cite: 4]
-    [:!QWEROx   ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x で 日本語翻訳 [cite: 4]
-
-    [:!QWERc    ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c で Raycast Notes を開く [cite: 4]
+    ;; --- Raycast拡張機能系 --- [cite: 45]
+    [:!QWERz          ["open 'raycast://extensions/raycast/raycast-ai/ai-chat'"]] ;; Hyper + z: Raycast AI チャットを開く [cite: 46]
+    [:!QWERCz         ["open 'raycast://ai-commands/request-a-commentary'"]]       ;; Cmd + Hyper + z: Raycast AIに「解説」を要求 [cite: 47]
+    [:!QWEROz         ["open 'raycast://ai-commands/summarize-3-points'"]]         ;; Opt + Hyper + z: Raycast AIに「3ポイント要約」を要求 [cite: 48]
+    [:!QWERx          ["open 'raycast://extensions/mooxl/deepcast/index'"]]       ;; Hyper + x: Deepcast (翻訳) を開く [cite: 49]
+    [:!QWERCx         ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]] ;; Cmd + Hyper + x: 英語(US)翻訳を実行 [cite: 50]
+    [:!QWEROx         ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x: 日本語翻訳を実行 [cite: 51]
+    [:!QWERc          ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c: Raycast Notes を開く [cite: 52]
    ]}
 
   ;; =======================================================================
-  ;; カーソル・マウス操作 (Hyper Navigation)
+  ;; カーソル・マウス操作 (Hyper Navigation) [cite: 53]
   ;; =======================================================================
   {:des "Hyper Navigation"
    :rules [
-    ;; --- h (Left / Prev) ---
-    [:!QWERh    :left_arrow]                                     ;; Hyper + h で 左矢印 [cite: 6]
-    [:!QWERCh   :!Sleft_arrow]                                   ;; Cmd + Hyper + h で 左を選択 (Shift + 左矢印) [cite: 6]
-    [:!QWEROCh  :!SOleft_arrow]                                  ;; Opt + Cmd + Hyper + h で 単語単位で左を選択 [cite: 6]
-    [:!QWERSh   :!TStab]                                         ;; Shift + Hyper + h で 前のタブへ (Ctrl + Shift + Tab) [cite: 6]
-    [:!QWERTh   :!Tleft_arrow]                                   ;; Ctrl + Hyper + h で 左の操作スペースへ (Ctrl + 左矢印) [cite: 6]
-    [:!QWEROh   {:mouse_key {:x -1600}}]                         ;; Opt + Hyper + h で マウスカーソルを左へ移動 (中速) [cite: 6]
-    [:!QWERSOh  {:mouse_key {:x -3200}}]                         ;; Shift + Opt + Hyper + h で マウスカーソルを左へ移動 (高速) [cite: 6]
-    [:!QWERSTh  {:mouse_key {:horizontal_wheel 64}}]             ;; Shift + Ctrl + Hyper + h で マウスホイールを左へスクロール [cite: 6]
-    [:!QWERSCh  {:mouse_key {:horizontal_wheel 128}}]            ;; Shift + Cmd + Hyper + h で マウスホイールを左へ高速スクロール [cite: 6]
+    ;; --- h (Left / Prev) --- [cite: 54]
+    [:!QWERh          :left_arrow]                                       ;; Hyper + h: カーソルを左へ移動 [cite: 55]
+    [:!QWERCh         :!Sleft_arrow]                                     ;; Cmd + Hyper + h: 左方向へテキスト選択 [cite: 56]
+    [:!QWEROCh        :!SOleft_arrow]                                    ;; Opt + Cmd + Hyper + h: 左方向へ単語単位でテキスト選択 [cite: 57]
+    [:!QWERSh         :!TStab]                                           ;; Shift + Hyper + h: 前のタブへ切り替え [cite: 58]
+    [:!QWERTh         :!Tleft_arrow]                                     ;; Ctrl + Hyper + h: 左の操作スペース(デスクトップ)へ移動 [cite: 59]
+    [:!QWEROh         {:mouse_key {:x -1600}}]                           ;; Opt + Hyper + h: マウスカーソルを左へ移動 (中速) [cite: 60]
+    [:!QWERSOh        {:mouse_key {:x -3200}}]                           ;; Shift + Opt + Hyper + h: マウスカーソルを左へ移動 (高速) [cite: 61]
+    [:!QWERSTh        {:mouse_key {:horizontal_wheel 64}}]               ;; Shift + Ctrl + Hyper + h: マウスホイールを左へスクロール [cite: 62]
+    [:!QWERSCh        {:mouse_key {:horizontal_wheel 128}}]              ;; Shift + Cmd + Hyper + h: マウスホイールを左へ高速スクロール [cite: 63]
 
-    ;; --- j (Down / Focus) ---
-    [:!QWERj    :down_arrow]                                     ;; Hyper + j で 下矢印 [cite: 7]
-    [:!QWERCj   :!Sdown_arrow]                                   ;; Cmd + Hyper + j で 下を選択 (Shift + 下矢印) [cite: 7]
-    [:!QWEROCj  [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]] ;; Opt + Cmd + Hyper + j で 下へ複数行まとめて選択 [cite: 7]
-    [:!QWERSj   :!Ctab]                                          ;; Shift + Hyper + j で 次のタブへ (Ctrl + Tab) [cite: 7]
-    [:!QWERTj   :!Tdown_arrow]                                   ;; Ctrl + Hyper + j で Expose/App Expose (Ctrl + 下矢印) [cite: 7]
-    [:!QWEROj   {:mouse_key {:y 1600}}]                          ;; Opt + Hyper + j で マウスカーソルを下へ移動 (中速) [cite: 7]
-    [:!QWERSOj  {:mouse_key {:y 3200}}]                          ;; Shift + Opt + Hyper + j で マウスカーソルを下へ移動 (高速) [cite: 7]
-    [:!QWERSTj  {:mouse_key {:vertical_wheel 64}}]               ;; Shift + Ctrl + Hyper + j で マウスホイールを下へスクロール [cite: 7]
-    [:!QWERSCj  {:mouse_key {:vertical_wheel 128}}]              ;; Shift + Cmd + Hyper + j で マウスホイールを下へ高速スクロール [cite: 7]
+    ;; --- j (Down / Focus) --- [cite: 64]
+    [:!QWERj          :down_arrow]                                       ;; Hyper + j: カーソルを下へ移動 [cite: 65]
+    [:!QWERCj         :!Sdown_arrow]                                     ;; Cmd + Hyper + j: 下方向へテキスト選択 [cite: 66]
+    [:!QWEROCj        [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]] ;; Opt + Cmd + Hyper + j: 下方向へ複数行まとめてテキスト選択 [cite: 67]
+    [:!QWERSj         :!Ctab]                                            ;; Shift + Hyper + j: 次のタブへ切り替え [cite: 68]
+    [:!QWERTj         :!Tdown_arrow]                                     ;; Ctrl + Hyper + j: アプリケーションウィンドウを一覧表示(App Expose) [cite: 69]
+    [:!QWEROj         {:mouse_key {:y 1600}}]                            ;; Opt + Hyper + j: マウスカーソルを下へ移動 (中速) [cite: 70]
+    [:!QWERSOj        {:mouse_key {:y 3200}}]                            ;; Shift + Opt + Hyper + j: マウスカーソルを下へ移動 (高速) [cite: 71]
+    [:!QWERSTj        {:mouse_key {:vertical_wheel 64}}]                 ;; Shift + Ctrl + Hyper + j: マウスホイールを下へスクロール [cite: 72]
+    [:!QWERSCj        {:mouse_key {:vertical_wheel 128}}]                ;; Shift + Cmd + Hyper + j: マウスホイールを下へ高速スクロール [cite: 73]
 
-    ;; --- k (Up / Expose) ---
-    [:!QWERk    :up_arrow]                                       ;; Hyper + k で 上矢印 [cite: 8]
-    [:!QWERCk   :!Sup_arrow]                                     ;; Cmd + Hyper + k で 上を選択 (Shift + 上矢印) [cite: 8]
-    [:!QWEROCk  [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]     ;; Opt + Cmd + Hyper + k で 上へ複数行まとめて選択 [cite: 8]
-    [:!QWERSk   :!CStab]                                         ;; Shift + Hyper + k で 前のタブへ (Ctrl + Shift + Tab) [cite: 8]
-    [:!QWERTk   :!Tup_arrow]                                     ;; Ctrl + Hyper + k で Mission Control (Ctrl + 上矢印) [cite: 8]
-    [:!QWEROk   {:mouse_key {:y -1600}}]                         ;; Opt + Hyper + k で マウスカーソルを上へ移動 (中速) [cite: 8]
-    [:!QWERSOk  {:mouse_key {:y -3200}}]                         ;; Shift + Opt + Hyper + k で マウスカーソルを上へ移動 (高速) [cite: 8]
-    [:!QWERSTk  {:mouse_key {:vertical_wheel -64}}]              ;; Shift + Ctrl + Hyper + k で マウスホイールを上へスクロール [cite: 8]
-    [:!QWERSCk  {:mouse_key {:vertical_wheel -128}}]             ;; Shift + Cmd + Hyper + k で マウスホイールを上へ高速スクロール [cite: 8]
+    ;; --- k (Up / Expose) --- [cite: 74]
+    [:!QWERk          :up_arrow]                                         ;; Hyper + k: カーソルを上へ移動 [cite: 75]
+    [:!QWERCk         :!Sup_arrow]                                       ;; Cmd + Hyper + k: 上方向へテキスト選択 [cite: 76]
+    [:!QWEROCk        [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]       ;; Opt + Cmd + Hyper + k: 上方向へ複数行まとめてテキスト選択 [cite: 77]
+    [:!QWERSk         :!CStab]                                           ;; Shift + Hyper + k: 前のタブへ切り替え [cite: 78]
+    [:!QWERTk         :!Tup_arrow]                                       ;; Ctrl + Hyper + k: Mission Control を開く [cite: 79]
+    [:!QWEROk         {:mouse_key {:y -1600}}]                           ;; Opt + Hyper + k: マウスカーソルを上へ移動 (中速) [cite: 80]
+    [:!QWERSOk        {:mouse_key {:y -3200}}]                           ;; Shift + Opt + Hyper + k: マウスカーソルを上へ移動 (高速) [cite: 81]
+    [:!QWERSTk        {:mouse_key {:vertical_wheel -64}}]                ;; Shift + Ctrl + Hyper + k: マウスホイールを上へスクロール [cite: 82]
+    [:!QWERSCk        {:mouse_key {:vertical_wheel -128}}]               ;; Shift + Cmd + Hyper + k: マウスホイールを上へ高速スクロール [cite: 83]
 
-    ;; --- l (Right / Next) ---
-    [:!QWERl    :right_arrow]                                    ;; Hyper + l で 右矢印 [cite: 9]
-    [:!QWERCl   :!Sright_arrow]                                  ;; Cmd + Hyper + l で 右を選択 (Shift + 右矢印) [cite: 9]
-    [:!QWEROCl  :!SOright_arrow]                                 ;; Opt + Cmd + Hyper + l で 単語単位で右を選択 [cite: 9]
-    [:!QWERSl   :!Ttab]                                          ;; Shift + Hyper + l で 次のタブへ (Ctrl + Tab) [cite: 9]
-    [:!QWERTl   :!Tright_arrow]                                  ;; Ctrl + Hyper + l で 右の操作スペースへ (Ctrl + 右矢印) [cite: 9]
-    [:!QWEROl   {:mouse_key {:x 1600}}]                          ;; Opt + Hyper + l で マウスカーソルを右へ移動 (中速) [cite: 9]
-    [:!QWERSOl  {:mouse_key {:x 3200}}]                          ;; Shift + Opt + Hyper + l で マウスカーソルを右へ移動 (高速) [cite: 9]
-    [:!QWERSTl  {:mouse_key {:horizontal_wheel -64}}]            ;; Shift + Ctrl + Hyper + l で マウスホイールを右へスクロール [cite: 9]
-    [:!QWERSCl  {:mouse_key {:horizontal_wheel -128}}]           ;; Shift + Cmd + Hyper + l で マウスホイールを右へ高速スクロール [cite: 9]
+    ;; --- l (Right / Next) --- [cite: 84]
+    [:!QWERl          :right_arrow]                                      ;; Hyper + l: カーソルを右へ移動 [cite: 85]
+    [:!QWERCl         :!Sright_arrow]                                    ;; Cmd + Hyper + l: 右方向へテキスト選択 [cite: 86]
+    [:!QWEROCl        :!SOright_arrow]                                   ;; Opt + Cmd + Hyper + l: 右方向へ単語単位でテキスト選択 [cite: 87]
+    [:!QWERSl         :!Ttab]                                            ;; Shift + Hyper + l: 次のタブへ切り替え [cite: 88]
+    [:!QWERTl         :!Tright_arrow]                                    ;; Ctrl + Hyper + l: 右の操作スペース(デスクトップ)へ移動 [cite: 89]
+    [:!QWEROl         {:mouse_key {:x 1600}}]                            ;; Opt + Hyper + l: マウスカーソルを右へ移動 (中速) [cite: 90]
+    [:!QWERSOl        {:mouse_key {:x 3200}}]                            ;; Shift + Opt + Hyper + l: マウスカーソルを右へ移動 (高速) [cite: 91]
+    [:!QWERSTl        {:mouse_key {:horizontal_wheel -64}}]              ;; Shift + Ctrl + Hyper + l: マウスホイールを右へスクロール [cite: 92]
+    [:!QWERSCl        {:mouse_key {:horizontal_wheel -128}}]             ;; Shift + Cmd + Hyper + l: マウスホイールを右へ高速スクロール [cite: 93]
 
-    ;; --- u (Page Up / Zoom Out / Left Click) ---
-    [:!QWERu    :page_up]                                        ;; Hyper + u で Page Up [cite: 10]
-    [:!QWERCu   :!Spage_up]                                      ;; Cmd + Hyper + u で Page Up 範囲選択 [cite: 10]
-    [:!QWEROCu  :!Spage_up]                                      ;; Opt + Cmd + Hyper + u で Page Up 範囲選択 [cite: 10]
-    [:!QWERSu   :!COhyphen]                                      ;; Shift + Hyper + u で ズームアウト (Cmd + Opt + -) [cite: 10]
-    [:!QWERTu   :!CTf]                                           ;; Ctrl + Hyper + u で フルスクリーン切り替え (Ctrl + Cmd + F) [cite: 10]
-    [:!QWEROu   [[:pointing_button] [:button1]]]                 ;; Opt + Hyper + u で 左クリック [cite: 10]
-    [:!QWERSOu  [[:pointing_button] [:button1]]]                 ;; Shift + Opt + Hyper + u で 左クリック [cite: 10]
-    [:!QWERSTu  {:mouse_key {:horizontal_wheel -64}}]            ;; Shift + Ctrl + Hyper + u で 右へスクロール [cite: 10]
-    [:!QWERSCu  {:mouse_key {:horizontal_wheel -128}}]           ;; Shift + Cmd + Hyper + u で 右へ高速スクロール [cite: 10]
+    ;; --- u (Page Up / Zoom Out / Left Click) --- [cite: 94]
+    [:!QWERu          :page_up]                                          ;; Hyper + u: ページアップ [cite: 95]
+    [:!QWERCu         :!Spage_up]                                        ;; Cmd + Hyper + u: ページアップしつつ範囲選択 [cite: 96]
+    [:!QWEROCu        :!Spage_up]                                        ;; Opt + Cmd + Hyper + u: ページアップしつつ範囲選択 [cite: 97]
+    [:!QWERSu         :!COhyphen]                                        ;; Shift + Hyper + u: 画面をズームアウト [cite: 98]
+    [:!QWERTu         :!CTf]                                             ;; Ctrl + Hyper + u: フルスクリーン表示の切り替え [cite: 99]
+    [:!QWEROu         [[:pointing_button] [:button1]]]                   ;; Opt + Hyper + u: マウス 左クリック [cite: 100]
+    [:!QWERSOu        [[:pointing_button] [:button1]]]                   ;; Shift + Opt + Hyper + u: マウス 左クリック [cite: 101]
+    [:!QWERSTu        {:mouse_key {:horizontal_wheel -64}}]              ;; Shift + Ctrl + Hyper + u: マウスホイール 右へスクロール [cite: 102]
+    [:!QWERSCu        {:mouse_key {:horizontal_wheel -128}}]             ;; Shift + Cmd + Hyper + u: マウスホイール 右へ高速スクロール [cite: 103]
 
-    ;; --- i (Home / Prev Window / Right Click) ---
-    [:!QWERi    :home]                                           ;; Hyper + i で Home [cite: 11]
-    [:!QWERCi   :!Shome]                                         ;; Cmd + Hyper + i で Home まで選択 [cite: 11]
-    [:!QWEROCi  [[:end] [:!Shome] [:!Shome]]]                     ;; Opt + Cmd + Hyper + i で 行全体選択 [cite: 11]
-    [:!QWERSi   :!SOTbackslash]                      ;; Shift + Hyper + i で 前のウィンドウへ [cite: 11]
-    [:!QWERTi   :!Ch]                                            ;; Ctrl + Hyper + i で ウィンドウを隠す (Cmd + h) [cite: 11]
-    [:!QWEROi   [[:pointing_button] [:button2]]]                 ;; Opt + Hyper + i で 右クリック [cite: 11]
-    [:!QWERSOi  [[:pointing_button] [:button2]]]                 ;; Shift + Opt + Hyper + i で 右クリック [cite: 11]
-    [:!QWERSTi  {:mouse_key {:vertical_wheel -64}}]              ;; Shift + Ctrl + Hyper + i で 上へスクロール [cite: 11]
-    [:!QWERSCi  {:mouse_key {:vertical_wheel -128}}]             ;; Shift + Cmd + Hyper + i で 上へ高速スクロール [cite: 11]
+    ;; --- i (Home / Prev Window / Right Click) --- [cite: 104]
+    [:!QWERi          :home]                                             ;; Hyper + i: 行頭へ移動 (Home) [cite: 105]
+    [:!QWERCi         :!Shome]                                           ;; Cmd + Hyper + i: 行頭までテキスト選択 [cite: 106]
+    [:!QWEROCi        [[:end] [:!Shome] [:!Shome]]]                       ;; Opt + Cmd + Hyper + i: 現在の行全体を選択 [cite: 107]
+    [:!QWERSi         :!SOTbackslash]                                    ;; Shift + Hyper + i: 同アプリ内の前のウィンドウへ [cite: 108]
+    [:!QWERTi         :!Ch]                                              ;; Ctrl + Hyper + i: ウィンドウを隠す [cite: 109]
+    [:!QWEROi         [[:pointing_button] [:button2]]]                   ;; Opt + Hyper + i: マウス 右クリック [cite: 110]
+    [:!QWERSOi        [[:pointing_button] [:button2]]]                   ;; Shift + Opt + Hyper + i: マウス 右クリック [cite: 111]
+    [:!QWERSTi        {:mouse_key {:vertical_wheel -64}}]                ;; Shift + Ctrl + Hyper + i: マウスホイール 上へスクロール [cite: 112]
+    [:!QWERSCi        {:mouse_key {:vertical_wheel -128}}]               ;; Shift + Cmd + Hyper + i: マウスホイール 上へ高速スクロール [cite: 113]
 
-    ;; --- o (End / Next Window / Backward) ---
-    [:!QWERo    :end]                                            ;; Hyper + o で End [cite: 12]
-    [:!QWERCo   :!Send]                                          ;; Cmd + Hyper + o で End まで選択 [cite: 12]
-    [:!QWEROCo  [[:home] [:!Send]]]                              ;; Opt + Cmd + Hyper + o で 行全体選択 [cite: 12]
-    [:!QWERSo   :!OTbackslash]                       ;; Shift + Hyper + o で 次のウィンドウへ [cite: 12]
-    [:!QWERTo   :!Tup_arrow]                                     ;; Ctrl + Hyper + o で Mission Control [cite: 12]
-    [:!QWEROo   [[:pointing_button] [:button4]]]                 ;; Opt + Hyper + o で マウスボタン4 (戻る) [cite: 12]
-    [:!QWERSOo  [[:pointing_button] [:button4]]]                 ;; Shift + Opt + Hyper + o で マウスボタン4 (戻る) [cite: 12]
-    [:!QWERSTo  {:mouse_key {:vertical_wheel 64}}]               ;; Shift + Ctrl + Hyper + o で 下へスクロール [cite: 12]
-    [:!QWERSCo  {:mouse_key {:vertical_wheel 128}}]              ;; Shift + Cmd + Hyper + o で 下へ高速スクロール [cite: 12]
+    ;; --- o (End / Next Window / Backward) --- [cite: 114]
+    [:!QWERo          :end]                                              ;; Hyper + o: 行末へ移動 (End) [cite: 115]
+    [:!QWERCo         :!Send]                                            ;; Cmd + Hyper + o: 行末までテキスト選択 [cite: 116]
+    [:!QWEROCo        [[:home] [:!Send]]]                                ;; Opt + Cmd + Hyper + o: 現在の行全体を選択 [cite: 117]
+    [:!QWERSo         :!OTbackslash]                                     ;; Shift + Hyper + o: 同アプリ内の次のウィンドウへ [cite: 118]
+    [:!QWERTo         :!Tup_arrow]                                       ;; Ctrl + Hyper + o: Mission Control を開く [cite: 119]
+    [:!QWEROo         [[:pointing_button] [:button4]]]                   ;; Opt + Hyper + o: マウス サイドボタン4 (戻る) [cite: 120]
+    [:!QWERSOo        [[:pointing_button] [:button4]]]                   ;; Shift + Opt + Hyper + o: マウス サイドボタン4 (戻る) [cite: 121]
+    [:!QWERSTo        {:mouse_key {:vertical_wheel 64}}]                 ;; Shift + Ctrl + Hyper + o: マウスホイール 下へスクロール [cite: 122]
+    [:!QWERSCo        {:mouse_key {:vertical_wheel 128}}]                ;; Shift + Cmd + Hyper + o: マウスホイール 下へ高速スクロール [cite: 123]
 
-    ;; --- p (Page Down / Zoom In / LaunchPad / Forward) ---
-    [:!QWERp    :page_down]                                      ;; Hyper + p で Page Down [cite: 13]
-    [:!QWERCp   :!Spage_down]                                    ;; Cmd + Hyper + p で Page Down 範囲選択 [cite: 13]
-    [:!QWEROCp  :!Spage_down]                                    ;; Opt + Cmd + Hyper + p で Page Down 範囲選択 [cite: 13]
-    [:!QWERSp   :!COequal_sign]                                  ;; Shift + Hyper + p で ズームイン [cite: 13]
-    [:!QWERTp   ["open -a 'Launchpad'"]]                         ;; Ctrl + Hyper + p で Launchpad を開く [cite: 13]
-    [:!QWEROp   [[:pointing_button] [:button5]]]                 ;; Opt + Hyper + p で マウスボタン5 (進む) [cite: 13]
-    [:!QWERSOp  [[:pointing_button] [:button5]]]                 ;; Shift + Opt + Hyper + p で マウスボタン5 (進む) [cite: 13]
-    [:!QWERSTp  {:mouse_key {:horizontal_wheel 64}}]             ;; Shift + Ctrl + Hyper + p で 左へスクロール [cite: 13]
-    [:!QWERSCp  {:mouse_key {:horizontal_wheel 128}}]            ;; Shift + Cmd + Hyper + p で 左へ高速スクロール [cite: 13]
+    ;; --- p (Page Down / Zoom In / LaunchPad / Forward) --- [cite: 124]
+    [:!QWERp          :page_down]                                        ;; Hyper + p: ページダウン [cite: 125]
+    [:!QWERCp         :!Spage_down]                                      ;; Cmd + Hyper + p: ページダウンしつつ範囲選択 [cite: 126]
+    [:!QWEROCp        :!Spage_down]                                      ;; Opt + Cmd + Hyper + p: ページダウンしつつ範囲選択 [cite: 127]
+    [:!QWERSp         :!COequal_sign]                                    ;; Shift + Hyper + p: 画面をズームイン [cite: 128]
+    [:!QWERTp         ["open -a 'Launchpad'"]]                           ;; Ctrl + Hyper + p: Launchpad を開く [cite: 129]
+    [:!QWEROp         [[:pointing_button] [:button5]]]                   ;; Opt + Hyper + p: マウス サイドボタン5 (進む) [cite: 130]
+    [:!QWERSOp        [[:pointing_button] [:button5]]]                   ;; Shift + Opt + Hyper + p: マウス サイドボタン5 (進む) [cite: 131]
+    [:!QWERSTp        {:mouse_key {:horizontal_wheel 64}}]               ;; Shift + Ctrl + Hyper + p: マウスホイール 左へスクロール [cite: 132]
+    [:!QWERSCp        {:mouse_key {:horizontal_wheel 128}}]              ;; Shift + Cmd + Hyper + p: マウスホイール 左へ高速スクロール [cite: 133]
    ]}
 
   ;; =======================================================================
-  ;; 削除アクション (Hyper Deletion)
+  ;; 削除アクション (Hyper Deletion) [cite: 134]
   ;; =======================================================================
   {:des "Hyper Deletion"
    :rules [
-    ;; --- option (O) + Hyper ---
-    [:!QWEROn     :!Cdelete_or_backspace]                        ;; Opt + Hyper + n で 行全体を削除 (Cmd + Backspace) [cite: 23]
-    [:!QWEROm     :!OSdown_arrow]                                ;; Opt + Hyper + m で 行を下へ移動 (Opt + Shift + 下矢印) [cite: 24]
-    [:!QWEROcomma :!OSup_arrow]                                  ;; Opt + Hyper + , で 行を上へ移動 (Opt + Shift + 上矢印) [cite: 25]
-    [:!QWEROperiod :!Cdelete_or_backspace]                       ;; Opt + Hyper + . で 行全体を削除 (Cmd + Backspace) [cite: 26]
+    ;; --- option (O) + Hyper --- [cite: 135]
+    [:!QWEROn         :!Cdelete_or_backspace]                            ;; Opt + Hyper + n: カーソルより前の行全体を削除 [cite: 136]
+    [:!QWEROm         :!OSdown_arrow]                                    ;; Opt + Hyper + m: 現在の行を下へ移動 [cite: 137]
+    [:!QWEROcomma     :!OSup_arrow]                                      ;; Opt + Hyper + ,: 現在の行を上へ移動 [cite: 138]
+    [:!QWEROperiod    :!Cdelete_or_backspace]                            ;; Opt + Hyper + .: カーソルより前の行全体を削除 [cite: 139]
 
-    ;; --- command (C) + Hyper ---
-    [:!QWERCn     [:!CSleft_arrow :delete_or_backspace]]         ;; Cmd + Hyper + n で カーソルより前を行削除 [cite: 28]
-    [:!QWERCm     [:delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace]]                        
-    [:!QWERCcomma [:delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward]]                             
-    [:!QWERCperiod [:!CSright_arrow :delete_or_backspace]]       ;; Cmd + Hyper + . で カーソルより後を行削除 [cite: 31]
+    ;; --- command (C) + Hyper --- [cite: 140]
+    [:!QWERCn         [:!CSleft_arrow :delete_or_backspace]]             ;; Cmd + Hyper + n: カーソルより前を行全体削除 [cite: 141]
+    [:!QWERCm         [:delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace]] ;; Cmd + Hyper + m: 前の12文字分を連続削除 [cite: 141]                       
+    [:!QWERCcomma     [:delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward]] ;; Cmd + Hyper + ,: 後の12文字分を連続削除 [cite: 141]                             
+    [:!QWERCperiod    [:!CSright_arrow :delete_or_backspace]]            ;; Cmd + Hyper + .: カーソルより後を行全体削除 [cite: 142, 143]
 
-    ;; --- Pure Hyper ---
-    [:!QWERn      :!Odelete_or_backspace]                        ;; Hyper + n で 前の単語を削除 (Opt + Backspace) [cite: 32]
-    [:!QWERm      :delete_or_backspace]                          ;; Hyper + m で 前の文字を削除 (Backspace) [cite: 33]
-    [:!QWERcomma  :delete_forward]                               ;; Hyper + , で 後の文字を削除 (Delete) [cite: 34]
-    [:!QWERperiod :!Odelete_forward]                             ;; Hyper + . で 後の単語を削除 (Opt + Delete) [cite: 35]
+    ;; --- Pure Hyper --- [cite: 143]
+    [:!QWERn          :!Odelete_or_backspace]                            ;; Hyper + n: 前の単語を削除 [cite: 144]
+    [:!QWERm          :delete_or_backspace]                              ;; Hyper + m: 前の文字を削除 (Backspace) [cite: 145]
+    [:!QWERcomma      :delete_forward]                                   ;; Hyper + ,: 後の文字を削除 (Delete) [cite: 146]
+    [:!QWERperiod     :!Odelete_forward]                                 ;; Hyper + .: 後の単語を削除 [cite: 147]
    ]}
 
   ;; =======================================================================
-  ;; システム・メディアコントロール (Hyper Functional)
+  ;; システム・メディアコントロール (Hyper Functional) [cite: 148]
   ;; =======================================================================
   {:des "Hyper Functional - Media & System Keys"
    :rules [
-    [:!QWERf1  :display_brightness_decrement]                    ;; Hyper + F1 で 画面の明るさを下げる [cite: 36]
-    [:!QWERf2  :display_brightness_increment]                    ;; Hyper + F2 で 画面の明るさを上げる [cite: 36]
-    [:!QWERf3  :!Tup_arrow]                                      ;; Hyper + F3 で Mission Control [cite: 36]
-    [:!QWERf4  :launchpad]                                       ;; Hyper + F4 で Launchpad を開く [cite: 36]
-    [:!QWERf5  :illumination_decrement]                          ;; Hyper + F5 で キーボードバックライトを下げる [cite: 36]
-    [:!QWERf6  :illumination_increment]                          ;; Hyper + F6 で キーボードバックライトを上げる [cite: 36]
-    [:!QWERf7  :rewind]                                          ;; Hyper + F7 で 巻き戻し [cite: 36]
-    [:!QWERf8  :play_or_pause]                                   ;; Hyper + F8 で 再生/一時停止 [cite: 36]
-    [:!QWERf9  :fast_forward]                                    ;; Hyper + F9 で 早送り [cite: 36]
-    [:!QWERf10 :mute]                                            ;; Hyper + F10 で ミュート [cite: 36]
-    [:!QWERf11 :volume_decrement]                                ;; Hyper + F11 で 音量を下げる [cite: 36]
-    [:!QWERf12 :volume_increment]                                ;; Hyper + F12 で 音量を上げる [cite: 36]
+    [:!QWERf1         :display_brightness_decrement]                     ;; Hyper + F1: 画面の明るさを下げる [cite: 149]
+    [:!QWERf2         :display_brightness_increment]                     ;; Hyper + F2: 画面の明るさを上げる [cite: 150]
+    [:!QWERf3         :!Tup_arrow]                                       ;; Hyper + F3: Mission Control を開く [cite: 151]
+    [:!QWERf4         :launchpad]                                        ;; Hyper + F4: Launchpad を開く [cite: 152]
+    [:!QWERf5         :illumination_decrement]                           ;; Hyper + F5: キーボードバックライトを暗くする [cite: 153]
+    [:!QWERf6         :illumination_increment]                           ;; Hyper + F6: キーボードバックライトを明るくする [cite: 154]
+    [:!QWERf7         :rewind]                                           ;; Hyper + F7: メディア 巻き戻し [cite: 155]
+    [:!QWERf8         :play_or_pause]                                    ;; Hyper + F8: メディア 再生/一時停止 [cite: 156]
+    [:!QWERf9         :fast_forward]                                     ;; Hyper + F9: メディア 早送り [cite: 157]
+    [:!QWERf10        :mute]                                             ;; Hyper + F10: 音量 ミュート [cite: 158]
+    [:!QWERf11        :volume_decrement]                                 ;; Hyper + F11: 音量を下げる [cite: 159]
+    [:!QWERf12        :volume_increment]                                 ;; Hyper + F12: 音量を上げる [cite: 160]
    ]}
 
   ;; =======================================================================
-  ;; スクリーンショット (Screen Capture & Screenshots)
+  ;; スクリーンショット (Screen Capture & Screenshots) [cite: 161]
   ;; =======================================================================
   {:des "Hyper Functional - Screen Capture & Screenshots"
    :rules [
-    ;; --- ` (Grave Accent) ---
-    [:!QWERCgrave_accent_and_tilde :!CS4]                        ;; Cmd + Hyper + ~ で 選択範囲のスクショをファイル保存 (Cmd+Shift+4) [cite: 37, 38]
-    [:!QWERgrave_accent_and_tilde  :!CTS4]                       ;; Hyper + ~ で 選択範囲のスクショをクリップボード保存 (Cmd+Ctrl+Shift+4) [cite: 39]
+    ;; --- ` (Grave Accent) --- [cite: 162]
+    [:!QWERCgrave_accent_and_tilde :!CS4]                                ;; Cmd + Hyper + ~: 選択範囲のスクショをファイル保存 [cite: 163]
+    [:!QWERgrave_accent_and_tilde  :!CTS4]                               ;; Hyper + ~: 選択範囲のスクショをクリップボード保存 [cite: 164]
 
-    ;; --- F13 ---
-    [:!QWERCf13 :!CS3]                                           ;; Cmd + Hyper + F13 で 画面全体のスクショをファイル保存 (Cmd+Shift+3) [cite: 40, 41]
-    [:!QWERf13  :!CTS3]                                          ;; Hyper + F13 で 画面全体のスクショをクリップボード保存 (Cmd+Ctrl+Shift+3) [cite: 42]
+    ;; --- F13 --- [cite: 165]
+    [:!QWERCf13       :!CS3]                                             ;; Cmd + Hyper + F13: 画面全体のスクショをファイル保存 [cite: 166]
+    [:!QWERf13        :!CTS3]                                            ;; Hyper + F13: 画面全体のスクショをクリップボード保存 [cite: 167]
 
-    ;; --- F14 / F15 ---
-    [:!QWERCf14 :!CS6]                                           ;; Cmd + Hyper + F14 で Touch Bar のスクショ (Cmd+Shift+6) [cite: 43, 44]
-    [:!QWERf14  :!CS5]                                           ;; Hyper + F14 で 画面収録ツールを開く (Cmd+Shift+5) [cite: 45]
-    [:!QWERf15  :play_or_pause]                                  ;; Hyper + F15 で 再生/一時停止 [cite: 45]
+    ;; --- F14 / F15 --- [cite: 168]
+    [:!QWERCf14       :!CS6]                                             ;; Cmd + Hyper + F14: Touch Barのスクショを保存 [cite: 169]
+    [:!QWERf14        :!CS5]                                             ;; Hyper + F14: 画面収録ツールを開く [cite: 170]
+    [:!QWERf15        :play_or_pause]                                    ;; Hyper + F15: メディア 再生/一時停止 [cite: 171]
    ]}
 
   ;; =======================================================================
-  ;; ウィンドウ・アプリ管理 (Hyper Window Management)
+  ;; ウィンドウ・アプリ管理 (Hyper Window Management) [cite: 172]
   ;; =======================================================================
   {:des "Hyper Window Management"
    :rules [
-    ;; --- Tab キー操作 ---
-    [:!QWERtab       :!Ctab]                                     ;; Hyper + Tab で アプリケーションの切り替え [cite: 50]
-    [:!QWERCtab      :!CStab]                             ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
-    [:!QWERStab      :!Tright_arrow]
-    [:!QWERSCtab     :!Tleft_arrow]                                  
+    ;; --- Tab キー操作 --- [cite: 173]
+    [:!QWERtab        :!Ctab]                                            ;; Hyper + Tab: アプリケーションの切り替え [cite: 174]
+    [:!QWERCtab       :!CStab]                                           ;; Cmd + Hyper + Tab: アプリケーションの切り替え (逆順) [cite: 175]
+    [:!QWERStab       :!Tright_arrow]                                    ;; Shift + Hyper + Tab: 右の操作スペースへ移動 [cite: 175]
+    [:!QWERSCtab      :!Tleft_arrow]                                     ;; Shift + Cmd + Hyper + Tab: 左の操作スペースへ移動 [cite: 175]
 
-    ;; --- Q キー操作 ---
-    [:!QWERq         :!Cq]                                       ;; Hyper + q で アプリを終了 (Cmd + q) [cite: 54]
-    [:!QWERSq        ["osascript -e 'tell app \"System Events\" to restart'"]]
-    [:!QWERSCq       ["osascript -e 'tell app \"System Events\" to shut down'"]]
-    [:!QWERSOq        :!CSq]                                      ;; Shift + Hyper + q で ログアウト [cite: 52]
+    ;; --- Q キー操作 --- [cite: 176]
+    [:!QWERq          :!Cq]                                              ;; Hyper + q: アプリを終了 [cite: 177]
+    [:!QWERSq         ["osascript -e 'tell app \"System Events\" to restart'"]] ;; Shift + Hyper + q: システムを再起動 [cite: 177]
+    [:!QWERSCq        ["osascript -e 'tell app \"System Events\" to shut down'"]] ;; Shift + Cmd + Hyper + q: システムをシステム終了 [cite: 177]
+    [:!QWERSOq        :!CSq]                                             ;; Shift + Opt + Hyper + q: ログアウト [cite: 178]
 
-    ;; --- W キー操作 ---
-    [:!QWERw         :!Cw]                                       ;; Hyper + w で タブを閉じる (Cmd + w) [cite: 58]
-    [:!QWERCw        :!Cw]                                       ;; Cmd + Hyper + w で 全てのタブを閉じる (アプリによる) [cite: 57]
-    [:!QWERSw       :!CTq]                                       ;;画面をロック
-    [:!QWERSCw        ["pmset sleepnow"]]                        ;; Shift + Hyper + w で スリープ [cite: 55]
+    ;; --- W キー操作 --- [cite: 179]
+    [:!QWERw          :!Cw]                                              ;; Hyper + w: 現在のウィンドウ/タブを閉じる [cite: 180]
+    [:!QWERCw         :!Cw]                                              ;; Cmd + Hyper + w: 全てのウィンドウ/タブを閉じる [cite: 181]
+    [:!QWERSw         :!CTq]                                             ;; Shift + Hyper + w: 画面をロック [cite: 181]
+    [:!QWERSCw        ["pmset sleepnow"]]                                ;; Shift + Cmd + Hyper + w: スリープ状態にする [cite: 182]
 
-    ;; --- A キー操作 ---
-    [:!QWERa         ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
-    [:!QWERCa         :!CTf]
-    [:!QWEROa         :!Ch]
-    [:!QWERSa         :launchpad]
-    [:!QWERSCa         :!Tup_arrow]
-    [:!QWERSOa         :!Tdown_arrow]
+    ;; --- A キー操作 --- [cite: 183]
+    [:!QWERa          ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]] ;; Hyper + a: ウィンドウをほぼ最大化 (Raycast) [cite: 183]
+    [:!QWERCa         :!CTf]                                             ;; Cmd + Hyper + a: フルスクリーン切り替え [cite: 183]
+    [:!QWEROa         :!Ch]                                              ;; Opt + Hyper + a: 現在のアプリを隠す [cite: 183]
+    [:!QWERSa         :launchpad]                                        ;; Shift + Hyper + a: Launchpadを開く [cite: 183]
+    [:!QWERSCa        :!Tup_arrow]                                       ;; Shift + Cmd + Hyper + a: Mission Controlを開く [cite: 183]
+    [:!QWERSOa        :!Tdown_arrow]                                     ;; Shift + Opt + Hyper + a: アプリケーションウィンドウを一覧表示 [cite: 183]
 
-    ;; --- S キー操作 ---
-    [:!QWERs         :!Ttab] 
-    [:!QWERCs        :!STtab]
-    [:!QWERSs        :!SOTbackslash]
-    [:!QWERSCs       :!OTbackslash]
+    ;; --- S キー操作 --- [cite: 184]
+    [:!QWERs          :!Ttab]                                            ;; Hyper + s: 次のタブへ移動 [cite: 184]
+    [:!QWERCs         :!STtab]                                           ;; Cmd + Hyper + s: 前のタブへ移動 [cite: 184]
+    [:!QWERSs         :!SOTbackslash]                                    ;; Shift + Hyper + s: 同アプリ内の前のウィンドウへ移動 [cite: 184]
+    [:!QWERSCs        :!OTbackslash]                                     ;; Shift + Cmd + Hyper + s: 同アプリ内の次のウィンドウへ移動 [cite: 184]
     ]}
 
   ;; =======================================================================
-  ;; 微調整コントロール (Navigation Key Controls Fine Tuning)
+  ;; 微調整コントロール (Navigation Key Controls Fine Tuning) [cite: 185]
   ;; =======================================================================
   {:des "Hyper Functional - Navigation Key Controls (Fine Tuning)"
    :rules [
-    [:!QWERinsert         :!OSdisplay_brightness_increment]      ;; Hyper + Insert で 画面輝度を微細に上げる [cite: 67]
-    [:!QWERdelete_forward :!OSdisplay_brightness_decrement]      ;; Hyper + ForwardDelete で 画面輝度を微細に下げる [cite: 68]
-    [:!QWERhome           :!OSillumination_increment]            ;; Hyper + Home で キーボード輝度を微細に上げる [cite: 69]
-    [:!QWERend            :!OSillumination_decrement]            ;; Hyper + End で キーボード輝度を微細に下げる [cite: 70]
-    [:!QWERpage_up        :!OSvolume_increment]                  ;; Hyper + PageUp で 音量を微細に上げる [cite: 71]
-    [:!QWERpage_down      :!OSvolume_decrement]                  ;; Hyper + PageDown で 音量を微細に下げる [cite: 72]
+    [:!QWERinsert         :!OSdisplay_brightness_increment]              ;; Hyper + Insert: 画面の明るさを微細に上げる [cite: 186, 187]
+    [:!QWERdelete_forward :!OSdisplay_brightness_decrement]              ;; Hyper + ForwardDelete: 画面の明るさを微細に下げる [cite: 188]
+    [:!QWERhome           :!OSillumination_increment]                    ;; Hyper + Home: キーボード輝度を微細に上げる [cite: 189]
+    [:!QWERend            :!OSillumination_decrement]                    ;; Hyper + End: キーボード輝度を微細に下げる [cite: 190]
+    [:!QWERpage_up        :!OSvolume_increment]                          ;; Hyper + PageUp: 音量を微細に上げる [cite: 191]
+    [:!QWERpage_down      :!OSvolume_decrement]                          ;; Hyper + PageDown: 音量を微細に下げる [cite: 192]
    ]}
 
   ;; =======================================================================
-  ;; Return / Hyphen キー拡張 (Hyper Return)
+  ;; Return / Hyphen キー拡張 (Hyper Return) [cite: 193]
   ;; =======================================================================
   {:des "Hyper Return (original)"
    :rules [
-    ;; Quote キーを Return に割り当て
-    [:!QWERquote      :return_or_enter]                          ;; Hyper + ' で Return を送信
-    [:!QWERCquote     :!Creturn_or_enter]                        ;; Cmd + Hyper + ' で Cmd + Return を送信
-    [:!QWERTquote     :!Treturn_or_enter]                        ;; Ctrl + Hyper + ' で Ctrl + Return を送信
-    [:!QWERSquote     :!Sreturn_or_enter]                        ;; Shift + Hyper + ' で Shift + Return を送信
-    [:!QWEROquote     :!Oreturn_or_enter]                        ;; Opt + Hyper + ' で Opt + Return を送信
+    ;; --- Quote (') キーを Return に割り当て --- [cite: 194]
+    [:!QWERquote      :return_or_enter]                                  ;; Hyper + ': Return を送信 [cite: 195]
+    [:!QWERCquote     :!Creturn_or_enter]                                ;; Cmd + Hyper + ': Cmd + Return を送信 [cite: 196]
+    [:!QWERTquote     :!Treturn_or_enter]                                ;; Ctrl + Hyper + ': Ctrl + Return を送信 [cite: 197]
+    [:!QWERSquote     :!Sreturn_or_enter]                                ;; Shift + Hyper + ': Shift + Return を送信 [cite: 198]
+    [:!QWEROquote     :!Oreturn_or_enter]                                ;; Opt + Hyper + ': Opt + Return を送信 [cite: 199]
 
-    ;; Semicolon キーを Hyphen に割り当て
-    [:!QWERsemicolon  :hyphen]                                   ;; Hyper + ; で ハイフン を送信
-    [:!QWERCsemicolon :!Creturn_or_enter]                        ;; Cmd + Hyper + ; で Cmd + Return を送信
-    [:!QWERTsemicolon :!Treturn_or_enter]                        ;; Ctrl + Hyper + ; で Ctrl + Return を送信
-    [:!QWERSsemicolon :!Sreturn_or_enter]                        ;; Shift + Hyper + ; で Shift + Return を送信
-    [:!QWEROsemicolon :!Oreturn_or_enter]                        ;; Opt + Hyper + ; で Opt + Return を送信
+    ;; --- Semicolon (;) キーを Hyphen に割り当て --- [cite: 200]
+    [:!QWERsemicolon  :hyphen]                                           ;; Hyper + ;: ハイフン を送信 [cite: 201]
+    [:!QWERCsemicolon :!Creturn_or_enter]                                ;; Cmd + Hyper + ;: Cmd + Return を送信 [cite: 202]
+    [:!QWERTsemicolon :!Treturn_or_enter]                                ;; Ctrl + Hyper + ;: Ctrl + Return を送信 [cite: 203]
+    [:!QWERSsemicolon :!Sreturn_or_enter]                                ;; Shift + Hyper + ;: Shift + Return を送信 [cite: 204]
+    [:!QWEROsemicolon :!Oreturn_or_enter]                                ;; Opt + Hyper + ;: Opt + Return を送信 [cite: 205]
    ]}
 
   ;; =======================================================================
-  ;; シンボル拡張 (Hyper Symbols)
+  ;; シンボル拡張 (Hyper Symbols) [cite: 206]
   ;; =======================================================================
   {:des "Hyper Symbols (Original)"
    :rules [
-    [:!QWERCslash  :!S1]                                         ;; Cmd + Hyper + / で ! (Shift + 1) を入力
-    [:!QWERTslash  :!S2]                                         ;; Ctrl + Hyper + / で @ (Shift + 2) を入力
-    [:!QWERSslash  :!S3]                                         ;; Shift + Hyper + / で # (Shift + 3) を入力
-    [:!QWEROslash  :!S4]                                         ;; Opt + Hyper + / で $ (Shift + 4) を入力
-    [:!QWERCTslash :!S5]                                         ;; Cmd + Ctrl + Hyper + / で % (Shift + 5) を入力 [cite: 73]
-    [:!QWERCSslash :!S6]                                         ;; Cmd + Shift + Hyper + / で ^ (Shift + 6) を入力 [cite: 73]
-    [:!QWERCOslash :!S7]                                         ;; Cmd + Opt + Hyper + / で & (Shift + 7) を入力 [cite: 73]
-    [:!QWERTSslash :!S8]                                         ;; Ctrl + Shift + Hyper + / で * (Shift + 8) を入力 [cite: 73]
+    [:!QWERCslash     :!S1]                                              ;; Cmd + Hyper + /: ! (Shift + 1) を入力 [cite: 207]
+    [:!QWERTslash     :!S2]                                              ;; Ctrl + Hyper + /: @ (Shift + 2) を入力 [cite: 208]
+    [:!QWERSslash     :!S3]                                              ;; Shift + Hyper + /: # (Shift + 3) を入力 [cite: 209]
+    [:!QWEROslash     :!S4]                                              ;; Opt + Hyper + /: $ (Shift + 4) を入力 [cite: 210]
+    [:!QWERCTslash    :!S5]                                              ;; Cmd + Ctrl + Hyper + /: % (Shift + 5) を入力 [cite: 211]
+    [:!QWERCSslash    :!S6]                                              ;; Cmd + Shift + Hyper + /: ^ (Shift + 6) を入力 [cite: 212]
+    [:!QWERCOslash    :!S7]                                              ;; Cmd + Opt + Hyper + /: & (Shift + 7) を入力 [cite: 213]
+    [:!QWERTSslash    :!S8]                                              ;; Ctrl + Shift + Hyper + /: * (Shift + 8) を入力 [cite: 214]
    ]}
 
   ;; =======================================================================
-  ;; Raycast ウィンドウリサイズ (Raycast Window Management)
+  ;; Raycast ウィンドウリサイズ (Raycast Window Management) [cite: 215, 216]
   ;; =======================================================================
   {:des "Raycast Window Management (original)"
    :rules [
-    [:!QWERCTh       ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]       ;; Cmd+Ctrl+Hyper+h で ウィンドウを左半分に配置
-    [:!QWERCTl       ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]      ;; Cmd+Ctrl+Hyper+l で ウィンドウを右半分に配置
-    [:!QWERCTk       ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]        ;; Cmd+Ctrl+Hyper+k で ウィンドウを上半分に配置
-    [:!QWERCTj       ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]     ;; Cmd+Ctrl+Hyper+j で ウィンドウを下半分に配置
-    [:!QWERCTu       ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]        ;; Cmd+Ctrl+Hyper+u で ウィンドウを最大化
-    [:!QWERCTi       ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]     ;; Cmd+Ctrl+Hyper+i で ウィンドウを拡大
-    [:!QWERCTo       ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]    ;; Cmd+Ctrl+Hyper+o で ウィンドウを縮小
-    [:!QWERCTp       ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]] ;; Cmd+Ctrl+Hyper+p で ウィンドウを適度なサイズに
+    [:!QWERCTh        ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]       ;; Cmd+Ctrl+Hyper+h: ウィンドウを左半分に配置 [cite: 217]
+    [:!QWERCTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]      ;; Cmd+Ctrl+Hyper+l: ウィンドウを右半分に配置 [cite: 218]
+    [:!QWERCTk        ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]        ;; Cmd+Ctrl+Hyper+k: ウィンドウを上半分に配置 [cite: 219]
+    [:!QWERCTj        ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]     ;; Cmd+Ctrl+Hyper+j: ウィンドウを下半分に配置 [cite: 220]
+    [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]        ;; Cmd+Ctrl+Hyper+u: ウィンドウを最大化 [cite: 221]
+    [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]     ;; Cmd+Ctrl+Hyper+i: ウィンドウを拡大 [cite: 222]
+    [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]    ;; Cmd+Ctrl+Hyper+o: ウィンドウを縮小 [cite: 223]
+    [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]] ;; Cmd+Ctrl+Hyper+p: ウィンドウを適度なサイズに配置 [cite: 224]
    ]}
  ]
 }
