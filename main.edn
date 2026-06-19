@@ -8,7 +8,7 @@
   ;; =======================================================================
   {:des "SandS"
    :rules [
-    [:##spacebar   :left_shift    nil {:alone :spacebar}]       ;; スペース単押しでスペース、他キー同時押しで左Shift（SandS） [cite: 1]
+    [:##spacebar   :left_shift    nil {:alone :spacebar}]
    ]}
 
   {:des "a to bbb"
@@ -18,13 +18,13 @@
 
   {:des "L-Command -> English / R-Command -> Japanese"
    :rules [
-    [:##left_command  :left_command  nil {:alone :japanese_eisuu}] ;; 左Command単押しで「英数」モードへ切り替え [cite: 1]
-    [:##right_command :right_command nil {:alone :japanese_kana}]  ;; 右Command単押しで「かな」モードへ切り替え [cite: 1]
+    [:##left_command  :left_command  nil {:alone :japanese_eisuu}]
+    [:##right_command :right_command nil {:alone :japanese_kana}]
    ]}
 
   {:des "L-Option -> Greek"
    :rules [
-    [:left_option   :left_option   nil {:alone :greek}]          ;; 左Option単押しでギリシャ語キーボードへ切り替え [cite: 1]
+    [:left_option   :left_option   nil {:alone :greek}]
    ]}
 
   {:des "Delete + F7-F12 for Media Keys"
@@ -288,7 +288,7 @@
     [:!QWERSCw        ["pmset sleepnow"]]                        ;; Shift + Hyper + w で スリープ [cite: 55]
 
     ;; --- A キー操作 ---
-    [:!QWERa         "open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]
+    [:!QWERa         ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
     [:!QWERCa         :!CTf]
     [:!QWEROa         :!Ch]
     [:!QWERSa         :launchpad]
