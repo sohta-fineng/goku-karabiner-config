@@ -3,6 +3,40 @@
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
 
  :main [
+
+  {:des "Fn Number"
+   :rules [
+    [:!QWER1      ["open -a Maccy"]]
+    [:!QWER2      ["open -a Maccy && sleep 0.8 && osascript -e 'tell application \"System Events\" to keystroke \"2\" using command down'"]]
+    [:!QWER3      [[:!Cgrave_accent_and_tilde] [:!C3]]]
+    [:!QWER4      :4]
+    [:!QWER5      :5]
+    [:!QWER6      :6]
+    [:!QWER7      :7]
+    [:!QWER8      :8]
+    [:!QWER9      :9]
+    [:!QWER0      :0]
+    [:!QWERhyphen      :!Chyphen]
+    [:!QWERequal_sign  :!Cequal_sign]
+    [:!QWEROhyphen     :!COhyphen]
+    [:!QWEROequal_sign :!COequal_sign]
+
+    [:!QWERC1      :f1]
+    [:!QWERC2     :f2]
+    [:!QWERC3      :f3]
+    [:!QWERC4      :f4]
+    [:!QWERC5      :f5]
+    [:!QWERC6      :f6]
+    [:!QWERC7      :f7]
+    [:!QWERC8      :f8]
+    [:!QWERC9      :f9]
+    [:!QWERC0      :f10]
+    [:!QWERChyphen      :f11]
+    [:!QWERCequal_sign      :f12]
+   ]}
+
+
+
   ;; =======================================================================
   ;; 基本修飾キー・レイヤー設定 [cite: 1]
   ;; =======================================================================
@@ -275,12 +309,12 @@
 
     ;; --- W キー操作 --- [cite: 179]
     [:!QWERw          :!Cw]                                              ;; Hyper + w: 現在のウィンドウ/タブを閉じる [cite: 180]
-    [:!QWERCw         :!Cw]                                              ;; Cmd + Hyper + w: 全てのウィンドウ/タブを閉じる [cite: 181]
+    [:!QWERCw         :!CSt]                                              
     [:!QWERSw         :!CTq]                                             ;; Shift + Hyper + w: 画面をロック [cite: 181]
     [:!QWERSCw        ["pmset sleepnow"]]                                ;; Shift + Cmd + Hyper + w: スリープ状態にする [cite: 182]
 
     ;; --- A キー操作 --- [cite: 183]
-    [:!QWERa          ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]] ;; Hyper + a: ウィンドウをほぼ最大化 (Raycast) [cite: 183]
+    [:!QWERa          ["open -g 'raycast://extensions/raycast/window-management/maximize'"]] ;; Hyper + a: ウィンドウを最大化 (Raycast) [cite: 183]
     [:!QWERCa         :!CTf]                                             ;; Cmd + Hyper + a: フルスクリーン切り替え [cite: 183]
     [:!QWEROa         :!Ch]                                              ;; Opt + Hyper + a: 現在のアプリを隠す [cite: 183]
     [:!QWERSa         :launchpad]                                        ;; Shift + Hyper + a: Launchpadを開く [cite: 183]
@@ -351,7 +385,7 @@
     [:!QWERCTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]      ;; Cmd+Ctrl+Hyper+l: ウィンドウを右半分に配置 [cite: 218]
     [:!QWERCTk        ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]        ;; Cmd+Ctrl+Hyper+k: ウィンドウを上半分に配置 [cite: 219]
     [:!QWERCTj        ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]     ;; Cmd+Ctrl+Hyper+j: ウィンドウを下半分に配置 [cite: 220]
-    [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]        ;; Cmd+Ctrl+Hyper+u: ウィンドウを最大化 [cite: 221]
+    [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize"]]        ;; Cmd+Ctrl+Hyper+u: ウィンドウを最大化 [cite: 221]
     [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]     ;; Cmd+Ctrl+Hyper+i: ウィンドウを拡大 [cite: 222]
     [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]    ;; Cmd+Ctrl+Hyper+o: ウィンドウを縮小 [cite: 223]
     [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]] ;; Cmd+Ctrl+Hyper+p: ウィンドウを適度なサイズに配置 [cite: 224]
