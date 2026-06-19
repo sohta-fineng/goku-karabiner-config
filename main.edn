@@ -40,6 +40,12 @@
     [:!QWERCspacebar ["open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]] ;; Cmd + Hyper + Space で Raycast 絵文字検索を開く [cite: 2]
    ]}
 
+  {:des "Fn to Ctrl"
+   :rules [
+    [:##fn :left_control]
+   ]}
+
+
   ;; =======================================================================
   ;; アプリケーション起動・フォーカス (Hyper Application)
   ;; =======================================================================
