@@ -11,7 +11,8 @@
     [:##fn            :left_control]
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
-    [:##right_shift :!Sreturn_or_enter] 
+    [:##right_shift :!Sreturn_or_enter]
+    [:##right_option "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"] 
    ]}
 
   {:des "Fn Number"
@@ -382,7 +383,8 @@
 
     [:!QWERSsemicolon :!Ssemicolon]
     [:!QWERSquote :!Squote]
-    
+
+    [:!QWERSslash :!Sslash]
     [:!QWERslash     :hyphen]
     [:!QWERCslash     :!Shyphen]
    ]}
