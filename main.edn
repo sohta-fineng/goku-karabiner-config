@@ -9,41 +9,30 @@
   {:des "Replace Modifier Keys"
    :rules [
     [:##fn            :left_control]
-    [:##caps_lock     :!QWEright_shift nil {:alone :escape}]             ;; CapsLock単押しでEscape、同時押しでHyper(Cmd+Opt+Ctrl+Shift) [cite: 10]
+    [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
-    [:##right_option :f19]
-    [:##right_shift :f20] 
+    [:##right_shift :!Sreturn_or_enter] 
    ]}
 
   {:des "Fn Number"
    :rules [
-    [:!QWER1 ["~/scripts/raycast-paste-nth.sh 1"]]
-    [:!QWER2 ["~/scripts/raycast-paste-nth.sh 2"]]
-    [:!QWER3 ["~/scripts/raycast-paste-nth.sh 3"]]
-    [:!QWER4 ["~/scripts/raycast-paste-nth.sh 4"]]
-    [:!QWER5 ["~/scripts/raycast-paste-nth.sh 5"]]
-    [:!QWER6 ["~/scripts/raycast-paste-nth.sh 6"]]
-    [:!QWER7 ["~/scripts/raycast-paste-nth.sh 7"]]
-    [:!QWER8 ["~/scripts/raycast-paste-nth.sh 8"]]
-    [:!QWER9 ["~/scripts/raycast-paste-nth.sh 9"]]
-
-    [:!QWERhyphen       :!Chyphen]
-    [:!QWERequal_sign   :!Cequal_sign]
+    [:!QWERChyphen       :!Chyphen]
+    [:!QWERCequal_sign   :!Cequal_sign]
     [:!QWEROhyphen      :!COhyphen]
     [:!QWEROequal_sign  :!COequal_sign]
 
-    [:!QWERC1               :f1]
-    [:!QWERC2               :f2]
-    [:!QWERC3               :f3]
-    [:!QWERC4               :f4]
-    [:!QWERC5               :f5]
-    [:!QWERC6               :f6]
-    [:!QWERC7               :f7]
-    [:!QWERC8               :f8]
-    [:!QWERC9               :f9]
-    [:!QWERC0               :f10]
-    [:!QWERChyphen          :f11]
-    [:!QWERCequal_sign      :f12]
+    [:!QWER1               :f1]
+    [:!QWER2               :f2]
+    [:!QWER3               :f3]
+    [:!QWER4               :f4]
+    [:!QWER5               :f5]
+    [:!QWER6               :f6]
+    [:!QWER7               :f7]
+    [:!QWER8               :f8]
+    [:!QWER9               :f9]
+    [:!QWER0               :f10]
+    [:!QWERhyphen          :f11]
+    [:!QWERequal_sign      :f12]
    ]}
 
  {:des "Hyper NumPad"
@@ -83,7 +72,6 @@
     [:!QWERx   :!Cx]
     [:!QWERc   :!Cc]
     [:!QWERv   :!Cv]
-    [:!QWERf20   :!Cslash]
    ]}
 
 
@@ -371,14 +359,12 @@
     [:!QWERquote      :return_or_enter]                                  ;; Hyper + ': Return を送信 [cite: 195]
     [:!QWERCquote     :!Creturn_or_enter]                                ;; Cmd + Hyper + ': Cmd + Return を送信 [cite: 196]
     [:!QWERTquote     :!Treturn_or_enter]                                ;; Ctrl + Hyper + ': Ctrl + Return を送信 [cite: 197]
-    [:!QWERSquote     :!Sreturn_or_enter]                                ;; Shift + Hyper + ': Shift + Return を送信 [cite: 198]
     [:!QWEROquote     :!Oreturn_or_enter]                                ;; Opt + Hyper + ': Opt + Return を送信 [cite: 199]
 
     ;; --- Semicolon (;) キーを Hyphen に割り当て --- [cite: 200]
     [:!QWERsemicolon  :return_or_enter]                                           ;; Hyper + ;: ハイフン を送信 [cite: 201]
     [:!QWERCsemicolon :!Creturn_or_enter]                                ;; Cmd + Hyper + ;: Cmd + Return を送信 [cite: 202]
     [:!QWERTsemicolon :!Treturn_or_enter]                                ;; Ctrl + Hyper + ;: Ctrl + Return を送信 [cite: 203]
-    [:!QWERSsemicolon :!Sreturn_or_enter]                                ;; Shift + Hyper + ;: Shift + Return を送信 [cite: 204]
     [:!QWEROsemicolon :!Oreturn_or_enter]                                ;; Opt + Hyper + ;: Opt + Return を送信 [cite: 205]
    ]}
 
@@ -390,11 +376,13 @@
     [:!QWERopen_bracket :!S9]
     [:!QWERSopen_bracket :!Sopen_bracket]
     [:!QWERCopen_bracket :!Scomma]
-
     [:!QWERclose_bracket :!S9]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
 
+    [:!QWERSsemicolon :!Ssemicolon]
+    [:!QWERSquote :!Squote]
+    
     [:!QWERslash     :hyphen]
     [:!QWERCslash     :!Shyphen]
    ]}
