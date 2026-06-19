@@ -20,8 +20,8 @@
    :rules [
     [:!QWERChyphen       :!Chyphen]
     [:!QWERCequal_sign   :!Cequal_sign]
-    [:!QWEROhyphen      :!COhyphen]
-    [:!QWEROequal_sign  :!COequal_sign]
+    [:!QWEROhyphen       :!COhyphen]
+    [:!QWEROequal_sign   :!COequal_sign]
 
     [:!QWER1               :f1]
     [:!QWER2               :f2]
@@ -156,8 +156,8 @@
 
     ;; --- Raycast拡張機能系 --- [cite: 45]
     [:!QWERSx          ["open 'raycast://extensions/mooxl/deepcast/index'"]]       ;; Hyper + x: Deepcast (翻訳) を開く [cite: 49]
-    [:!QWERCx         ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]] ;; Cmd + Hyper + x: 英語(US)翻訳を実行 [cite: 50]
-    [:!QWEROx         ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x: 日本語翻訳を実行 [cite: 51]
+    [:!QWERCx          ["open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]] ;; Cmd + Hyper + x: 英語(US)翻訳を実行 [cite: 50]
+    [:!QWEROx          ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x: 日本語翻訳を実行 [cite: 51]
     [:!QWERCc          ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c: Raycast Notes を開く [cite: 52]
    ]}
 
@@ -306,37 +306,38 @@
   ;; =======================================================================
   {:des "Hyper Window Management"
    :rules [
-    ;; --- Tab キー操作 --- [cite: 173]
-    [:!QWERtab        :!Ctab]                                            ;; Hyper + Tab: アプリケーションの切り替え [cite: 174]
-    [:!QWERCtab       :!CStab]                                           ;; Cmd + Hyper + Tab: アプリケーションの切り替え (逆順) [cite: 175]
-    [:!QWERStab       :!Tright_arrow]                                    ;; Shift + Hyper + Tab: 右の操作スペースへ移動 [cite: 175]
-    [:!QWERSCtab      :!Tleft_arrow]                                     ;; Shift + Cmd + Hyper + Tab: 左の操作スペースへ移動 [cite: 175]
+                                   
 
     ;; --- Q キー操作 --- [cite: 176]
-    [:!QWERq          :!Cq]                                              ;; Hyper + q: アプリを終了 [cite: 177]
-    [:!QWERSq         ["osascript -e 'tell app \"System Events\" to restart'"]] ;; Shift + Hyper + q: システムを再起動 [cite: 177]
-    [:!QWERSCq        ["osascript -e 'tell app \"System Events\" to shut down'"]] ;; Shift + Cmd + Hyper + q: システムをシステム終了 [cite: 177]
-    [:!QWERSOq        :!CSq]                                             ;; Shift + Opt + Hyper + q: ログアウト [cite: 178]
+    [:!QWERq          :!Cq]                                              
+    [:!QWERSq         ["osascript -e 'tell app \"System Events\" to restart'"]]
+    [:!QWERSCq        ["osascript -e 'tell app \"System Events\" to shut down'"]]
+    [:!QWERSOq        :!CSq]             
 
     ;; --- W キー操作 --- [cite: 179]
-    [:!QWERw          :!Cw]                                              ;; Hyper + w: 現在のウィンドウ/タブを閉じる [cite: 180]
-    [:!QWERCw         :!CSt]                                              
-    [:!QWERSw         :!CTq]                                             ;; Shift + Hyper + w: 画面をロック [cite: 181]
-    [:!QWERSCw        ["pmset sleepnow"]]                                ;; Shift + Cmd + Hyper + w: スリープ状態にする [cite: 182]
+    [:!QWERw          :!Cw]              
+    [:!QWERCw         :!CSt]             
+    [:!QWERSw         :!CTq]             
+    [:!QWERSCw        ["pmset sleepnow"]]
 
-    ;; --- A キー操作 --- [cite: 183]
-    [:!QWERa          ["open -g 'raycast://extensions/raycast/window-management/maximize'"]] ;; Hyper + a: ウィンドウを最大化 (Raycast) [cite: 183]
-    [:!QWERCa         :!CTf]                                             ;; Cmd + Hyper + a: フルスクリーン切り替え [cite: 183]
-    [:!QWEROa         :!Ch]                                              ;; Opt + Hyper + a: 現在のアプリを隠す [cite: 183]
-    [:!QWERSa         :launchpad]                                        ;; Shift + Hyper + a: Launchpadを開く [cite: 183]
-    [:!QWERSCa        :!Tup_arrow]                                       ;; Shift + Cmd + Hyper + a: Mission Controlを開く [cite: 183]
-    [:!QWERSOa        :!Tdown_arrow]                                     ;; Shift + Opt + Hyper + a: アプリケーションウィンドウを一覧表示 [cite: 183]
+    ;; --- Tab キー操作 --- [cite: 183]
+    [:!QWERtab         ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
+    [:!QWERCtab        :!CTf] 
+    [:!QWEROtab       :!Ch]  
+    [:!QWERStab       :launchpad]
+    [:!QWERSCtab       :!Tup_arrow]
+    [:!QWERSOtab      :!Tdown_arrow]
 
-    ;; --- S キー操作 --- [cite: 184]
-    [:!QWERs          :!Ttab]                                            ;; Hyper + s: 次のタブへ移動 [cite: 184]
-    [:!QWERCs         :!STtab]                                           ;; Cmd + Hyper + s: 前のタブへ移動 [cite: 184]
-    [:!QWERSs         :!SOTbackslash]                                    ;; Shift + Hyper + s: 同アプリ内の前のウィンドウへ移動 [cite: 184]
-    [:!QWERSCs        :!OTbackslash]                                     ;; Shift + Cmd + Hyper + s: 同アプリ内の次のウィンドウへ移動 [cite: 184]
+    [:!QWERa        :!Copen_bracket]                                            
+    [:!QWERs        :!Cclose_bracket]
+    [:!QWERSa        :!Ctab]                                            
+    [:!QWERSs        :!CStab]                                           
+    [:!QWERTs        :!Tright_arrow]                                    
+    [:!QWERTa        :!Tleft_arrow]  
+    [:!QWERCa        :!Ttab]         
+    [:!QWERCs        :!STtab]        
+    [:!QWEROs        :!SOTbackslash] 
+    [:!QWEROa        :!OTbackslash]  
     ]}
 
   ;; =======================================================================
