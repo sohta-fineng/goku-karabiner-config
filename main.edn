@@ -75,10 +75,10 @@
     [:!QWEROy   ["open -a Calendar"]]                            ;; Opt + Hyper + y で カレンダー を起動/切り替え [cite: 3]
 
     ;; ドキュメント・ノート系
-    [:!QWERCd   ["open -a Obsidian"]]                            ;; Cmd + Hyper + d で Obsidian を起動/切り替え [cite: 3]
-    [:!QWERCb   ["open -a Bear"]]                                ;; Cmd + Hyper + b で Bear を起動/切り替え [cite: 3]
-    [:!QWERCl   ["open -a Logseq"]]                              ;; Cmd + Hyper + l で Logseq を起動/切り替え [cite: 3]
-    [:!QWERSCd  ["open -a Notion"]]                              ;; Shift + Cmd + Hyper + d で Notion を起動/切り替え [cite: 3]
+    [:!QWERd    ["open -a Obsidian"]]                            ;; Cmd + Hyper + d で Obsidian を起動/切り替え [cite: 3]
+    [:!QWERCd   ["open -a Bear"]]                                ;; Cmd + Hyper + b で Bear を起動/切り替え [cite: 3]
+    [:!QWEROd   ["open -a Logseq"]]                              ;; Cmd + Hyper + l で Logseq を起動/切り替え [cite: 3]
+    [:!QWERSd   ["open -a Notion"]]                              ;; Shift + Cmd + Hyper + d で Notion を起動/切り替え [cite: 3]
 
     ;; ツール・システム系
     [:!QWERf    ["open -a Raycast"]]                             ;; Hyper + f で Raycast を起動/切り替え [cite: 3]
@@ -103,7 +103,6 @@
     [:!QWEROx   ["open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]]  ;; Opt + Hyper + x で 日本語翻訳 [cite: 4]
 
     [:!QWERc    ["open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]] ;; Hyper + c で Raycast Notes を開く [cite: 4]
-    [:!QWERv    ["open 'raycast://extensions/raycast/apple-reminders/create-reminder'"]] ;; Hyper + v で Raycast リマインダー作成 [cite: 5]
    ]}
 
   ;; =======================================================================
@@ -314,9 +313,11 @@
    :rules [
     ;; --- Tab キー操作 ---
     [:!QWERtab       :!Ctab]                                     ;; Hyper + Tab で アプリケーションの切り替え [cite: 50]
-    [:!QWERStab      :!Ttab]                                     ;; Shift + Hyper + Tab で タブの切り替え (次のタブ) [cite: 46, 47]
-    [:!QWEROtab      :!Tright_arrow]                             ;; Opt + Hyper + Tab で デスクトップ切り替え (右へ) [cite: 48]
-    [:!QWERCtab      :!CStab]                                    ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
+    [:!QWERCtab      :!Tright_arrow]                             ;; Cmd + Hyper + Tab で アプリケーション切り替え (逆順) [cite: 49]
+    [:!QWERStab      :!Ctab]
+    [:!QWERSCtab     :!CStab]
+    [:!QWEROtab      :!Tright_arrow]
+    [:!QWEROCtab     :!Tleft_arrow]                                  
 
     ;; --- Q キー操作 ---
     [:!QWERq         :!Cq]                                       ;; Hyper + q で アプリを終了 (Cmd + q) [cite: 54]
@@ -331,6 +332,7 @@
     [:!QWERCw        :!Cw]                                       ;; Cmd + Hyper + w で 全てのタブを閉じる (アプリによる) [cite: 57]
 
     ;; --- A キー操作 ---
+    [:!QWERa         :launchpad]  
     [:!QWERTa        :launchpad]                    ;; Ctrl + Hyper + a で Launchpad を開く [cite: 59]
     [:!QWEROa        :f11]                                       ;; Opt + Hyper + a で デスクトップを表示 [cite: 60]
     [:!QWERCa        :!Cup_arrow]                                ;; Cmd + Hyper + a で 全ウィンドウ表示 (Expose All) [cite: 61]
