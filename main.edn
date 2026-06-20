@@ -18,9 +18,7 @@
  }
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
 
- ;; Gokuの仕様に従い、マウス関連の詳細設定をエイリアス化して定義
  :tos {
-  ;; マウスカーソルの移動速度・方向
   :m-left        {:mouse_key {:x -1600}}
   :m-left-fast   {:mouse_key {:x -3200}}
   :m-down        {:mouse_key {:y 1600}}
@@ -30,13 +28,11 @@
   :m-right       {:mouse_key {:x 1600}}
   :m-right-fast  {:mouse_key {:x 3200}}
 
-  ;; マウスホイールのスクロール
   :v-wheel-up    {:mouse_key {:vertical_wheel -128}}
   :v-wheel-down  {:mouse_key {:vertical_wheel 128}}
   :h-wheel-left  {:mouse_key {:horizontal_wheel -128}}
   :h-wheel-right {:mouse_key {:horizontal_wheel 128}}
 
-  ;; マウスボタンの設定
   :mouse-btn1    {:pkey :button1}
   :mouse-btn2    {:pkey :button2}
   :mouse-btn4    {:pkey :button4}
