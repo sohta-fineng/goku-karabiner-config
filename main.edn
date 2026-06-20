@@ -47,7 +47,7 @@
   {:des "Application - Hyper Launchers & Controls"
    :rules [
     ;; --- c / d ---
-    [:!QWERCc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
+    [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
     [:!QWERd          "open -a Obsidian"]
     [:!QWERCd         "open -a Bear"]
     [:!QWEROd         "open -a Logseq"]
@@ -182,6 +182,7 @@
     [:!QWERCz         :!SCz]
     [:!QWERx          :!Cx]
     [:!QWERc          :!Cc]
+    [:!QWERCc         [:!Ca :!Cc]]
     [:!QWERv          :!Cv]
 
     ;; --- tab ---
