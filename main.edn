@@ -184,6 +184,7 @@
     ;; --- tab ---
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
+    [:!QWERStab       :launchpad]
    ]}
 
   {:des "Editing - Hyper Deletion & Word Movement"
