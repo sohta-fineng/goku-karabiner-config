@@ -1,20 +1,8 @@
-;; !  | means mandatory
-;; #  | means optional
-;; ## | optional any
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; P  | caps_lock
-
 ;; =============================================================================
 ;;  SCOT MATRIX (General Functional Mapping)
 ;; =============================================================================
-;;  Mod  | Hyper (!QWER) | +S (Shift) | +C (Cmd)    | +O (Opt)    | +T (Ctrl)
+;;
+;; Mod  | Hyper (!QWER) | +S (Shift) | +C (Cmd)    | +O (Opt)    | +T (Ctrl)
 ;; ------+---------------+------------+-------------+-------------+-------------
 ;;  Base | Nav & Delete  | Numpad     | Word Select | Mouse       | Fast Mouse /
 ;;       | (Standard)    | (0-9)      | & Macro Del | (Standard)  | Media Ctrl
@@ -27,6 +15,7 @@
 ;; ------+---------------+------------+-------------+-------------+-------------
 ;;  +O   |               |            |             |             | Window Move
 ;;       |               |            |             |             | (Raycast)
+;;
 ;; =============================================================================
 
 {
@@ -115,7 +104,7 @@
     ;; --- h ---
     [:!QWERh          :left_arrow]
     [:!QWERCh         :!Sleft_arrow]
-    [:!QWEROCh        :!SOleft_arrow]
+    [:!QWERCOh        :!SOleft_arrow]
     [:!QWEROh         {:mkey {:x -1600}}]
     [:!QWERTh         {:mkey {:x -3200}}]
     [:!QWERSOh        {:mkey {:hwheel 128}}]
@@ -123,7 +112,7 @@
     ;; --- j ---
     [:!QWERj          :down_arrow]
     [:!QWERCj         :!Sdown_arrow]
-    [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
+    [:!QWERCOj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
     [:!QWEROj         {:mkey {:y 1600}}]
     [:!QWERTj         {:mkey {:y 3200}}]
     [:!QWERSOj        {:mkey {:vwheel 128}}]
@@ -131,7 +120,7 @@
     ;; --- k ---
     [:!QWERk          :up_arrow]
     [:!QWERCk         :!Sup_arrow]
-    [:!QWEROCk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
+    [:!QWERCOk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
     [:!QWEROk         {:mkey {:y -1600}}]
     [:!QWERTk         {:mkey {:y -3200}}]
     [:!QWERSOk        {:mkey {:vwheel -128}}]
@@ -139,7 +128,7 @@
     ;; --- l ---
     [:!QWERl          :right_arrow]
     [:!QWERCl         :!Sright_arrow]
-    [:!QWEROCl        :!SOright_arrow]
+    [:!QWERCOl        :!SOright_arrow]
     [:!QWEROl         {:mkey {:x 1600}}]
     [:!QWERTl         {:mkey {:x 3200}}]
     [:!QWERSOl        {:mkey {:hwheel -128}}]
@@ -147,7 +136,7 @@
     ;; --- u ---
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
-    [:!QWEROCu        :!Oup_arrow]
+    [:!QWERCOu        :!Oup_arrow]
     [:!QWEROu         {:pkey :button1}]
     [:!QWERTu         {:pkey :button1}]
     [:!QWERSOu        {:mkey {:hwheel -128}}]
@@ -155,7 +144,7 @@
     ;; --- i ---
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
-    [:!QWEROCi        :!SOup_arrow]
+    [:!QWERCOi        :!SOup_arrow]
     [:!QWEROi         {:pkey :button2}]
     [:!QWERTi         {:pkey :button2}]
     [:!QWERSOi        {:mkey {:vwheel -128}}]
@@ -163,7 +152,7 @@
     ;; --- o ---
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
-    [:!QWEROCo        :!SOdown_arrow]
+    [:!QWERCOo        :!SOdown_arrow]
     [:!QWEROo         {:pkey :button4}]
     [:!QWERTo         {:pkey :button4}]
     [:!QWERSOo        {:mkey {:vwheel 128}}]
@@ -171,7 +160,7 @@
     ;; --- p ---
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
-    [:!QWEROCp        :!Odown_arrow]
+    [:!QWERCOp        :!Odown_arrow]
     [:!QWEROp         {:pkey :button5}]
     [:!QWERTp         {:pkey :button5}]
     [:!QWERSOp        {:mkey {:hwheel 128}}]
@@ -181,16 +170,16 @@
     [:!QWERCq         :!Ch]
     [:!QWERSq         "osascript -e 'tell app \"System Events\" to restart'"]
     [:!QWERSCq        "osascript -e 'tell app \"System Events\" to shut down'"]
-    [:!QWERSOq        :!CSq]
+    [:!QWERSOq        :!SCq]
     [:!QWERw          :!Cw]
-    [:!QWERCw         :!CSt]
+    [:!QWERCw         :!SCt]
     [:!QWERSw         :!CTq]
     [:!QWERSCw        "pmset sleepnow"]
     [:!QWERSOw        "pmset displaysleepnow"]
 
     ;; --- z / x / c / v (Shortcuts) ---
     [:!QWERz          :!Cz]
-    [:!QWERCz         :!CSz]
+    [:!QWERCz         :!SCz]
     [:!QWERx          :!Cx]
     [:!QWERc          :!Cc]
     [:!QWERv          :!Cv]
@@ -209,11 +198,11 @@
 
     ;; --- m ---
     [:!QWERm          :delete_or_backspace]
-    [:!QWERCm         [:!CSleft_arrow :delete_or_backspace]]
+    [:!QWERCm         [:!SCleft_arrow :delete_or_backspace]]
 
     ;; --- comma ---
     [:!QWERcomma      :delete_forward]
-    [:!QWERCcomma     [:!CSright_arrow :delete_or_backspace]]
+    [:!QWERCcomma     [:!SCright_arrow :delete_or_backspace]]
 
     ;; --- period ---
     [:!QWERperiod     :!Odelete_forward]
@@ -222,16 +211,16 @@
 
   {:des "Numpad - Hyper Layer"
    :rules [
-    [:!QWERSn        :0]
-    [:!QWERSm        :1]
-    [:!QWERScomma    :2]
-    [:!QWERSperiod   :3]
-    [:!QWERSj        :4]
-    [:!QWERSk        :5]
-    [:!QWERSl        :6]
-    [:!QWERSu        :7]
-    [:!QWERSi        :8]
-    [:!QWERSo        :9]
+    [:!QWERSn         :0]
+    [:!QWERSm         :1]
+    [:!QWERScomma     :2]
+    [:!QWERSperiod    :3]
+    [:!QWERSj         :4]
+    [:!QWERSk         :5]
+    [:!QWERSl         :6]
+    [:!QWERSu         :7]
+    [:!QWERSi         :8]
+    [:!QWERSo         :9]
    ]}
 
   {:des "Shift Numpad - Hyper Layer"
@@ -265,37 +254,37 @@
 
   {:des "Numpad - Semicolon Layer"
    :rules [
-    [:n        :0   :semicolon-layer]
-    [:m        :1   :semicolon-layer]
-    [:comma    :2   :semicolon-layer]
-    [:period   :3   :semicolon-layer]
-    [:j        :4   :semicolon-layer]
-    [:k        :5   :semicolon-layer]
-    [:l        :6   :semicolon-layer]
-    [:u        :7   :semicolon-layer]
-    [:i        :8   :semicolon-layer]
-    [:o        :9   :semicolon-layer]
+    [:n               :0   :semicolon-layer]
+    [:m               :1   :semicolon-layer]
+    [:comma           :2   :semicolon-layer]
+    [:period          :3   :semicolon-layer]
+    [:j               :4   :semicolon-layer]
+    [:k               :5   :semicolon-layer]
+    [:l               :6   :semicolon-layer]
+    [:u               :7   :semicolon-layer]
+    [:i               :8   :semicolon-layer]
+    [:o               :9   :semicolon-layer]
    ]}
 
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
    :rules [
     [:!QWERChyphen       :!Chyphen]
     [:!QWERCequal_sign   :!Cequal_sign]
-    [:!QWEROhyphen       :!COhyphen]
-    [:!QWEROequal_sign   :!COequal_sign]
+    [:!QWERCOhyphen      :!COhyphen]
+    [:!QWERCOequal_sign   :!COequal_sign]
 
-    [:!QWER1               :f1]
-    [:!QWER2               :f2]
-    [:!QWER3               :f3]
-    [:!QWER4               :f4]
-    [:!QWER5               :f5]
-    [:!QWER6               :f6]
-    [:!QWER7               :f7]
-    [:!QWER8               :f8]
-    [:!QWER9               :f9]
-    [:!QWER0               :f10]
-    [:!QWERhyphen          :f11]
-    [:!QWERequal_sign      :f12]
+    [:!QWER1             :f1]
+    [:!QWER2             :f2]
+    [:!QWER3             :f3]
+    [:!QWER4             :f4]
+    [:!QWER5             :f5]
+    [:!QWER6             :f6]
+    [:!QWER7             :f7]
+    [:!QWER8             :f8]
+    [:!QWER9             :f9]
+    [:!QWER0             :f10]
+    [:!QWERhyphen        :f11]
+    [:!QWERequal_sign    :f12]
    ]}
 
   {:des "Functional - Delete Layer Media Keys"
@@ -326,31 +315,31 @@
 
   {:des "Functional - Hyper Screen Capture"
    :rules [
-    [:!QWERCgrave_accent_and_tilde :!CS4]
-    [:!QWERgrave_accent_and_tilde  :!CTS4]
+    [:!QWERCgrave_accent_and_tilde :!SC4]
+    [:!QWERgrave_accent_and_tilde  :!SCT4]
 
-    [:!QWERCf13       :!CS3]
-    [:!QWERf13        :!CTS3]
+    [:!QWERCf13       :!SC3]
+    [:!QWERf13        :!SCT3]
 
-    [:!QWERCf14       :!CS6]
-    [:!QWERf14        :!CS5]
+    [:!QWERCf14       :!SC6]
+    [:!QWERf14        :!SC5]
     [:!QWERf15        :play_or_pause]
    ]}
 
   {:des "Functional - Hyper Precision Hardware Controls"
    :rules [
-    [:!QWERinsert         :!OSdisplay_brightness_increment]
-    [:!QWERdelete_forward :!OSdisplay_brightness_decrement]
-    [:!QWERhome           :!OSillumination_increment]
-    [:!QWERend            :!OSillumination_decrement]
-    [:!QWERpage_up        :!OSvolume_increment]
-    [:!QWERpage_down      :!OSvolume_decrement]
+    [:!QWERinsert         :!SOdisplay_brightness_increment]
+    [:!QWERdelete_forward :!SOdisplay_brightness_decrement]
+    [:!QWERhome           :!SOillumination_increment]
+    [:!QWERend            :!SOillumination_decrement]
+    [:!QWERpage_up        :!SOvolume_increment]
+    [:!QWERpage_down      :!SOvolume_decrement]
    ]}
 
   {:des "Text - Hyper Returns & Symbols"
    :rules [
     ;; --- p ---
-    [:!QWERSp              :!Sreturn_or_enter]
+    [:!QWERSp             :!Sreturn_or_enter]
 
     ;; --- open_bracket ---
     [:!QWERopen_bracket   :!S9]
