@@ -256,7 +256,7 @@
     [:!QWERChyphen       :!Chyphen]
     [:!QWERCequal_sign   :!Cequal_sign]
     [:!QWERCOhyphen      :!COhyphen]
-    [:!QWERCOequal_sign   :!COequal_sign]
+    [:!QWERCOequal_sign  :!COequal_sign]
 
     [:!QWER1             :f1]
     [:!QWER2             :f2]
@@ -324,19 +324,21 @@
   {:des "Text - Hyper Returns & Symbols"
    :rules [
     ;; --- p ---
-    [:!QWERSp             :!Sreturn_or_enter]
+    [:!QWERSp             :!Cslash]
+    [:!QWERSCp            :!Cslash]
+    [:!QWERSOp            :!Cslash]
 
     ;; --- open_bracket ---
     [:!QWERopen_bracket   :!S9]
     [:!QWERSopen_bracket  :!Sopen_bracket]
     [:!QWERCopen_bracket  :!Scomma]
-    [:!QWEROopen_bracket  :hyphen]
-    [:!QWERTopen_bracket  :!Shyphen]
+    [:!QWEROopen_bracket :!S3]
 
     ;; --- close_bracket ---
     [:!QWERclose_bracket  :!S0]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
+    [:!QWEROclose_bracket :!S8]
 
     ;; --- backslash ---
     [:!QWERbackslash      :grave_accent_and_tilde]
@@ -359,9 +361,9 @@
     [:!QWERTquote         :!Treturn_or_enter]
 
     ;; --- period ---
-    [:!QWERperiod          :hyphen]
-    [:!QWERSperiod         :!Cslash]
-    [:!QWERCperiod         :!Shyphen]
+    [:!QWERperiod         :hyphen]
+    [:!QWERSperiod        :!S1]
+    [:!QWERCperiod        :!Shyphen]
  
     ;; --- slash ---
     [:!QWERslash          :equal_sign]
