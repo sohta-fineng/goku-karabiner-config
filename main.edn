@@ -183,6 +183,7 @@
     ;; --- tab ---
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
+    [:!QWEROtab       :!Tf2]
     [:!QWERStab       :launchpad]
    ]}
 
