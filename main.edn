@@ -329,7 +329,7 @@
     [:!QWEROopen_bracket  :hyphen]
     [:!QWERTopen_bracket  :!Shyphen]
 
-    [:!QWERclose_bracket  :!S9]
+    [:!QWERclose_bracket  :!S0]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
     [:!QWEROclose_bracket :equal_sign]
