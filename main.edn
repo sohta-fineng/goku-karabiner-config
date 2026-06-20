@@ -247,16 +247,18 @@
 
   {:des "Fn Numpad - Hyper Layer"
    :rules [
-    [:!QWERSn        :0]
-    [:!QWERSm        :1]
-    [:!QWERScomma    :2]
-    [:!QWERSperiod   :3]
-    [:!QWERSj        :4]
-    [:!QWERSk        :5]
-    [:!QWERSl        :6]
-    [:!QWERSu        :7]
-    [:!QWERSi        :8]
-    [:!QWERSo        :9]
+    [:!QWERSOm        :f1]
+    [:!QWERSOcomma    :f2]
+    [:!QWERSOperiod   :f3]
+    [:!QWERSOj        :f4]
+    [:!QWERSOk        :f5]
+    [:!QWERSOl        :f6]
+    [:!QWERSOu        :f7]
+    [:!QWERSOi        :f8]
+    [:!QWERSOo        :f9]
+    [:!QWERSO7        :f10]
+    [:!QWERSO8        :f11]
+    [:!QWERSO9        :f12]
    ]}
 
   {:des "Numpad - Semicolon Layer"
