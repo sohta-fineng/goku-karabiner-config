@@ -1,15 +1,34 @@
-    ;; !  | means mandatory
-    ;; #  | means optional
-    ;; ## | optional any
-    ;; C  | left_command
-    ;; T  | left_control
-    ;; O  | left_option
-    ;; S  | left_shift
-    ;; Q  | right_command
-    ;; W  | right_control
-    ;; E  | right_option
-    ;; R  | right_shift
-    ;; P  | caps_lock
+;; !  | means mandatory
+;; #  | means optional
+;; ## | optional any
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+
+;; =============================================================================
+;;  SCOT MATRIX (General Functional Mapping)
+;; =============================================================================
+;;  Mod  | Hyper (!QWER) | +S (Shift) | +C (Cmd)    | +O (Opt)    | +T (Ctrl)
+;; ------+---------------+------------+-------------+-------------+-------------
+;;  Base | Nav & Delete  | Numpad     | Word Select | Mouse       | Fast Mouse /
+;;       | (Standard)    | (0-9)      | & Macro Del | (Standard)  | Media Ctrl
+;; ------+---------------+------------+-------------+-------------+-------------
+;;  +S   |               |            | Numpad Sign | Mouse Wheel | Fn Key
+;;       |               |            | (!@#...)    | (Scroll)    | (F1-F12)
+;; ------+---------------+------------+-------------+-------------+-------------
+;;  +C   |               |            |             | Smart Text  | Window Size
+;;       |               |            |             | Range Select| (Raycast)
+;; ------+---------------+------------+-------------+-------------+-------------
+;;  +O   |               |            |             |             | Window Move
+;;       |               |            |             |             | (Raycast)
+;; =============================================================================
+
 {
  :simlayers {
   :delete-layer     {:key :delete_or_backspace}
