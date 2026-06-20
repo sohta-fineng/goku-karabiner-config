@@ -7,11 +7,11 @@
 ;;  Base | Nav & Delete  | Numpad     | Word Select | Mouse       | Fast Mouse /
 ;;       | (Standard)    | (0-9)      | & Macro Del | (Standard)  | Media Ctrl
 ;; ------+---------------+------------+-------------+-------------+-------------
-;;   +S  |               |            | Numpad Sign | Mouse Wheel | Fn Key
-;;       |               |            | (!@#...)    | (Scroll)    | (F1-F12)
+;;   +S  |               | Numpad Sign| Mouse Wheel | Fn Key      |
+;;       |               | (!@#...)   | (Scroll)    | (F1-F12)    |
 ;; ------+---------------+------------+-------------+-------------+-------------
 ;;   +C  |               |            |             | Smart Text  | Window Size
-;;       |               |            |             | Range Select| (Raycast)
+;;       |               |            | Range Select| (Raycast)   |
 ;; ------+---------------+------------+-------------+-------------+-------------
 ;;   +O  |               |            |             |             | Window Move
 ;;       |               |            |             |             | (Raycast)
@@ -204,21 +204,21 @@
 
   {:des "Editing - Hyper Deletion & Word Movement"
    :rules [
+    ;; --- b ---
+    [:!QWERb          :!Odelete_or_backspace]
+    [:!QWERCb         :!Cdelete_or_backspace]
+
     ;; --- n ---
-    [:!QWERn          :!Odelete_or_backspace]
-    [:!QWERCn         :!Cdelete_or_backspace]
+    [:!QWERn          :delete_or_backspace]
+    [:!QWERCn         [:!SCleft_arrow :delete_or_backspace]]
 
     ;; --- m ---
-    [:!QWERm          :delete_or_backspace]
-    [:!QWERCm         [:!SCleft_arrow :delete_or_backspace]]
+    [:!QWERm          :delete_forward]
+    [:!QWERCm         [:!SCright_arrow :delete_or_backspace]]
 
     ;; --- comma ---
-    [:!QWERcomma      :delete_forward]
-    [:!QWERCcomma     [:!SCright_arrow :delete_or_backspace]]
-
-    ;; --- period ---
-    [:!QWERperiod     :!Odelete_forward]
-    [:!QWERCperiod    :!Cdelete_forward]
+    [:!QWERcomma      :!Odelete_forward]
+    [:!QWERCcomma     :!Cdelete_forward]
    ]}
 
   {:des "Numpad - Hyper Layer"
@@ -240,7 +240,7 @@
     [:!QWERSCm        :!S1]
     [:!QWERSCcomma    :!S2]
     [:!QWERSCperiod   :!S3]
-    [:!QWERSCj        :!S4]
+    [:!QWERSCj         :!S4]
     [:!QWERSCk        :!S5]
     [:!QWERSCl        :!S6]
     [:!QWERSCu        :!S7]
