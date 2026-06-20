@@ -374,10 +374,15 @@
     [:!QWEROquote         :!Oreturn_or_enter]
     [:!QWERTquote         :!Treturn_or_enter]
 
+    ;; --- period ---
+    [:!QWERperiod          :hyphen]
+    [:!QWERSperiod         :!Cslash]
+    [:!QWERCperiod         :!Shyphen]
+ 
     ;; --- slash ---
-    [:!QWERslash          :!Cslash]
+    [:!QWERslash          :equal_sign]
     [:!QWERSslash         :!Sslash]
-    [:!QWERCslash         :!S1]
+    [:!QWERCslash         :!Sequal_sign]
    ]}
 
   {:des "Application - Raycast Window Management"
