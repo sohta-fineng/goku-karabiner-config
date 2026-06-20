@@ -1,26 +1,22 @@
-;; ==================================================================================================================
-;;                                                SCOT MATRIX
-;; ==================================================================================================================
-;; Trigger | Hyper (!QWER)    | +S (Shift)         | +C (Cmd)           | +O (Opt)           | +T (Ctrl)
-;; --------+------------------+--------------------+--------------------+--------------------+---------------------
-;; Base    | Nav & Delete     | Numpad Entry       | Word Select/Del    | Mouse Control      | Fast Nav/Media
-;; +S      | -                | Symbol Numpad      | Mouse Wheel        | Fn Key Layer       | -
-;; +C      | -                | -                  | Advanced Select    | Smart Text Macro   | Window Resize
-;; +O      | -                | -                  | -                  | -                  | Window Move
-;; ==================================================================================================================
-
-;; !  | means mandatory
-;; #  | means optional
-;; ## | optional any
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; P  | caps_lock
+;; ===================================================================================
+;;  SCOT Matrix Layout
+;;  - Hyper-key spatial layer mapping for navigation, mouse, and window actions.
+;; ===================================================================================
+;;
+;;  Hyper + | None         | S (Shift)    | C (Command)  | O (Option)   | T (Control)
+;;  --------+--------------+--------------+--------------+--------------+--------------
+;;    None  | Nav & Delete | Numpad Input | Select & Del | Mouse Normal | Mouse Fast
+;;     +S   | --           | --           | Symbol Num   | Wheel Scroll | Fn Key Input
+;;     +C   | --           | --           | --           | Smart Select | Win Resize
+;;     +O   | --           | --           | --           | --           | Win Move
+;;
+;;  [Legend]
+;;  ! : Mandatory  | # : Optional  | ## : Optional Any  | P : CapsLock
+;;  C : L_Command  | T : L_Control | O  : L_Option      | S : L_Shift
+;;  Q : R_Command  | W : R_Control | E  : R_Option      | R : R_Shift
+;;  (* !QWER = Hyper Layer Activation)
+;;
+;; ===================================================================================
 
 {
  :simlayers {
