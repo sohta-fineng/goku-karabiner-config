@@ -362,7 +362,6 @@
 
     ;; --- period ---
     [:!QWERperiod         :hyphen]
-    [:!QWERSperiod        :!S1]
     [:!QWERCperiod        :!Shyphen]
  
     ;; --- slash ---
