@@ -1,4 +1,19 @@
 {
+;; here's the definition
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; ## | optional any
+
  :simlayers {
   :delete-layer     {:key :delete_or_backspace}
   :semicolon-layer  {:key :semicolon}
@@ -13,7 +28,7 @@
     [:!QWER#Pescape   :caps_lock]
     [:##right_shift   :!Sreturn_or_enter]
     [:##right_option  "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]
-    [:!!QWERspacebar  :spacebar] 
+    [:!QWERspacebar   :spacebar] 
     [:##spacebar      :left_shift    nil {:alone :spacebar}]
    ]}
 
