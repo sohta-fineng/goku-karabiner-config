@@ -373,12 +373,6 @@
     [:!QWERslash          :!Cslash]
     [:!QWERSslash         :!Sslash]
     [:!QWERCslash         :!S1]
-
-    ;; --- comma ---
-    [:!QWERScomma         :hyphen]
-
-    ;; --- period ---
-    [:!QWERSperiod        :hyphen]
    ]}
 
   {:des "Application - Raycast Window Management"
