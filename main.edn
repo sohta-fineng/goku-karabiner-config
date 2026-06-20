@@ -23,13 +23,13 @@
  :main [
   {:des "Base - Modifier Substitutions"
    :rules [
+    [:##right_shift   :!Sreturn_or_enter]
     [:##fn            :left_control]
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
-    [:##right_shift   :!Sreturn_or_enter]
     [:##right_option  "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]
     [:!QWERspacebar   :spacebar] 
-    [:##spacebar      :left_shift    nil {:alone :spacebar}]
+    [:##spacebar      :left_shift    nil {:alone :spacebar}] 
    ]}
 
   {:des "Base - Input Source Switching"
@@ -165,8 +165,8 @@
     [:!QWEROCp        :!Spage_down]
     [:!QWEROp         [[:pointing_button] [:button5]]]
     [:!QWERSOp        [[:pointing_button] [:button5]]]
-    [:!QWERTp         "open -a 'Launchpad'"]
     [:!QWERSCp        {:mouse_key {:horizontal_wheel 128}}]
+    [:!QWERSTp        {:mouse_key {:horizontal_wheel 64}}]
 
     ;; --- q / w ---
     [:!QWERq          :!Cq]
@@ -220,32 +220,30 @@
 
   {:des "Numpad - Hyper Layer"
    :rules [
-    [:!QWERSn   :0]
-    [:!QWERSm   :0]
-    [:!QWERSj   :1]
-    [:!QWERSk   :2]
-    [:!QWERSl   :3]
-    [:!QWERSu   :4]
-    [:!QWERSi   :5]
-    [:!QWERSo   :6]
-    [:!QWERS7   :7]
-    [:!QWERS8   :8]
-    [:!QWERS9   :9]
+    [:!QWERSn        :0]
+    [:!QWERSm        :1]
+    [:!QWERScomma    :2]
+    [:!QWERSperiod   :3]
+    [:!QWERSj        :4]
+    [:!QWERSk        :5]
+    [:!QWERSl        :6]
+    [:!QWERSu        :7]
+    [:!QWERSi        :8]
+    [:!QWERSo        :9]
    ]}
 
   {:des "Numpad - Semicolon Layer"
    :rules [
-    [:n   :0   :semicolon-layer]
-    [:m   :0   :semicolon-layer]
-    [:j   :1   :semicolon-layer]
-    [:k   :2   :semicolon-layer]
-    [:l   :3   :semicolon-layer]
-    [:u   :4   :semicolon-layer]
-    [:i   :5   :semicolon-layer]
-    [:o   :6   :semicolon-layer]
-    [:7   :7   :semicolon-layer]
-    [:8   :8   :semicolon-layer]
-    [:9   :9   :semicolon-layer] 
+    [:n        :0   :semicolon-layer]
+    [:m        :1   :semicolon-layer]
+    [:comma    :2   :semicolon-layer]
+    [:period   :3   :semicolon-layer]
+    [:j        :4   :semicolon-layer]
+    [:k        :5   :semicolon-layer]
+    [:l        :6   :semicolon-layer]
+    [:u        :7   :semicolon-layer]
+    [:i        :8   :semicolon-layer]
+    [:o        :9   :semicolon-layer]
    ]}
 
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
@@ -335,8 +333,6 @@
     [:!QWERclose_bracket  :!S0]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
-    [:!QWEROclose_bracket :equal_sign]
-    [:!QWERTclose_bracket :!Sequal_sign]
 
     ;; --- semicolon ---
     [:!QWERsemicolon      :return_or_enter]
@@ -353,14 +349,14 @@
     [:!QWERTquote         :!Treturn_or_enter]
 
     ;; --- slash ---
-    [:!QWERslash          :!Cslash]
-    [:!QWERCslash         :!S1]
-    [:!QWEROslash         :!S3]
-    [:!QWERTslash         :!S4]
-    [:!QWERSslash         :!Sslash]
-    [:!QWERSCslash        :!S8]
-    [:!QWERSOslash        :!S7]
-    [:!QWERSTslash        :!S6]
+    [:!QWERslash          :hyphen]
+    [:!QWERSslash          :!Sslash]
+    [:!QWERCslash         :!Shyphen]
+    [:!QWEROslash         :equal_sign]
+    [:!QWERTslash         :!Sequal_sign]
+
+    ;; --- comma ---
+    [:!QWERScomma          [:hyphen ]]
    ]}
 
   {:des "Application - Raycast Window Management"
