@@ -26,7 +26,7 @@
     [:!QWER#Pescape   :caps_lock]
     [:##right_option  "open 'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'"]
     [:!QWERspacebar   :spacebar] 
-    [:##spacebar      :left_shift    nil {:alone :spacebar}] 
+    [:##spacebar      :left_shift nil {:alone :spacebar}] 
    ]}
 
   {:des "Base - Input Source Switching"
@@ -324,7 +324,6 @@
 
   {:des "Functional - Hyper Precision Hardware Controls"
    :rules [
-    ;; 以下のキーマップは、macOSのデフォルト（Opt + Shift + 輝度/音量）による「1/4目盛り単位」の微調整を再現しています
     [:!QWERinsert         :!OSdisplay_brightness_increment]
     [:!QWERdelete_forward :!OSdisplay_brightness_decrement]
     [:!QWERhome           :!OSillumination_increment]
