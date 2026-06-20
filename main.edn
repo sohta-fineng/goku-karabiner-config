@@ -232,6 +232,33 @@
     [:!QWERSo        :9]
    ]}
 
+  {:des "Shift Numpad - Hyper Layer"
+   :rules [
+    [:!QWERSCm        :!S1]
+    [:!QWERSCcomma    :!S2]
+    [:!QWERSCperiod   :!S3]
+    [:!QWERSCj        :!S4]
+    [:!QWERSCk        :!S5]
+    [:!QWERSCl        :!S6]
+    [:!QWERSCu        :!S7]
+    [:!QWERSCi        :!S8]
+    [:!QWERSCo        :!S9]
+   ]}
+
+  {:des "Fn Numpad - Hyper Layer"
+   :rules [
+    [:!QWERSn        :0]
+    [:!QWERSm        :1]
+    [:!QWERScomma    :2]
+    [:!QWERSperiod   :3]
+    [:!QWERSj        :4]
+    [:!QWERSk        :5]
+    [:!QWERSl        :6]
+    [:!QWERSu        :7]
+    [:!QWERSi        :8]
+    [:!QWERSo        :9]
+   ]}
+
   {:des "Numpad - Semicolon Layer"
    :rules [
     [:n        :0   :semicolon-layer]
