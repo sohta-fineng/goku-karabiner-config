@@ -108,7 +108,7 @@
     ;; --- j ---
     [:!QWERj          :down_arrow]
     [:!QWERCj         :!Sdown_arrow]
-    [:!QWEROCj        [[:!Sdown_arrow] [:!Sdown_arrow] [:!Sdown_arrow]]]
+    [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
     [:!QWEROj         {:mouse_key {:y 1600}}]
     [:!QWERSOj        {:mouse_key {:y 3200}}]
     [:!QWERSCj        {:mouse_key {:vertical_wheel 128}}]
@@ -117,7 +117,7 @@
     ;; --- k ---
     [:!QWERk          :up_arrow]
     [:!QWERCk         :!Sup_arrow]
-    [:!QWEROCk        [[:!Sup_arrow] [:!Sup_arrow] [:!Sup_arrow]]]
+    [:!QWEROCk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
     [:!QWEROk         {:mouse_key {:y -1600}}]
     [:!QWERSOk        {:mouse_key {:y -3200}}]
     [:!QWERSCk        {:mouse_key {:vertical_wheel -128}}]
@@ -136,26 +136,26 @@
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
     [:!QWEROCu        :!Spage_up]
-    [:!QWEROu         [[:pointing_button] [:button1]]]
-    [:!QWERSOu        [[:pointing_button] [:button1]]]
+    [:!QWEROu         {:pkey :button1}]
+    [:!QWERSOu        {:pkey :button1}]
     [:!QWERSCu        {:mouse_key {:horizontal_wheel -128}}]
     [:!QWERSTu        {:mouse_key {:horizontal_wheel -64}}]
 
     ;; --- i ---
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
-    [:!QWEROCi        [[:end] [:!Shome] [:!Shome]]]
-    [:!QWEROi         [[:pointing_button] [:button2]]]
-    [:!QWERSOi        [[:pointing_button] [:button2]]]
+    [:!QWEROCi        [:end :!Shome :!Shome]]
+    [:!QWEROi         {:pointing_button :button2}]
+    [:!QWERSOi        {:pointing_button :button2}]
     [:!QWERSCi        {:mouse_key {:vertical_wheel -128}}]
     [:!QWERSTi        {:mouse_key {:vertical_wheel -64}}]
 
     ;; --- o ---
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
-    [:!QWEROCo        [[:home] [:!Send]]]
-    [:!QWEROo         [[:pointing_button] [:button4]]]
-    [:!QWERSOo        [[:pointing_button] [:button4]]]
+    [:!QWEROCo        [:home :!Send]]
+    [:!QWEROo         {:pointing_button :button4}]
+    [:!QWERSOo        {:pointing_button :button4}]
     [:!QWERSCo        {:mouse_key {:vertical_wheel 128}}]
     [:!QWERSTo        {:mouse_key {:vertical_wheel 64}}]
 
@@ -163,8 +163,8 @@
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
     [:!QWEROCp        :!Spage_down]
-    [:!QWEROp         [[:pointing_button] [:button5]]]
-    [:!QWERSOp        [[:pointing_button] [:button5]]]
+    [:!QWEROp         {:pointing_button :button5}]
+    [:!QWERSOp        {:pointing_button :button5}]
     [:!QWERSCp        {:mouse_key {:horizontal_wheel 128}}]
     [:!QWERSTp        {:mouse_key {:horizontal_wheel 64}}]
 
@@ -350,8 +350,6 @@
    :rules [
     ;; --- p ---
     [:!QWERSp              :!Sreturn_or_enter]
-    [:!QWERSOp             :!Sreturn_or_enter]
-    [:!QWERSCp             :!Sreturn_or_enter]
 
     ;; --- open_bracket ---
     [:!QWERopen_bracket   :!S9]
