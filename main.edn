@@ -101,72 +101,66 @@
     [:!QWERCh         :!Sleft_arrow]
     [:!QWEROCh        :!SOleft_arrow]
     [:!QWEROh         {:mouse_key {:x -1600}}]
-    [:!QWERSOh        {:mouse_key {:x -3200}}]
-    [:!QWERSCh        {:mouse_key {:horizontal_wheel 128}}]
-    [:!QWERSTh        {:mouse_key {:horizontal_wheel 64}}]
+    [:!QWEROTh        {:mouse_key {:x -3200}}]
+    [:!QWERSOh        {:mouse_key {:horizontal_wheel 128}}]
 
     ;; --- j ---
     [:!QWERj          :down_arrow]
     [:!QWERCj         :!Sdown_arrow]
     [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
     [:!QWEROj         {:mouse_key {:y 1600}}]
-    [:!QWERSOj        {:mouse_key {:y 3200}}]
-    [:!QWERSCj        {:mouse_key {:vertical_wheel 128}}]
-    [:!QWERSTj        {:mouse_key {:vertical_wheel 64}}]
+    [:!QWEROTj        {:mouse_key {:y 3200}}]
+    [:!QWERSOj        {:mouse_key {:vertical_wheel 128}}]
 
     ;; --- k ---
     [:!QWERk          :up_arrow]
     [:!QWERCk         :!Sup_arrow]
     [:!QWEROCk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
     [:!QWEROk         {:mouse_key {:y -1600}}]
-    [:!QWERSOk        {:mouse_key {:y -3200}}]
-    [:!QWERSCk        {:mouse_key {:vertical_wheel -128}}]
-    [:!QWERSTk        {:mouse_key {:vertical_wheel -64}}]
+    [:!QWEROTk        {:mouse_key {:y -3200}}]
+    [:!QWERSOk        {:mouse_key {:vertical_wheel -128}}]
 
     ;; --- l ---
     [:!QWERl          :right_arrow]
     [:!QWERCl         :!Sright_arrow]
     [:!QWEROCl        :!SOright_arrow]
     [:!QWEROl         {:mouse_key {:x 1600}}]
-    [:!QWERSOl        {:mouse_key {:x 3200}}]
-    [:!QWERSCl        {:mouse_key {:horizontal_wheel -128}}]
-    [:!QWERSTl        {:mouse_key {:horizontal_wheel -64}}]
+    [:!QWEROTl        {:mouse_key {:x 3200}}]
+    [:!QWERSOl        {:mouse_key {:horizontal_wheel -128}}]
+
+
 
     ;; --- u ---
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
     [:!QWEROCu        :!Spage_up]
     [:!QWEROu         {:pkey :button1}]
-    [:!QWERSOu        {:pkey :button1}]
-    [:!QWERSCu        {:mouse_key {:horizontal_wheel -128}}]
-    [:!QWERSTu        {:mouse_key {:horizontal_wheel -64}}]
+    [:!QWEROTu        {:pkey :button1}]
+    [:!QWERSOu        {:mouse_key {:horizontal_wheel -128}}]
 
     ;; --- i ---
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
     [:!QWEROCi        [:end :!Shome :!Shome]]
     [:!QWEROi         {:pointing_button :button2}]
-    [:!QWERSOi        {:pointing_button :button2}]
-    [:!QWERSCi        {:mouse_key {:vertical_wheel -128}}]
-    [:!QWERSTi        {:mouse_key {:vertical_wheel -64}}]
+    [:!QWEROTi        {:pointing_button :button2}]
+    [:!QWERSOi        {:mouse_key {:vertical_wheel -128}}]
 
     ;; --- o ---
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
     [:!QWEROCo        [:home :!Send]]
     [:!QWEROo         {:pointing_button :button4}]
-    [:!QWERSOo        {:pointing_button :button4}]
-    [:!QWERSCo        {:mouse_key {:vertical_wheel 128}}]
-    [:!QWERSTo        {:mouse_key {:vertical_wheel 64}}]
+    [:!QWEROTo        {:pointing_button :button4}]
+    [:!QWERSOo        {:mouse_key {:vertical_wheel 128}}]
 
     ;; --- p ---
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
     [:!QWEROCp        :!Spage_down]
     [:!QWEROp         {:pointing_button :button5}]
-    [:!QWERSOp        {:pointing_button :button5}]
-    [:!QWERSCp        {:mouse_key {:horizontal_wheel 128}}]
-    [:!QWERSTp        {:mouse_key {:horizontal_wheel 64}}]
+    [:!QWEROTp        {:pointing_button :button5}]
+    [:!QWERSOp        {:mouse_key {:horizontal_wheel 128}}]
 
     ;; --- q / w ---
     [:!QWERq          :!Cq]
@@ -247,18 +241,18 @@
 
   {:des "Fn Numpad - Hyper Layer"
    :rules [
-    [:!QWERSOm        :f1]
-    [:!QWERSOcomma    :f2]
-    [:!QWERSOperiod   :f3]
-    [:!QWERSOj        :f4]
-    [:!QWERSOk        :f5]
-    [:!QWERSOl        :f6]
-    [:!QWERSOu        :f7]
-    [:!QWERSOi        :f8]
-    [:!QWERSOo        :f9]
-    [:!QWERSO7        :f10]
-    [:!QWERSO8        :f11]
-    [:!QWERSO9        :f12]
+    [:!QWERSTm        :f1]
+    [:!QWERSTcomma    :f2]
+    [:!QWERSTperiod   :f3]
+    [:!QWERSTj        :f4]
+    [:!QWERSTk        :f5]
+    [:!QWERSTl        :f6]
+    [:!QWERSTu        :f7]
+    [:!QWERSTi        :f8]
+    [:!QWERSTo        :f9]
+    [:!QWERST7        :f10]
+    [:!QWERST8        :f11]
+    [:!QWERST9        :f12]
    ]}
 
   {:des "Numpad - Semicolon Layer"
@@ -396,19 +390,18 @@
 
   {:des "Application - Raycast Window Management"
    :rules [
-    [:!QWERCTh        ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]
-    [:!QWERCTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
-    [:!QWERCTk        ["open -g 'raycast://extensions/raycast/window-management/top-half'"]]
-    [:!QWERCTj        ["open -g 'raycast://extensions/raycast/window-management/bottom-half'"]]
-    [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
-    [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
-    [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
-    [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
-    [:!QWERCTq        ["open -g 'raycast://extensions/raycast/window-management/top-left-sixth'"]]
-    [:!QWERCTw        ["open -g 'raycast://extensions/raycast/window-management/top-right-sixth'"]]
-    [:!QWERCTa        ["open -g 'raycast://extensions/raycast/window-management/bottom-left-sixth'"]]
-    [:!QWERCTs        ["open -g 'raycast://extensions/raycast/window-management/bottom-right-sixth'"]]
-    [:!QWERCTtab      ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
+    [:!QWERTh        ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]
+    [:!QWERTj        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
+    [:!QWERTk        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
+    [:!QWERTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
+    [:!QWERTu        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
+    [:!QWERTi        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
+    [:!QWERTo        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
+    [:!QWERTp        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size"]]
+    [:!QWERTq        ["open -g 'raycast://extensions/raycast/window-management/top-left-sixth'"]]
+    [:!QWERTw        ["open -g 'raycast://extensions/raycast/window-management/top-right-sixth'"]]
+    [:!QWERTa        ["open -g 'raycast://extensions/raycast/window-management/bottom-left-sixth'"]]
+    [:!QWERTs        ["open -g 'raycast://extensions/raycast/window-management/bottom-right-sixth'"]]
    ]}
  ]
 }
