@@ -229,7 +229,7 @@
     [:!QWERSCm        :!S1]
     [:!QWERSCcomma    :!S2]
     [:!QWERSCperiod   :!S3]
-    [:!QWERSCj         :!S4]
+    [:!QWERSCj        :!S4]
     [:!QWERSCk        :!S5]
     [:!QWERSCl        :!S6]
     [:!QWERSCu        :!S7]
@@ -255,30 +255,26 @@
 
   {:des "Numpad - Semicolon Layer"
    :rules [
-    [:n               :0   :semicolon-layer]
-    [:m               :1   :semicolon-layer]
-    [:comma           :2   :semicolon-layer]
-    [:period          :3   :semicolon-layer]
-    [:j               :4   :semicolon-layer]
-    [:k               :5   :semicolon-layer]
-    [:l               :6   :semicolon-layer]
-    [:u               :7   :semicolon-layer]
-    [:i               :8   :semicolon-layer]
-    [:o               :9   :semicolon-layer]
-   ]}
-
-  {:des "Numpad - Semicolon Layer2"
-   :rules [
-    [[:n  :semicolon]   :0]
-    [[:m  :semicolon]   :1]
-    [[:comma  :semicolon]   :2]
+    [:n                      :0   :semicolon-layer]
+    [:m                      :1   :semicolon-layer]
+    [:comma                  :2   :semicolon-layer]
+    [:period                 :3   :semicolon-layer]
+    [:j                      :4   :semicolon-layer]
+    [:k                      :5   :semicolon-layer]
+    [:l                      :6   :semicolon-layer]
+    [:u                      :7   :semicolon-layer]
+    [:i                      :8   :semicolon-layer]
+    [:o                      :9   :semicolon-layer]
+    [[:n       :semicolon]   :0]
+    [[:m       :semicolon]   :1]
+    [[:comma   :semicolon]   :2]
     [[:period  :semicolon]   :3]
-    [[:j  :semicolon]   :4]
-    [[:k  :semicolon]   :5]
-    [[:l  :semicolon]   :6]
-    [[:u  :semicolon]   :7]
-    [[:i  :semicolon]   :8]
-    [[:o  :semicolon]   :9]
+    [[:j       :semicolon]   :4]
+    [[:k       :semicolon]   :5]
+    [[:l       :semicolon]   :6]
+    [[:u       :semicolon]   :7]
+    [[:i       :semicolon]   :8]
+    [[:o       :semicolon]   :9]
    ]}
 
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
