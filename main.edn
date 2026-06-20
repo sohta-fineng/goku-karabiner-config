@@ -240,18 +240,18 @@
 
   {:des "Fn Numpad - Hyper Layer"
    :rules [
-    [:!QWERSTm        :f1]
-    [:!QWERSTcomma    :f2]
-    [:!QWERSTperiod   :f3]
-    [:!QWERSTj        :f4]
-    [:!QWERSTk        :f5]
-    [:!QWERSTl        :f6]
-    [:!QWERSTu        :f7]
-    [:!QWERSTi        :f8]
-    [:!QWERSTo        :f9]
-    [:!QWERST7        :f10]
-    [:!QWERST8        :f11]
-    [:!QWERST9        :f12]
+    [:!QWERSTb        :f1]
+    [:!QWERSTn        :f2]
+    [:!QWERSTm        :f3]
+    [:!QWERSTcomma    :f4]
+    [:!QWERSTh        :f5]
+    [:!QWERSTj        :f6]
+    [:!QWERSTk        :f7]
+    [:!QWERSTl        :f8]
+    [:!QWERSTu        :f9]
+    [:!QWERSTi        :f10]
+    [:!QWERSTo        :f11]
+    [:!QWERSTp        :f12]
    ]}
 
   {:des "Numpad - Semicolon Layer"
@@ -394,7 +394,7 @@
     ;; --- slash ---
     [:!QWERslash          :hyphen]
     [:!QWERSslash         :!Sslash]
-    [:!QWERCslash         :!hyphen]
+    [:!QWERCslash         :!Shyphen]
    ]}
 
   {:des "Application - Raycast Window Management"
