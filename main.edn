@@ -205,23 +205,19 @@
    :rules [
     ;; --- n ---
     [:!QWERn          :!Odelete_or_backspace]
-    [:!QWERCn         [:!CSleft_arrow :delete_or_backspace]]
-    [:!QWEROn         :!Cdelete_or_backspace]
+    [:!QWERCn         :!Cdelete_or_backspace]
 
     ;; --- m ---
     [:!QWERm          :delete_or_backspace]
-    [:!QWERCm         [:delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace :delete_or_backspace]]
-    [:!QWEROm         :!OSdown_arrow]
+    [:!QWERCm         [:!CSleft_arrow :delete_or_backspace]]
 
     ;; --- comma ---
     [:!QWERcomma      :delete_forward]
-    [:!QWERCcomma     [:delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward :delete_forward]]
-    [:!QWEROcomma     :!OSup_arrow]
+    [:!QWERCcomma     [:!CSright_arrow :delete_or_backspace]]
 
     ;; --- period ---
     [:!QWERperiod     :!Odelete_forward]
-    [:!QWERCperiod    [:!CSright_arrow :delete_or_backspace]]
-    [:!QWEROperiod    :!Cdelete_or_backspace]
+    [:!QWERCperiod    :!Cdelete_forward]
    ]}
 
   {:des "Numpad - Hyper Layer"
