@@ -107,7 +107,7 @@
     [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
     [:!QWEROj         {:mkey {:y 1600}}]
     [:!QWERTj         {:mkey {:y 3200}}]
-    [:!QWERSOh        {:mkey {:vwheel 128}}]
+    [:!QWERSOj        {:mkey {:vwheel 128}}]
 
     ;; --- k ---
     [:!QWERk          :up_arrow]
