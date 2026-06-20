@@ -221,6 +221,7 @@
   {:des "Numpad - Hyper Layer"
    :rules [
     [:!QWERSn   :0]
+    [:!QWERSm   :0]
     [:!QWERSj   :1]
     [:!QWERSk   :2]
     [:!QWERSl   :3]
@@ -230,22 +231,21 @@
     [:!QWERS7   :7]
     [:!QWERS8   :8]
     [:!QWERS9   :9]
-    [:!QWERm    :delete_or_backspace]
    ]}
 
   {:des "Numpad - Semicolon Layer"
    :rules [
-    [:n   :0                     :semicolon-layer]
-    [:j   :1                     :semicolon-layer]
-    [:k   :2                     :semicolon-layer]
-    [:l   :3                     :semicolon-layer]
-    [:u   :4                     :semicolon-layer]
-    [:i   :5                     :semicolon-layer]
-    [:o   :6                     :semicolon-layer]
-    [:7   :7                     :semicolon-layer]
-    [:8   :8                     :semicolon-layer]
-    [:9   :9                     :semicolon-layer]
-    [:m   :delete_or_backspace   :semicolon-layer]
+    [:n   :0   :semicolon-layer]
+    [:m   :0   :semicolon-layer]
+    [:j   :1   :semicolon-layer]
+    [:k   :2   :semicolon-layer]
+    [:l   :3   :semicolon-layer]
+    [:u   :4   :semicolon-layer]
+    [:i   :5   :semicolon-layer]
+    [:o   :6   :semicolon-layer]
+    [:7   :7   :semicolon-layer]
+    [:8   :8   :semicolon-layer]
+    [:9   :9   :semicolon-layer] 
    ]}
 
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
@@ -321,32 +321,38 @@
 
   {:des "Text - Hyper Returns & Symbols"
    :rules [
+    ;; --- p ---
     [:!QWERSp              :grave_accent_and_tilde]
 
+    ;; --- open_bracket ---
     [:!QWERopen_bracket   :!S9]
     [:!QWERSopen_bracket  :!Sopen_bracket]
     [:!QWERCopen_bracket  :!Scomma]
     [:!QWEROopen_bracket  :hyphen]
     [:!QWERTopen_bracket  :!Shyphen]
 
+    ;; --- close_bracket ---
     [:!QWERclose_bracket  :!S0]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
     [:!QWEROclose_bracket :equal_sign]
     [:!QWERTclose_bracket :!Sequal_sign]
 
+    ;; --- semicolon ---
     [:!QWERsemicolon      :return_or_enter]
     [:!QWERSsemicolon     :!Ssemicolon]
     [:!QWERCsemicolon     :!Creturn_or_enter]
     [:!QWEROsemicolon     :!Oreturn_or_enter]
     [:!QWERTsemicolon     :!Treturn_or_enter]
 
+    ;; --- quote ---
     [:!QWERquote          :return_or_enter]
     [:!QWERSquote         :!Squote]
     [:!QWERCquote         :!Creturn_or_enter]
     [:!QWEROquote         :!Oreturn_or_enter]
     [:!QWERTquote         :!Treturn_or_enter]
 
+    ;; --- slash ---
     [:!QWERslash          :!Cslash]
     [:!QWERCslash         :!S1]
     [:!QWEROslash         :!S3]
