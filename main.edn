@@ -86,12 +86,12 @@
     ;; --- a / s ---
     [:!QWERa          :!Copen_bracket]
     [:!QWERCa         :!STtab]
-    [:!QWEROa         :!SOTbackslash]
+    [:!QWEROa         :!SOTf1]
     [:!QWERSa         :!SCtab]
     [:!QWERTa         :!Tright_arrow]
     [:!QWERs          :!Cclose_bracket]
     [:!QWERCs         :!Ttab]
-    [:!QWEROs         :!OTbackslash]
+    [:!QWEROs         :!OTf1]
     [:!QWERSs         :!Ctab]
     [:!QWERTs         :!Tleft_arrow]
 
