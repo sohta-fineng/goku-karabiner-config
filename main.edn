@@ -1,4 +1,3 @@
-;; here's the definition
 ;; !  | means mandatory
 ;; #  | means optional
 ;; C  | left_command
@@ -18,6 +17,31 @@
   :semicolon-layer  {:key :semicolon}
  }
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
+
+ ;; Gokuの仕様に従い、マウス関連の詳細設定をエイリアス化して定義
+ :tos {
+  ;; マウスカーソルの移動速度・方向
+  :m-left        {:mouse_key {:x -1600}}
+  :m-left-fast   {:mouse_key {:x -3200}}
+  :m-down        {:mouse_key {:y 1600}}
+  :m-down-fast   {:mouse_key {:y 3200}}
+  :m-up          {:mouse_key {:y -1600}}
+  :m-up-fast     {:mouse_key {:y -3200}}
+  :m-right       {:mouse_key {:x 1600}}
+  :m-right-fast  {:mouse_key {:x 3200}}
+
+  ;; マウスホイールのスクロール
+  :v-wheel-up    {:mouse_key {:vertical_wheel -128}}
+  :v-wheel-down  {:mouse_key {:vertical_wheel 128}}
+  :h-wheel-left  {:mouse_key {:horizontal_wheel -128}}
+  :h-wheel-right {:mouse_key {:horizontal_wheel 128}}
+
+  ;; マウスボタンの設定
+  :mouse-btn1    {:pkey :button1}
+  :mouse-btn2    {:pkey :button2}
+  :mouse-btn4    {:pkey :button4}
+  :mouse-btn5    {:pkey :button5}
+ }
 
  :main [
   {:des "Base - Modifier Substitutions"
@@ -86,12 +110,12 @@
     ;; --- a / s ---
     [:!QWERa          :!Copen_bracket]
     [:!QWERCa         :!STtab]
-    [:!QWEROa         :!SOTf1]
+    [:!QWEROa         :!SOTbackslash]
     [:!QWERSa         :!SCtab]
     [:!QWERTa         :!Tright_arrow]
     [:!QWERs          :!Cclose_bracket]
     [:!QWERCs         :!Ttab]
-    [:!QWEROs         :!OTf1]
+    [:!QWEROs         :!OTbackslash]
     [:!QWERSs         :!Ctab]
     [:!QWERTs         :!Tleft_arrow]
 
@@ -99,67 +123,65 @@
     [:!QWERh          :left_arrow]
     [:!QWERCh         :!Sleft_arrow]
     [:!QWEROCh        :!SOleft_arrow]
-    [:!QWEROh         {:mouse_key {:x -1600}}]
-    [:!QWERTh         {:mouse_key {:x -3200}}]
-    [:!QWERSOh        {:mouse_key {:horizontal_wheel 128}}]
+    [:!QWEROh         :m-left]
+    [:!QWERTh         :m-left-fast]
+    [:!QWERSOh        :h-wheel-right]
 
     ;; --- j ---
     [:!QWERj          :down_arrow]
     [:!QWERCj         :!Sdown_arrow]
     [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
-    [:!QWEROj         {:mouse_key {:y 1600}}]
-    [:!QWERTj         {:mouse_key {:y 3200}}]
-    [:!QWERSOj        {:mouse_key {:vertical_wheel 128}}]
+    [:!QWEROj         :m-down]
+    [:!QWERTj         :m-down-fast]
+    [:!QWERSOj        :v-wheel-down]
 
     ;; --- k ---
     [:!QWERk          :up_arrow]
     [:!QWERCk         :!Sup_arrow]
     [:!QWEROCk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
-    [:!QWEROk         {:mouse_key {:y -1600}}]
-    [:!QWERTk         {:mouse_key {:y -3200}}]
-    [:!QWERSOk        {:mouse_key {:vertical_wheel -128}}]
+    [:!QWEROk         :m-up]
+    [:!QWERTk         :m-up-fast]
+    [:!QWERSOk        :v-wheel-up]
 
     ;; --- l ---
     [:!QWERl          :right_arrow]
     [:!QWERCl         :!Sright_arrow]
     [:!QWEROCl        :!SOright_arrow]
-    [:!QWEROl         {:mouse_key {:x 1600}}]
-    [:!QWERTl         {:mouse_key {:x 3200}}]
-    [:!QWERSOl        {:mouse_key {:horizontal_wheel -128}}]
-
-
+    [:!QWEROl         :m-right]
+    [:!QWERTl         :m-right-fast]
+    [:!QWERSOl        :h-wheel-left]
 
     ;; --- u ---
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
     [:!QWEROCu        :!Spage_up]
-    [:!QWEROu         {:pkey :button1}]
-    [:!QWERTu         {:pkey :button1}]
-    [:!QWERSOu        {:mouse_key {:horizontal_wheel -128}}]
+    [:!QWEROu         :mouse-btn1]
+    [:!QWERTu         :mouse-btn1]
+    [:!QWERSOu        :h-wheel-left]
 
     ;; --- i ---
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
     [:!QWEROCi        [:end :!Shome :!Shome]]
-    [:!QWEROi         {:pointing_button :button2}]
-    [:!QWERTi         {:pointing_button :button2}]
-    [:!QWERSOi        {:mouse_key {:vertical_wheel -128}}]
+    [:!QWEROi         :mouse-btn2]
+    [:!QWERTi         :mouse-btn2]
+    [:!QWERSOi        :v-wheel-up]
 
     ;; --- o ---
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
     [:!QWEROCo        [:home :!Send]]
-    [:!QWEROo         {:pointing_button :button4}]
-    [:!QWERTo         {:pointing_button :button4}]
-    [:!QWERSOo        {:mouse_key {:vertical_wheel 128}}]
+    [:!QWEROo         :mouse-btn4]
+    [:!QWERTo         :mouse-btn4]
+    [:!QWERSOo        :v-wheel-down]
 
     ;; --- p ---
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
     [:!QWEROCp        :!Spage_down]
-    [:!QWEROp         {:pointing_button :button5}]
-    [:!QWERTp         {:pointing_button :button5}]
-    [:!QWERSOp        {:mouse_key {:horizontal_wheel 128}}]
+    [:!QWEROp         :mouse-btn5]
+    [:!QWERTp         :mouse-btn5]
+    [:!QWERSOp        :h-wheel-right]
 
     ;; --- q / w ---
     [:!QWERq          :!Cq]
@@ -183,7 +205,6 @@
     ;; --- tab ---
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
-    [:!QWEROtab       :!Tf2]
     [:!QWERStab       :launchpad]
    ]}
 
