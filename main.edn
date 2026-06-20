@@ -164,6 +164,7 @@
 
     ;; --- q / w ---
     [:!QWERq          :!Cq]
+    [:!QWERCq         :!Ch]
     [:!QWERSq         "osascript -e 'tell app \"System Events\" to restart'"]
     [:!QWERSCq        "osascript -e 'tell app \"System Events\" to shut down'"]
     [:!QWERSOq        :!CSq]
@@ -171,6 +172,7 @@
     [:!QWERCw         :!CSt]
     [:!QWERSw         :!CTq]
     [:!QWERSCw        "pmset sleepnow"]
+    [:!QWERSOw        "pmset displaysleepnow"]
 
     ;; --- z / x / c / v (Shortcuts) ---
     [:!QWERz          :!Cz]
@@ -182,11 +184,6 @@
     ;; --- tab ---
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
-    [:!QWERTtab       :!CTf]
-    [:!QWEROtab       :!Ch]
-    [:!QWERStab       :launchpad]
-    [:!QWERSCtab      :!Tup_arrow]
-    [:!QWERSOtab      :!Tdown_arrow]
    ]}
 
   {:des "Editing - Hyper Deletion & Word Movement"
@@ -396,7 +393,7 @@
     [:!QWERCTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
     [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/toggle-fullscreen'"]]
     [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
-    [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
+    [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
     [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/center'"]]
 
     [:!QWEROTh        ["open -g 'raycast://extensions/raycast/window-management/move-left'"]]
