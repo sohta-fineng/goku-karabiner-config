@@ -280,23 +280,10 @@
 
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
    :rules [
-    [:!QWERChyphen       :!Chyphen]
-    [:!QWERCequal_sign   :!Cequal_sign]
-    [:!QWERCOhyphen      :!COhyphen]
-    [:!QWERCOequal_sign  :!COequal_sign]
-
-    [:!QWER1             :f1]
-    [:!QWER2             :f2]
-    [:!QWER3             :f3]
-    [:!QWER4             :f4]
-    [:!QWER5             :f5]
-    [:!QWER6             :f6]
-    [:!QWER7             :f7]
-    [:!QWER8             :f8]
-    [:!QWER9             :f9]
-    [:!QWER0             :f10]
-    [:!QWERhyphen        :f11]
-    [:!QWERequal_sign    :f12]
+    [:!QWERhyphen       :!Chyphen]
+    [:!QWERequal_sign   :!Cqual_sign]
+    [:!QWERChyphen      :!COhyphen]
+    [:!QWERCequal_sign  :!COequal_sign]
    ]}
 
   {:des "Functional - Delete Layer Media Keys"
