@@ -267,6 +267,20 @@
     [:o               :9   :semicolon-layer]
    ]}
 
+  {:des "Numpad - Semicolon Layer2"
+   :rules [
+    [[:n  :semicolon]   :0]
+    [[:m  :semicolon]   :1]
+    [[:comma  :semicolon]   :2]
+    [[:period  :semicolon]   :3]
+    [[:j  :semicolon]   :4]
+    [[:k  :semicolon]   :5]
+    [[:l  :semicolon]   :6]
+    [[:u  :semicolon]   :7]
+    [[:i  :semicolon]   :8]
+    [[:o  :semicolon]   :9]
+   ]}
+
   {:des "Functional - F1-F12 & Hyphen/Equal Controls"
    :rules [
     [:!QWERChyphen       :!Chyphen]
