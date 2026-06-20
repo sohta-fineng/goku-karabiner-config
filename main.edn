@@ -1,21 +1,25 @@
-;; =============================================================================
-;;  SCOT MATRIX (General Functional Mapping)
-;; =============================================================================
+;; ===============================================================================================================
+;;                                            SCOT MATRIX
+;; ===============================================================================================================
 ;;
-;;  Mod  | Hyper (!QWER) | +S (Shift) | +C (Cmd)    | +O (Opt)    | +T (Ctrl)
-;; ------+---------------+------------+-------------+-------------+-------------
-;;  Base | Nav & Delete  | Numpad     | Word Select | Mouse       | Fast Mouse /
-;;       | (Standard)    | (0-9)      | & Macro Del | (Standard)  | Media Ctrl
-;; ------+---------------+------------+-------------+-------------+-------------
-;;   +S  |               | Numpad Sign| Mouse Wheel | Fn Key      |
-;;       |               | (!@#...)   | (Scroll)    | (F1-F12)    |
-;; ------+---------------+------------+-------------+-------------+-------------
-;;   +C  |               |            |             | Smart Text  | Window Size
-;;       |               |            | Range Select| (Raycast)   |
-;; ------+---------------+------------+-------------+-------------+-------------
-;;   +O  |               |            |             |             | Window Move
-;;       |               |            |             |             | (Raycast)
-;; =============================================================================
+;;  Mod  | Hyper (!QWER)      | +S (Shift)         | +C (Cmd)           | +O (Opt)           | +T (Ctrl)
+;; ------+--------------------+--------------------+--------------------+--------------------+--------------------
+;;  Base | Nav & Delete       | Numpad Entry       | Word Select/Del    | Mouse Control      | Fast Nav / Media
+;;       | Standard cursor    | Numeric 0-9 keys   | Word selection &   | Standard pointer   | High-speed move &
+;;       | movement/deletion  | for home-row use   | macro deletion     | click operations   | hardware control
+;; ------+--------------------+--------------------+--------------------+--------------------+--------------------
+;;       |                    | Symbol Numpad      | Mouse Wheel        | Fn Key Layer       |
+;;   +S  |                    | Shifted symbols    | Vertical/Horizontal| F1-F12 direct      |
+;;       |                    | via numpad grid    | scroll mapping     | access mapping     |
+;; ------+--------------------+--------------------+--------------------+-----------------------------------------
+;;       |                    |                    | Advanced Select    | Smart Text Macro   | Window Resize
+;;   +C  |                    |                    | Range & word-wise  | Line/Block select  | Raycast-powered
+;;       |                    |                    | selection macros   | selection logic    | layout management
+;; ------+--------------------+--------------------+--------------------+-----------------------------------------
+;;       |                    |                    |                    |                    | Window Move
+;;   +O  |                    |                    |                    |                    | Raycast-powered
+;;       |                    |                    |                    |                    | position control
+;; ===============================================================================================================
 
 ;; !  | means mandatory
 ;; #  | means optional
@@ -199,6 +203,7 @@
     ;; --- tab ---
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
+    [:!QWEROtab       :!Tf2]
     [:!QWERStab       :launchpad]
    ]}
 
