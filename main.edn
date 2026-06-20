@@ -100,7 +100,7 @@
     [:!QWERCh         :!Sleft_arrow]
     [:!QWEROCh        :!SOleft_arrow]
     [:!QWEROh         {:mouse_key {:x -1600}}]
-    [:!QWERTh        {:mouse_key {:x -3200}}]
+    [:!QWERTh         {:mouse_key {:x -3200}}]
     [:!QWERSOh        {:mouse_key {:horizontal_wheel 128}}]
 
     ;; --- j ---
@@ -108,7 +108,7 @@
     [:!QWERCj         :!Sdown_arrow]
     [:!QWEROCj        [:!Sdown_arrow :!Sdown_arrow :!Sdown_arrow]]
     [:!QWEROj         {:mouse_key {:y 1600}}]
-    [:!QWERTj        {:mouse_key {:y 3200}}]
+    [:!QWERTj         {:mouse_key {:y 3200}}]
     [:!QWERSOj        {:mouse_key {:vertical_wheel 128}}]
 
     ;; --- k ---
@@ -116,7 +116,7 @@
     [:!QWERCk         :!Sup_arrow]
     [:!QWEROCk        [:!Sup_arrow :!Sup_arrow :!Sup_arrow]]
     [:!QWEROk         {:mouse_key {:y -1600}}]
-    [:!QWERTk        {:mouse_key {:y -3200}}]
+    [:!QWERTk         {:mouse_key {:y -3200}}]
     [:!QWERSOk        {:mouse_key {:vertical_wheel -128}}]
 
     ;; --- l ---
@@ -124,7 +124,7 @@
     [:!QWERCl         :!Sright_arrow]
     [:!QWEROCl        :!SOright_arrow]
     [:!QWEROl         {:mouse_key {:x 1600}}]
-    [:!QWERTl        {:mouse_key {:x 3200}}]
+    [:!QWERTl         {:mouse_key {:x 3200}}]
     [:!QWERSOl        {:mouse_key {:horizontal_wheel -128}}]
 
 
@@ -134,7 +134,7 @@
     [:!QWERCu         :!Spage_up]
     [:!QWEROCu        :!Spage_up]
     [:!QWEROu         {:pkey :button1}]
-    [:!QWERTu        {:pkey :button1}]
+    [:!QWERTu         {:pkey :button1}]
     [:!QWERSOu        {:mouse_key {:horizontal_wheel -128}}]
 
     ;; --- i ---
@@ -142,7 +142,7 @@
     [:!QWERCi         :!Shome]
     [:!QWEROCi        [:end :!Shome :!Shome]]
     [:!QWEROi         {:pointing_button :button2}]
-    [:!QWERTi        {:pointing_button :button2}]
+    [:!QWERTi         {:pointing_button :button2}]
     [:!QWERSOi        {:mouse_key {:vertical_wheel -128}}]
 
     ;; --- o ---
@@ -150,7 +150,7 @@
     [:!QWERCo         :!Send]
     [:!QWEROCo        [:home :!Send]]
     [:!QWEROo         {:pointing_button :button4}]
-    [:!QWERTo        {:pointing_button :button4}]
+    [:!QWERTo         {:pointing_button :button4}]
     [:!QWERSOo        {:mouse_key {:vertical_wheel 128}}]
 
     ;; --- p ---
@@ -158,7 +158,7 @@
     [:!QWERCp         :!Spage_down]
     [:!QWEROCp        :!Spage_down]
     [:!QWEROp         {:pointing_button :button5}]
-    [:!QWERTp        {:pointing_button :button5}]
+    [:!QWERTp         {:pointing_button :button5}]
     [:!QWERSOp        {:mouse_key {:horizontal_wheel 128}}]
 
     ;; --- q / w ---
@@ -376,13 +376,13 @@
 
     ;; --- slash ---
     [:!QWERslash          :hyphen]
-    [:!QWERSslash          :!Sslash]
+    [:!QWERSslash         :!Sslash]
     [:!QWERCslash         :!Shyphen]
     [:!QWEROslash         :equal_sign]
     [:!QWERTslash         :!Sequal_sign]
 
     ;; --- comma ---
-    [:!QWERScomma          [:hyphen ]]
+    [:!QWERScomma         [:hyphen ]]
    ]}
 
   {:des "Application - Raycast Window Management"
