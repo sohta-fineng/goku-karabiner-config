@@ -357,8 +357,8 @@
     ;; --- backslash ---
     [:!QWERbackslash      :grave_accent_and_tilde]
     [:!QWERSbackslash     :!Sbackslash]
-    [:!QWERObackslash     :!Sgrave_accent_and_tilde]
-    [:!QWERCbackslash     [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde :!Sreturn_or_enter]]
+    [:!QWERObackslash     [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]]
+    [:!QWERCbackslash     :!Sgrave_accent_and_tilde]
 
     ;; --- semicolon --
     [:!QWERsemicolon      :return_or_enter]
