@@ -147,7 +147,7 @@
     ;; --- u ---
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
-    [:!QWEROCu        :!Odown_arrow]
+    [:!QWEROCu        :!Oup_arrow]
     [:!QWEROu         {:pkey :button1}]
     [:!QWERTu         {:pkey :button1}]
     [:!QWERSOu        {:mkey {:hwheel -128}}]
