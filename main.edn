@@ -320,7 +320,7 @@
   {:des "Text - Hyper Returns & Symbols"
    :rules [
     ;; --- p ---
-    [:!QWERSp              :grave_accent_and_tilde]
+    [:!QWERSp              :!Sreturn_or_enter]
 
     ;; --- open_bracket ---
     [:!QWERopen_bracket   :!S9]
