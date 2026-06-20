@@ -147,7 +147,7 @@
     ;; --- u ---
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
-    [:!QWEROCu        :!Spage_up]
+    [:!QWEROCu        :!Odown_arrow]
     [:!QWEROu         {:pkey :button1}]
     [:!QWERTu         {:pkey :button1}]
     [:!QWERSOu        {:mkey {:hwheel -128}}]
@@ -155,7 +155,7 @@
     ;; --- i ---
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
-    [:!QWEROCi        [:end :!Shome :!Shome]]
+    [:!QWEROCi        :!SOup_arrow]
     [:!QWEROi         {:pkey :button2}]
     [:!QWERTi         {:pkey :button2}]
     [:!QWERSOi        {:mkey {:vwheel -128}}]
@@ -163,7 +163,7 @@
     ;; --- o ---
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
-    [:!QWEROCo        [:home :!Send]]
+    [:!QWEROCo        :!SOdown_arrow]
     [:!QWEROo         {:pkey :button4}]
     [:!QWERTo         {:pkey :button4}]
     [:!QWERSOo        {:mkey {:vwheel 128}}]
@@ -171,7 +171,7 @@
     ;; --- p ---
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
-    [:!QWEROCp        :!Spage_down]
+    [:!QWEROCp        :!Odown_arrow]
     [:!QWEROp         {:pkey :button5}]
     [:!QWERTp         {:pkey :button5}]
     [:!QWERSOp        {:mkey {:hwheel 128}}]
