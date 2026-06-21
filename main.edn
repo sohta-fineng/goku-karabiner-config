@@ -26,8 +26,9 @@
  }
  
  :templates {
-  :app        "open -a '%s'"
+  :app       "open -a '%s'"
   :ray       "open -g 'raycast://extensions/%s'"
+  :ray-ext   "open 'raycast://extensions/%s'"
   :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
   :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
   :pwr       "pmset %s"
@@ -100,9 +101,9 @@
    :rules [
     ;; x / c (Row 3)
     [:!QWERSx         [:ray "mooxl/deepcast/index"]]
-    [:!QWERCx         "open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]
-    [:!QWEROx         "open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]
-    [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
+    [:!QWERCx         [:ray-ext "mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D"]]
+    [:!QWEROx         [:ray-ext "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
+    [:!QWERSc         [:ray-ext "raycast/raycast-notes/raycast-notes"]]
    ]}
 
   ;; =================================================================================
