@@ -91,8 +91,7 @@
     [:!QWERCy         [:app "Mail"]]
     [:!QWEROy         [:app "Calendar"]]
 
-    ;; c / d / f / g (Row 2 & 3)
-    [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
+    ;; d / f / g (Row 2)
     [:!QWERd          [:app "Obsidian"]]
     [:!QWERCd         [:app "Bear"]]
     [:!QWEROd         [:app "Logseq"]]
@@ -107,10 +106,11 @@
     [:!QWERSg         [:app "Ollama"]]
     [:!QWERSCg        [:app "LM Studio"]]
 
-    ;; x (Translation)
+    ;; x / c (Row 3)
     [:!QWERSx         [:ray "mooxl/deepcast/index"]]
     [:!QWERCx         "open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]
     [:!QWEROx         "open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]
+    [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
    ]}
 
   {:des "Application - Shortcuts (z / x / c / v)"
