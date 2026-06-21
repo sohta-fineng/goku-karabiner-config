@@ -5,8 +5,8 @@
 ;;
 ;;  Hyper + | None         | S (Shift)    | C (Command)  | O (Option)   | T (Control)
 ;;  --------+--------------+--------------+--------------+--------------+--------------
-;;    None  | Nav & Delete | Numpad Input | Select & Del | Mouse Normal | Mouse Fast
-;;     +S   | --           | --           | Symbol Num   | Wheel Scroll | Fn Key Input
+;;    None  | Nav & Delete | Shift Numpad | Select & Del | Mouse Normal | Mouse Fast
+;;     +S   | --           | --           | Clip Numpad  | Wheel Scroll | Fn1~12 keys
 ;;     +C   | --           | --           | --           | Smart Select | Win Resize
 ;;     +O   | --           | --           | --           | --           | Win Move
 ;;
@@ -26,14 +26,15 @@
  }
  
  :templates {
-  :app       "open -a '%s'"
-  :ray       "open -g 'raycast://extensions/%s'"
-  :ray-ext   "open 'raycast://extensions/%s'"
-  :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
-  :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
-  :pwr       "pmset %s"
-  :clip-save "sleep 0.1 && pbpaste > ~/.clip%s"
-  :clip-load "cat ~/.clip%s | pbcopy && sleep 0.1"
+  :app         "open -a '%s'"
+  :ray         "open -g 'raycast://extensions/%s'"
+  :ray-ext     "open 'raycast://extensions/%s'"
+  :wm          "open -g 'raycast://extensions/raycast/window-management/%s'"
+  :sys-evt     "osascript -e 'tell app \"System Events\" to %s'"
+  :pwr         "pmset %s"
+  :clip-save   "sleep 0.1 && pbpaste > ~/.clip%s"
+  :clip-load   "cat ~/.clip%s | pbcopy && sleep 0.1"
+  :recent-clip "hs -c \"pasteAndRotate('%s')\""
  }
 
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
@@ -270,30 +271,29 @@
     [:!QWERCslash         :!Shyphen]
    ]}
 
-  {:des "Text - Numpad Layers (Hyper & Semicolon)"
+  {:des "Text - Numpad (Hyper & Semicolon)"
    :rules [
-    ;; Numpad - Hyper Layer
-    [:!QWERSn         :0]
-    [:!QWERSm         :1]
-    [:!QWERScomma     :2]
-    [:!QWERSperiod    :3]
-    [:!QWERSj         :4]
-    [:!QWERSk         :5]
-    [:!QWERSl         :6]
-    [:!QWERSu         :7]
-    [:!QWERSi         :8]
-    [:!QWERSo         :9]
-
     ;; Shift Numpad - Hyper Layer
-    [:!QWERSCm        :!S1]
-    [:!QWERSCcomma    :!S2]
-    [:!QWERSCperiod   :!S3]
-    [:!QWERSCj        :!S4]
-    [:!QWERSCk        :!S5]
-    [:!QWERSCl        :!S6]
-    [:!QWERSCu        :!S7]
-    [:!QWERSCi        :!S8]
-    [:!QWERSCo        :!S9]
+    [:!QWERSm         :!S1]
+    [:!QWERScomma     :!S2]
+    [:!QWERSperiod    :!S3]
+    [:!QWERSj         :!S4]
+    [:!QWERSk         :!S5]
+    [:!QWERSl         :!S6]
+    [:!QWERSu         :!S7]
+    [:!QWERSi         :!S8]
+    [:!QWERSo         :!S9]
+
+    ;; Clip Numpad - Hyper Layer
+    [:!QWERSCm        [:recent-clip "1"]]
+    [:!QWERSCcomma    [:recent-clip "2"]]
+    [:!QWERSCperiod   [:recent-clip "3"]]
+    [:!QWERSCj        [:recent-clip "4"]]
+    [:!QWERSCk        [:recent-clip "5"]]
+    [:!QWERSCl        [:recent-clip "6"]]
+    [:!QWERSCu        [:recent-clip "7"]]
+    [:!QWERSCi        [:recent-clip "8"]]
+    [:!QWERSCo        [:recent-clip "9"]]
 
     ;; Numpad - Semicolon Layer
     [[:n       :semicolon]   :0]
