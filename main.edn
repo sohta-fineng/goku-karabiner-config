@@ -45,12 +45,6 @@
   ;; =================================================================================
   {:des "Core: Base Modifiers & Substitutions"
    :rules [
-    [[:a :s] "/Applications/Hammerspoon.app/Contents/MacOS/Hammerspoon -c \"pasteAndRotate('%s')\""]
-
-
-
-
-
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
     [:##spacebar      :left_shift nil {:alone :spacebar}]
