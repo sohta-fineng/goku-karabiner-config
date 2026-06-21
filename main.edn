@@ -66,9 +66,9 @@
   {:des "Apps: Main Application Launchers"
    :rules [
     ;; e / r / t / y (Row 1)
-    [:!QWERe          [:app "Arc"]]
+    [:!QWERe          [:app "Dia"]]
     [:!QWERCe         [:app "Google Chrome"]]
-    [:!QWEROe         [:app "Safari"]]
+    [:!QWEROe         [:app "Comet"]]
     [:!QWERSe         [:app "Cursor"]]
     [:!QWERSCe        [:app "Visual Studio Code"]]
     [:!QWERSOe        [:app "Notes"]]
