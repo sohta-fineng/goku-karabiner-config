@@ -31,7 +31,7 @@
   :app       "open -a '%s'"
   :ray       "open -g 'raycast://extensions/%s'"
   :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
-  :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
+  :sys-evt   "osascript -e 'tell app "System Events" to %s'"
   :pwr       "pmset %s"
  }
 
@@ -39,9 +39,9 @@
 
  :main [
   ;; =================================================================================
-  ;;  1. BASE SYSTEM & MODIFIERS
+  ;;  1. SYSTEM & BASE MODIFIERS (システム & 基本モディファイア)
   ;; =================================================================================
-  {:des "Base - Modifier Substitutions"
+  {:des "System - Base Modifier Substitutions"
    :rules [
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
@@ -52,17 +52,17 @@
     [:##right_option  [:ray "raycast/emoji-symbols/search-emoji-symbols"]]
    ]}
 
-  {:des "Base - Input Source Switching"
+  {:des "System - Input Source Switching"
    :rules [
-    [:##left_command  :left_command  nil {:alone :japanese_eisuu}]
+    [:##left_command  :left_command nil {:alone :japanese_eisuu}]
     [:##right_command :right_command nil {:alone :japanese_kana}]
     [:left_option     :left_option   nil {:alone :greek}]
    ]}
 
   ;; =================================================================================
-  ;;  2. APP LAUNCHERS & SHORTCUTS
+  ;;  2. APPLICATION LAUNCHERS (アプリケーション・ランチャー)
   ;; =================================================================================
-  {:des "Application - Hyper Launchers & Controls"
+  {:des "App - Hyper Launchers & Power Controls"
    :rules [
     ;; q / w / e / r / t / y (Row 1)
     [:!QWERq          :!Cq]
@@ -105,7 +105,10 @@
     [:!QWEROg         [:app "Gemini"]]
     [:!QWERSg         [:app "Ollama"]]
     [:!QWERSCg        [:app "LM Studio"]]
+   ]}
 
+  {:des "App - AI Tools & Translation"
+   :rules [
     ;; x / c (Row 3)
     [:!QWERSx         [:ray "mooxl/deepcast/index"]]
     [:!QWERCx         "open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]
@@ -113,20 +116,10 @@
     [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
    ]}
 
-  {:des "Application - Shortcuts (z / x / c / v)"
-   :rules [
-    [:!QWERz          :!Cz]
-    [:!QWERCz         :!SCz]
-    [:!QWERx          :!Cx]
-    [:!QWERc          :!Cc]
-    [:!QWERCc         [:!Ca :!Cc]]
-    [:!QWERv          :!Cv]
-   ]}
-
   ;; =================================================================================
-  ;;  3. NAVIGATION & MOUSE ACTIONS
+  ;;  3. NAVIGATION & WORKSPACE CONTROL (ナビゲーション & ウィンドウ管理)
   ;; =================================================================================
-  {:des "Navigation - Hyper Tabs, Windows & Cursors"
+  {:des "Workspace - Tab & Page Navigation"
    :rules [
     ;; a / s (Tab & Left/Right Nav)
     [:!QWERa          :!Copen_bracket]
@@ -139,7 +132,10 @@
     [:!QWEROs         :!OTbackslash]
     [:!QWERSs         :!Ctab]
     [:!QWERTs         :!Tleft_arrow]
+   ]}
 
+  {:des "Workspace - Vim Navigation & Mouse Actions"
+   :rules [
     ;; u / i / o / p (Page Nav / Mouse Buttons)
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
@@ -193,10 +189,39 @@
     [:!QWERSOl        {:mkey {:hwheel -128}}]
    ]}
 
+  {:des "Workspace - Raycast Window Management"
+   :rules [
+    ;; q / w / a / s (Sixths)
+    [:!QWERCTq        [:wm "top-left-sixth"]]
+    [:!QWERCTw        [:wm "top-right-sixth"]]
+    [:!QWERCTa        [:wm "bottom-left-sixth"]]
+    [:!QWERCTs        [:wm "bottom-right-sixth"]]
+
+    ;; u / i / o / p (Size & Placement)
+    [:!QWERCTu        [:wm "toggle-fullscreen"]]
+    [:!QWEROTu        [:wm "toggle-fullscreen"]]
+    [:!QWERCTi        [:wm "maximize"]]
+    [:!QWEROTi        [:wm "maximize"]]
+    [:!QWERCTo        [:wm "almost-maximize"]]
+    [:!QWEROTo        [:wm "reasonable-size"]]
+    [:!QWERCTp        [:wm "center"]]
+    [:!QWEROTp        [:wm "center"]]
+
+    ;; h / j / k / l (Halves & Movement)
+    [:!QWERCTh        [:wm "left-half"]]
+    [:!QWEROTh        [:wm "move-left"]]
+    [:!QWERCTj        [:wm "make-smaller"]]
+    [:!QWEROTj        [:wm "move-up"]]
+    [:!QWERCTk        [:wm "make-larger"]]
+    [:!QWEROTk        [:wm "move-down"]]
+    [:!QWERCTl        [:wm "right-half"]]
+    [:!QWEROTl        [:wm "move-right"]]
+   ]}
+
   ;; =================================================================================
-  ;;  4. EDITING & TEXT INPUT
+  ;;  4. TEXT EDITING & INPUT LAYERS (テキスト編集・入力レイヤー)
   ;; =================================================================================
-  {:des "Editing - Hyper Deletion & Word Movement"
+  {:des "Text - Hyper Deletion & Word Movement"
    :rules [
     [:!QWERb          :!Odelete_or_backspace]
     [:!QWERCb         :!Cdelete_or_backspace]
@@ -245,11 +270,9 @@
     [:!QWERCslash         :!Shyphen]
    ]}
 
-  ;; =================================================================================
-  ;;  5. NUMPAD LAYERS
-  ;; =================================================================================
-  {:des "Numpad - Hyper Layer"
+  {:des "Text - Numpad Layers (Hyper & Semicolon)"
    :rules [
+    ;; Numpad - Hyper Layer
     [:!QWERSn         :0]
     [:!QWERSm         :1]
     [:!QWERScomma     :2]
@@ -260,10 +283,8 @@
     [:!QWERSu         :7]
     [:!QWERSi         :8]
     [:!QWERSo         :9]
-   ]}
 
-  {:des "Shift Numpad - Hyper Layer"
-   :rules [
+    ;; Shift Numpad - Hyper Layer
     [:!QWERSCm        :!S1]
     [:!QWERSCcomma    :!S2]
     [:!QWERSCperiod   :!S3]
@@ -273,10 +294,8 @@
     [:!QWERSCu        :!S7]
     [:!QWERSCi        :!S8]
     [:!QWERSCo        :!S9]
-   ]}
 
-  {:des "Numpad - Semicolon Layer"
-   :rules [
+    ;; Numpad - Semicolon Layer
     [[:n       :semicolon]   :0]
     [[:m       :semicolon]   :1]
     [[:comma   :semicolon]   :2]
@@ -301,105 +320,18 @@
    ]}
 
   ;; =================================================================================
-  ;;  6. WINDOW MANAGEMENT (RAYCAST)
+  ;;  5. HARDWARE, FUNCTION KEYS & CLIPBOARD (ハードウェア・機能キー & クリップボード)
   ;; =================================================================================
-  {:des "Application - Raycast Window Management"
+  {:des "Global - OS Shortcuts & Clipboard"
    :rules [
-    ;; q / w / a / s (Sixths)
-    [:!QWERCTq        [:wm "top-left-sixth"]]
-    [:!QWERCTw        [:wm "top-right-sixth"]]
-    [:!QWERCTa        [:wm "bottom-left-sixth"]]
-    [:!QWERCTs        [:wm "bottom-right-sixth"]]
+    ;; Basic edits that were mixed in row 3
+    [:!QWERz          :!Cz]
+    [:!QWERCz         :!SCz]
+    [:!QWERx          :!Cx]
+    [:!QWERc          :!Cc]
+    [:!QWERCc         [:!Ca :!Cc]]
+    [:!QWERv          :!Cv]
 
-    ;; u / i / o / p (Size & Placement)
-    [:!QWERCTu        [:wm "toggle-fullscreen"]]
-    [:!QWEROTu        [:wm "toggle-fullscreen"]]
-    [:!QWERCTi        [:wm "maximize"]]
-    [:!QWEROTi        [:wm "maximize"]]
-    [:!QWERCTo        [:wm "almost-maximize"]]
-    [:!QWEROTo        [:wm "reasonable-size"]]
-    [:!QWERCTp        [:wm "center"]]
-    [:!QWEROTp        [:wm "center"]]
-
-    ;; h / j / k / l (Halves & Movement)
-    [:!QWERCTh        [:wm "left-half"]]
-    [:!QWEROTh        [:wm "move-left"]]
-    [:!QWERCTj        [:wm "make-smaller"]]
-    [:!QWEROTj        [:wm "move-up"]]
-    [:!QWERCTk        [:wm "make-larger"]]
-    [:!QWEROTk        [:wm "move-down"]]
-    [:!QWERCTl        [:wm "right-half"]]
-    [:!QWEROTl        [:wm "move-right"]]
-   ]}
-
-  ;; =================================================================================
-  ;;  7. HARDWARE & MEDIA CONTROLS
-  ;; =================================================================================
-  {:des "Functional - F1-F12 & Hyphen/Equal Controls"
-   :rules [
-    [:!QWERtab        :f6]
-    [:!QWERCtab       :!Sf6]
-    [:!QWEROtab       :!Tf2]
-    [:!QWERStab       :launchpad]
-    [:!QWERhyphen       :!Chyphen]
-    [:!QWERChyphen      :!COhyphen]
-    [:!QWERequal_sign   :!Cequal_sign]
-    [:!QWERCequal_sign  :!COequal_sign]
-   ]}
-
-  {:des "Functional - Hyper Media Controls"
-   :rules [
-    [:!QWERf1         :display_brightness_decrement]
-    [:!QWERf2         :display_brightness_increment]
-    [:!QWERf3         :!Tup_arrow]
-    [:!QWERf4         :launchpad]
-    [:!QWERf5         :illumination_decrement]
-    [:!QWERf6         :illumination_increment]
-    [:!QWERf7         :rewind]
-    [:!QWERf8         :play_or_pause]
-    [:!QWERf9         :fast_forward]
-    [:!QWERf10        :mute]
-    [:!QWERf11        :volume_decrement]
-    [:!QWERf12        :volume_increment]
-   ]}
-
-  {:des "Functional - Delete Layer Media Keys"
-   :rules [
-    [:f7              :rewind           :delete-layer]
-    [:f8              :play_or_pause    :delete-layer]
-    [:f9              :fast_forward     :delete-layer]
-    [:f10             :mute             :delete-layer]
-    [:f11             :volume_decrement :delete-layer]
-    [:f12             :volume_increment :delete-layer]
-   ]}
-
-  {:des "Functional - Hyper Screen Capture"
-   :rules [
-    [:!QWERgrave_accent_and_tilde  :!SCT4]
-    [:!QWERCgrave_accent_and_tilde :!SC4]
-   ]}
-
-  ;; =================================================================================
-  ;;  8. FUNCTION KEYS & CLIPBOARD
-  ;; =================================================================================
-  {:des "Function Keys"
-   :rules [
-    [:!QWERSTb        :f1]
-    [:!QWERSTn        :f2]
-    [:!QWERSTm        :f3]
-    [:!QWERSTcomma    :f4]
-    [:!QWERSTh        :f5]
-    [:!QWERSTj        :f6]
-    [:!QWERSTk        :f7]
-    [:!QWERSTl        :f8]
-    [:!QWERSTu        :f9]
-    [:!QWERSTi        :f10]
-    [:!QWERSTo        :f11]
-    [:!QWERSTp        :f12]
-   ]}
-
-  {:des "Clipboard"
-   :rules [
     ;; Save Clips (0-9 numerical order)
     [:!QWERC0 [:!Cc [:clip-save "0"]]]
     [:!QWERC1 [:!Cc [:clip-save "1"]]]
@@ -423,6 +355,60 @@
     [:!QWER7 [[:clip-load "7"] :!Cv]]
     [:!QWER8 [[:clip-load "8"] :!Cv]]
     [:!QWER9 [[:clip-load "9"] :!Cv]]
+   ]}
+
+  {:des "Global - Hardware & Media Controls"
+   :rules [
+    [:!QWERtab        :f6]
+    [:!QWERCtab       :!Sf6]
+    [:!QWEROtab       :!Tf2]
+    [:!QWERStab       :launchpad]
+    [:!QWERhyphen       :!Chyphen]
+    [:!QWERChyphen      :!COhyphen]
+    [:!QWERequal_sign   :!Cequal_sign]
+    [:!QWERCequal_sign  :!COequal_sign]
+
+    [:!QWERf1         :display_brightness_decrement]
+    [:!QWERf2         :display_brightness_increment]
+    [:!QWERf3         :!Tup_arrow]
+    [:!QWERf4         :launchpad]
+    [:!QWERf5         :illumination_decrement]
+    [:!QWERf6         :illumination_increment]
+    [:!QWERf7         :rewind]
+    [:!QWERf8         :play_or_pause]
+    [:!QWERf9         :fast_forward]
+    [:!QWERf10        :mute]
+    [:!QWERf11        :volume_decrement]
+    [:!QWERf12        :volume_increment]
+
+    ;; Functional - Delete Layer Media Keys
+    [:f7              :rewind           :delete-layer]
+    [:f8              :play_or_pause    :delete-layer]
+    [:f9              :fast_forward     :delete-layer]
+    [:f10             :mute             :delete-layer]
+    [:f11             :volume_decrement :delete-layer]
+    [:f12             :volume_increment :delete-layer]
+   ]}
+
+  {:des "Global - Screen Capture & Function Keys"
+   :rules [
+    ;; Screen Capture
+    [:!QWERgrave_accent_and_tilde  :!SCT4]
+    [:!QWERCgrave_accent_and_tilde :!SC4]
+
+    ;; Function Keys
+    [:!QWERSTb        :f1]
+    [:!QWERSTn        :f2]
+    [:!QWERSTm        :f3]
+    [:!QWERSTcomma    :f4]
+    [:!QWERSTh        :f5]
+    [:!QWERSTj        :f6]
+    [:!QWERSTk        :f7]
+    [:!QWERSTl        :f8]
+    [:!QWERSTu        :f9]
+    [:!QWERSTi        :f10]
+    [:!QWERSTo        :f11]
+    [:!QWERSTp        :f12]
    ]}
  ]
 }
