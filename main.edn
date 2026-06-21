@@ -377,27 +377,12 @@
    :rules [
     [:!QWERgrave_accent_and_tilde  :!SCT4]
     [:!QWERCgrave_accent_and_tilde :!SC4]
-    [:!QWERf13        :!SCT3]
-    [:!QWERCf13       :!SC3]
-    [:!QWERf14        :!SC4]
-    [:!QWERCf14       :!SC6]
-    [:!QWERf15        :play_or_pause]
-   ]}
-
-  {:des "Functional - Hyper Precision Hardware Controls"
-   :rules [
-    [:!QWERinsert         :!SOdisplay_brightness_increment]
-    [:!QWERdelete_forward :!SOdisplay_brightness_decrement]
-    [:!QWERhome           :!SOillumination_increment]
-    [:!QWERend            :!SOillumination_decrement]
-    [:!QWERpage_up        :!SOvolume_increment]
-    [:!QWERpage_down      :!SOvolume_decrement]
    ]}
 
   ;; =================================================================================
   ;;  8. FUNCTION KEYS & CLIPBOARD
   ;; =================================================================================
-  {:des "Fn"
+  {:des "Function Keys"
    :rules [
     [:!QWERSTb        :f1]
     [:!QWERSTn        :f2]
@@ -413,7 +398,7 @@
     [:!QWERSTp        :f12]
    ]}
 
-  {:des "Hyper Clipboard"
+  {:des "Clipboard"
    :rules [
     ;; Save Clips (0-9 numerical order)
     [:!QWERC0 [:!Cc [:clip-save "0"]]]
