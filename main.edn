@@ -12,9 +12,8 @@
 ;;
 ;;  [Legend]
 ;;  ! : Mandatory  | # : Optional  | ## : Optional Any  | P : CapsLock
-;;
 ;;  C : L_Command  | T : L_Control | O  : L_Option      | S : L_Shift
-;;  Q : R_Command  | W : R_Control | E  : R_Option      | R : R_Shift
+;;  Q : R_Command  | W : R_Control | E  : R_Option      | R : R_Shifts
 ;;  (* !QWER = Hyper Layer Activation)
 ;;
 ;; ===================================================================================
@@ -123,13 +122,13 @@
     [:!QWERSw         :!CTq]
     [:!QWERSCw        [:pwr "sleepnow"]]
     [:!QWERSOw        [:pwr "displaysleepnow"]]
-    [:!QWERa          :!Copen_bracket]
-    [:!QWERCa         :!STtab]
+    [:!QWERa          :!STtab]
+    [:!QWERCa         :!Copen_bracket]
     [:!QWEROa         :!SOTbackslash]
     [:!QWERSa         :!SCtab]
     [:!QWERTa         :!Tright_arrow]
-    [:!QWERs          :!Cclose_bracket]
-    [:!QWERCs         :!Ttab]
+    [:!QWERs          :!Ttab]
+    [:!QWERCs         :!Cclose_bracket]
     [:!QWEROs         :!OTbackslash]
     [:!QWERSs         :!Ctab]
     [:!QWERTs         :!Tleft_arrow]
