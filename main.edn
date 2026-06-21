@@ -26,12 +26,11 @@
  }
  
  :templates {
-  :clip-save "pbpaste > ~/.clip%s"
-  :clip-load "cat ~/.clip%s | pbcopy"
-  :app       "open -a '%s'"
+  :clip-save "sleep 0.1 && pbpaste > ~/.clip%s"
+  :clip-load "cat ~/.clip%s | pbcopy && sleep 0.1"
   :ray       "open -g 'raycast://extensions/%s'"
   :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
-  :sys-evt   "osascript -e 'tell app "System Events" to %s'"
+  :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
   :pwr       "pmset %s"
  }
 
@@ -62,7 +61,7 @@
   ;; =================================================================================
   ;;  2. APPLICATION LAUNCHERS (アプリケーション・ランチャー)
   ;; =================================================================================
-  {:des "App - Hyper Launchers & Power Controls"
+  {:des "App - Hyper Launchers "
    :rules [
     ;; e / r / t / y (Row 1)
     [:!QWERe          [:app "Arc"]]
@@ -88,7 +87,6 @@
     [:!QWERSd         [:app "Notion"]]
     [:!QWERf          [:app "Raycast"]]
     [:!QWERCf         [:app "Karabiner-Elements"]]
-    [:!QWEROf         [:app "Karabiner-EventViewer"]]
     [:!QWERSf         [:app "Maccy"]]
     [:!QWERg          [:app "Claude"]]
     [:!QWERCg         [:app "ChatGPT"]]
@@ -97,7 +95,7 @@
     [:!QWERSCg        [:app "LM Studio"]]
    ]}
 
-  {:des "App - AI Tools & Translation"
+  {:des "App - Translation & Notes"
    :rules [
     ;; x / c (Row 3)
     [:!QWERSx         [:ray "mooxl/deepcast/index"]]
