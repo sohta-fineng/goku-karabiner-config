@@ -28,8 +28,11 @@
  :templates {
   :clip-save "pbpaste > ~/.clip%s"
   :clip-load "cat ~/.clip%s | pbcopy"
-  :open-app  "open -a %s"
-  :open-ray  "open -g 'raycast://extensions/%s'"
+  :app       "open -a '%s'"
+  :ray       "open -g 'raycast://extensions/%s'"
+  :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
+  :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
+  :pwr       "pmset %s"
  }
 
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
@@ -46,7 +49,7 @@
     [:!QWERspacebar   :spacebar]
     [:##fn            :left_control]
     [:##right_shift   :!Sreturn_or_enter]
-    [:##right_option  [:open-ray "raycast/emoji-symbols/search-emoji-symbols"]]
+    [:##right_option  [:ray "raycast/emoji-symbols/search-emoji-symbols"]]
    ]}
 
   {:des "Base - Input Source Switching"
@@ -64,48 +67,48 @@
     ;; q / w / e / r / t / y (Row 1)
     [:!QWERq          :!Cq]
     [:!QWERCq         :!Ch]
-    [:!QWERSq         "osascript -e 'tell app \"System Events\" to restart'"]
-    [:!QWERSCq        "osascript -e 'tell app \"System Events\" to shut down'"]
+    [:!QWERSq         [:sys-evt "restart"]]
+    [:!QWERSCq        [:sys-evt "shut down"]]
     [:!QWERSOq        :!SCq]
     [:!QWERw          :!Cw]
     [:!QWERCw         :!SCt]
     [:!QWERSw         :!CTq]
-    [:!QWERSCw        "pmset sleepnow"]
-    [:!QWERSOw        "pmset displaysleepnow"]
-    [:!QWERe          [:open-app "Arc"]]
-    [:!QWERCe         "open -a 'Google Chrome'"]
-    [:!QWEROe         "open -a Safari"]
-    [:!QWERSe         "open -a Cursor"]
-    [:!QWERSCe        "open -a 'Visual Studio Code'"]
-    [:!QWERSOe        "open -a Notes"]
-    [:!QWERr          "open -a Finder"]
-    [:!QWERCr         "open -a Preview"]
-    [:!QWERSr         "open -a iTerm"]
-    [:!QWERSCr        "open -a Terminal"]
-    [:!QWERt          "open -a Slack"]
-    [:!QWERCt         "open -a Discord"]
-    [:!QWERy          "open -a Reminders"]
-    [:!QWERCy         "open -a Mail"]
-    [:!QWEROy         "open -a Calendar"]
+    [:!QWERSCw        [:pwr "sleepnow"]]
+    [:!QWERSOw        [:pwr "displaysleepnow"]]
+    [:!QWERe          [:app "Arc"]]
+    [:!QWERCe         [:app "Google Chrome"]]
+    [:!QWEROe         [:app "Safari"]]
+    [:!QWERSe         [:app "Cursor"]]
+    [:!QWERSCe        [:app "Visual Studio Code"]]
+    [:!QWERSOe        [:app "Notes"]]
+    [:!QWERr          [:app "Finder"]]
+    [:!QWERCr         [:app "Preview"]]
+    [:!QWERSr         [:app "iTerm"]]
+    [:!QWERSCr        [:app "Terminal"]]
+    [:!QWERt          [:app "Slack"]]
+    [:!QWERCt         [:app "Discord"]]
+    [:!QWERy          [:app "Reminders"]]
+    [:!QWERCy         [:app "Mail"]]
+    [:!QWEROy         [:app "Calendar"]]
 
     ;; c / d / f / g (Row 2 & 3)
     [:!QWERSc         "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"]
-    [:!QWERd          "open -a Obsidian"]
-    [:!QWERCd         "open -a Bear"]
-    [:!QWEROd         "open -a Logseq"]
-    [:!QWERSd         "open -a Notion"]
-    [:!QWERf          "open -a Raycast"]
-    [:!QWERCf         "open -a 'Karabiner-Elements'"]
-    [:!QWEROf         "open -a 'Karabiner-EventViewer'"]
-    [:!QWERSf         "open -a 'Maccy'"]
-    [:!QWERg          "open -a Claude"]
-    [:!QWERCg         "open -a ChatGPT"]
-    [:!QWEROg         "open -a Gemini"]
-    [:!QWERSg         "open -a Ollama"]
-    [:!QWERSCg        "open -a 'LM Studio'"]
+    [:!QWERd          [:app "Obsidian"]]
+    [:!QWERCd         [:app "Bear"]]
+    [:!QWEROd         [:app "Logseq"]]
+    [:!QWERSd         [:app "Notion"]]
+    [:!QWERf          [:app "Raycast"]]
+    [:!QWERCf         [:app "Karabiner-Elements"]]
+    [:!QWEROf         [:app "Karabiner-EventViewer"]]
+    [:!QWERSf         [:app "Maccy"]]
+    [:!QWERg          [:app "Claude"]]
+    [:!QWERCg         [:app "ChatGPT"]]
+    [:!QWEROg         [:app "Gemini"]]
+    [:!QWERSg         [:app "Ollama"]]
+    [:!QWERSCg        [:app "LM Studio"]]
 
     ;; x (Translation)
-    [:!QWERSx         "open -g 'raycast://extensions/mooxl/deepcast/index'"]
+    [:!QWERSx         [:ray "mooxl/deepcast/index"]]
     [:!QWERCx         "open 'raycast://extensions/mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D'"]
     [:!QWEROx         "open 'raycast://extensions/mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D'"]
    ]}
@@ -284,6 +287,7 @@
     [[:u       :semicolon]   :7]
     [[:i       :semicolon]   :8]
     [[:o       :semicolon]   :9]
+    
     [:n                      :0   :semicolon-layer]
     [:m                      :1   :semicolon-layer]
     [:comma                  :2   :semicolon-layer]
@@ -302,30 +306,30 @@
   {:des "Application - Raycast Window Management"
    :rules [
     ;; q / w / a / s (Sixths)
-    [:!QWERCTq        ["open -g 'raycast://extensions/raycast/window-management/top-left-sixth'"]]
-    [:!QWERCTw        ["open -g 'raycast://extensions/raycast/window-management/top-right-sixth'"]]
-    [:!QWERCTa        ["open -g 'raycast://extensions/raycast/window-management/bottom-left-sixth'"]]
-    [:!QWERCTs        ["open -g 'raycast://extensions/raycast/window-management/bottom-right-sixth'"]]
+    [:!QWERCTq        [:wm "top-left-sixth"]]
+    [:!QWERCTw        [:wm "top-right-sixth"]]
+    [:!QWERCTa        [:wm "bottom-left-sixth"]]
+    [:!QWERCTs        [:wm "bottom-right-sixth"]]
 
     ;; u / i / o / p (Size & Placement)
-    [:!QWERCTu        ["open -g 'raycast://extensions/raycast/window-management/toggle-fullscreen'"]]
-    [:!QWEROTu        ["open -g 'raycast://extensions/raycast/window-management/toggle-fullscreen'"]]
-    [:!QWERCTi        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
-    [:!QWEROTi        ["open -g 'raycast://extensions/raycast/window-management/maximize'"]]
-    [:!QWERCTo        ["open -g 'raycast://extensions/raycast/window-management/almost-maximize'"]]
-    [:!QWEROTo        ["open -g 'raycast://extensions/raycast/window-management/reasonable-size'"]]
-    [:!QWERCTp        ["open -g 'raycast://extensions/raycast/window-management/center'"]]
-    [:!QWEROTp        ["open -g 'raycast://extensions/raycast/window-management/center'"]]
+    [:!QWERCTu        [:wm "toggle-fullscreen"]]
+    [:!QWEROTu        [:wm "toggle-fullscreen"]]
+    [:!QWERCTi        [:wm "maximize"]]
+    [:!QWEROTi        [:wm "maximize"]]
+    [:!QWERCTo        [:wm "almost-maximize"]]
+    [:!QWEROTo        [:wm "reasonable-size"]]
+    [:!QWERCTp        [:wm "center"]]
+    [:!QWEROTp        [:wm "center"]]
 
     ;; h / j / k / l (Halves & Movement)
-    [:!QWERCTh        ["open -g 'raycast://extensions/raycast/window-management/left-half'"]]
-    [:!QWEROTh        ["open -g 'raycast://extensions/raycast/window-management/move-left'"]]
-    [:!QWERCTj        ["open -g 'raycast://extensions/raycast/window-management/make-smaller'"]]
-    [:!QWEROTj        ["open -g 'raycast://extensions/raycast/window-management/move-up'"]]
-    [:!QWERCTk        ["open -g 'raycast://extensions/raycast/window-management/make-larger'"]]
-    [:!QWEROTk        ["open -g 'raycast://extensions/raycast/window-management/move-down'"]]
-    [:!QWERCTl        ["open -g 'raycast://extensions/raycast/window-management/right-half'"]]
-    [:!QWEROTl        ["open -g 'raycast://extensions/raycast/window-management/move-right'"]]
+    [:!QWERCTh        [:wm "left-half"]]
+    [:!QWEROTh        [:wm "move-left"]]
+    [:!QWERCTj        [:wm "make-smaller"]]
+    [:!QWEROTj        [:wm "move-up"]]
+    [:!QWERCTk        [:wm "make-larger"]]
+    [:!QWEROTk        [:wm "move-down"]]
+    [:!QWERCTl        [:wm "right-half"]]
+    [:!QWEROTl        [:wm "move-right"]]
    ]}
 
   ;; =================================================================================
@@ -375,7 +379,7 @@
     [:!QWERCgrave_accent_and_tilde :!SC4]
     [:!QWERf13        :!SCT3]
     [:!QWERCf13       :!SC3]
-    [:!QWERf14        :!SC5]
+    [:!QWERf14        :!SC4]
     [:!QWERCf14       :!SC6]
     [:!QWERf15        :play_or_pause]
    ]}
@@ -433,7 +437,7 @@
     [:!QWER6 [[:clip-load "6"] :!Cv]]
     [:!QWER7 [[:clip-load "7"] :!Cv]]
     [:!QWER8 [[:clip-load "8"] :!Cv]]
-    [:!QWER9 [[:load-clip "9"] :!Cv]]
+    [:!QWER9 [[:clip-load "9"] :!Cv]]
    ]}
  ]
 }
