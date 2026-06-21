@@ -41,9 +41,9 @@
 
  :main [
   ;; =================================================================================
-  ;;  1. SYSTEM & BASE MODIFIERS
+  ;;  1. CORE: SYSTEM & BASE MODIFIERS
   ;; =================================================================================
-  {:des "System - Base Modifier Substitutions"
+  {:des "Core: Base Modifiers & Substitutions"
    :rules [
     [:##caps_lock     :!QWEright_shift nil {:alone :escape}]
     [:!QWER#Pescape   :caps_lock]
@@ -54,7 +54,7 @@
     [:##right_option  [:ray "raycast/emoji-symbols/search-emoji-symbols"]]
    ]}
 
-  {:des "System - Input Source Switching"
+  {:des "Core: Input Source Toggles"
    :rules [
     [:##left_command  :left_command nil {:alone :japanese_eisuu}]
     [:##right_command :right_command nil {:alone :japanese_kana}]
@@ -62,9 +62,9 @@
    ]}
 
   ;; =================================================================================
-  ;;  2. APPLICATION LAUNCHERS
+  ;;  2. APPS: APPLICATION LAUNCHERS
   ;; =================================================================================
-  {:des "App - Hyper Launchers "
+  {:des "Apps: Main Application Launchers"
    :rules [
     ;; e / r / t / y (Row 1)
     [:!QWERe          [:app "Arc"]]
@@ -98,7 +98,7 @@
     [:!QWERSCg        [:app "LM Studio"]]
    ]}
 
-  {:des "App - Translation & Notes"
+  {:des "Apps: Translation & Quick Notes"
    :rules [
     ;; x / c (Row 3)
     [:!QWERSx         [:ray "mooxl/deepcast/index"]]
@@ -108,34 +108,37 @@
    ]}
 
   ;; =================================================================================
-  ;;  3. NAVIGATION & WORKSPACE CONTROL
+  ;;  3. SYSTEM: UTILITIES & POWER CONTROLS
   ;; =================================================================================
-{:des "Workspace - Left-side Nav & Power Controls"
- :rules [
-  ;; q / w / a / s (Left-side Cluster)
-  [:!QWERq          :!Cq]
-  [:!QWERCq         :!Ch]
-  [:!QWERSq         [:sys-evt "restart"]]
-  [:!QWERSCq        [:sys-evt "shut down"]]
-  [:!QWERSOq        :!SCq]
-  [:!QWERw          :!Cw]
-  [:!QWERCw         :!SCt]
-  [:!QWERSw         :!CTq]
-  [:!QWERSCw        [:pwr "sleepnow"]]
-  [:!QWERSOw        [:pwr "displaysleepnow"]]
-  [:!QWERa          :!Copen_bracket]
-  [:!QWERCa         :!STtab]
-  [:!QWEROa         :!SOTbackslash]
-  [:!QWERSa         :!SCtab]
-  [:!QWERTa         :!Tright_arrow]
-  [:!QWERs          :!Cclose_bracket]
-  [:!QWERCs         :!Ttab]
-  [:!QWEROs         :!OTbackslash]
-  [:!QWERSs         :!Ctab]
-  [:!QWERTs         :!Tleft_arrow]
- ]}
+  {:des "System: Power Controls & Left-Hand Navigation"
+   :rules [
+    ;; q / w / a / s (Left-side Cluster)
+    [:!QWERq          :!Cq]
+    [:!QWERCq         :!Ch]
+    [:!QWERSq         [:sys-evt "restart"]]
+    [:!QWERSCq        [:sys-evt "shut down"]]
+    [:!QWERSOq        :!SCq]
+    [:!QWERw          :!Cw]
+    [:!QWERCw         :!SCt]
+    [:!QWERSw         :!CTq]
+    [:!QWERSCw        [:pwr "sleepnow"]]
+    [:!QWERSOw        [:pwr "displaysleepnow"]]
+    [:!QWERa          :!Copen_bracket]
+    [:!QWERCa         :!STtab]
+    [:!QWEROa         :!SOTbackslash]
+    [:!QWERSa         :!SCtab]
+    [:!QWERTa         :!Tright_arrow]
+    [:!QWERs          :!Cclose_bracket]
+    [:!QWERCs         :!Ttab]
+    [:!QWEROs         :!OTbackslash]
+    [:!QWERSs         :!Ctab]
+    [:!QWERTs         :!Tleft_arrow]
+   ]}
 
-  {:des "Workspace - Vim Navigation & Mouse Actions"
+  ;; =================================================================================
+  ;;  4. NAVIGATION: CURSOR & MOUSE ACTIONS
+  ;; =================================================================================
+  {:des "Navigation: Vim-Style Cursor & Mouse Actions"
    :rules [
     ;; u / i / o / p (Page Nav / Mouse Buttons)
     [:!QWERu          :page_up]
@@ -190,7 +193,10 @@
     [:!QWERSOl        {:mkey {:hwheel -128}}]
    ]}
 
-  {:des "Workspace - Raycast Window Management"
+  ;; =================================================================================
+  ;;  5. WINDOW: RAYCAST WINDOW MANAGEMENT
+  ;; =================================================================================
+  {:des "Window: Raycast Window Management"
    :rules [
     ;; q / w / a / s (Sixths)
     [:!QWERCTq        [:wm "top-left-sixth"]]
@@ -220,9 +226,9 @@
    ]}
 
   ;; =================================================================================
-  ;;  4. TEXT EDITING & INPUT LAYERS
+  ;;  6. TEXT: EDITING & INPUT LAYERS
   ;; =================================================================================
-  {:des "Text - Hyper Deletion & Word Movement"
+  {:des "Text: Advanced Deletion & Word Movement"
    :rules [
     [:!QWERb          :!Odelete_or_backspace]
     [:!QWERCb         :!Cdelete_or_backspace]
@@ -234,7 +240,7 @@
     [:!QWERCcomma     :!Cdelete_forward]
    ]}
 
-  {:des "Text - Hyper Returns & Symbols"
+  {:des "Text: Symbols, Punctuation & Returns"
    :rules [
     ;; p / open_bracket / close_bracket / backslash
     [:!QWERSp             :!Cslash]
@@ -271,7 +277,7 @@
     [:!QWERCslash         :!Shyphen]
    ]}
 
-  {:des "Text - Numpad (Hyper & Semicolon)"
+  {:des "Text: Virtual Numpad Layers"
    :rules [
     ;; Shift Numpad - Hyper Layer
     [:!QWERSm         :!S1]
@@ -320,9 +326,9 @@
    ]}
 
   ;; =================================================================================
-  ;;  5. HARDWARE, FUNCTION KEYS & CLIPBOARD
+  ;;  7. GLOBAL: HARDWARE, MEDIA & CLIPBOARD
   ;; =================================================================================
-  {:des "Global - OS Shortcuts & Clipboard"
+  {:des "Global: OS Shortcuts & Clipboard Manager"
    :rules [
     ;; Basic edits that were mixed in row 3
     [:!QWERz          :!Cz]
@@ -357,7 +363,7 @@
     [:!QWER9 [[:clip-load "9"] :!Cv]]
    ]}
 
-  {:des "Global - Hardware & Media Controls"
+  {:des "Global: Hardware & Media Controls"
    :rules [
     [:!QWERtab        :f6]
     [:!QWERCtab       :!Sf6]
@@ -390,7 +396,7 @@
     [:f12             :volume_increment :delete-layer]
    ]}
 
-  {:des "Global - Screen Capture & Function Keys"
+  {:des "Global: Screen Capture & Virtual Function Keys"
    :rules [
     ;; Screen Capture
     [:!QWERgrave_accent_and_tilde  :!SCT4]
