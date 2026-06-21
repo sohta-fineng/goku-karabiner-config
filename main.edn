@@ -400,6 +400,7 @@
     ;; Screen Capture
     [:!QWERgrave_accent_and_tilde  :!SCT4]
     [:!QWERCgrave_accent_and_tilde :!SC4]
+    [:!QWEROgrave_accent_and_tilde :!SC5]
 
     ;; Function Keys
     [:!QWERSTb        :f1]

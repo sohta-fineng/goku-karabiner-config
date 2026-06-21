@@ -1,0 +1,103 @@
+* 1429864 (HEAD -> main, origin/main, origin/HEAD) docs: add comprehensive README with SCOT Matrix layout
+* b5907b3 chore: update main configuration by rearranging key mappings for improved clarity and organization
+* e2fb77e chore: update main configuration by removing unused Hammerspoon command for improved clarity and organization
+* 789f048 chore: update main configuration by specifying the full path for Hammerspoon commands in recent clipboard functionality for improved clarity and usability
+* 9c95b26 chore: update main configuration by standardizing section headers and enhancing descriptions for improved clarity and organization
+* 9a7e68b chore: update main configuration by removing Japanese translations from section headers for improved clarity and consistency
+* dc5a2a1 chore: update main configuration by refining Numpad key mappings and adding recent clipboard functionality for improved clarity and usability
+* 8ca2ad6 chore: update main configuration by refining application launch templates and enhancing key mappings for Raycast extensions to improve clarity and functionality
+* a088338 chore: update main configuration by reordering clipboard management commands and refining application launch templates for improved clarity and functionality
+* f9e9cd8 chore: update main configuration by modifying clipboard management commands and refining application section descriptions for improved clarity and functionality
+* 046e445 chore: update main configuration by reorganizing workspace control key mappings and enhancing left-side navigation functionality for improved clarity and usability
+* 155f8a2 chore: enhance main configuration by updating section descriptions, refining key mappings for applications and workspace control, and improving overall clarity and organization
+* aaf40a7 chore: simplify main configuration by removing unused functional key mappings and renaming sections for improved clarity and organization
+* 7f9a6fd chore: refine main configuration by updating application launch commands and reorganizing key mappings for improved clarity and functionality
+* 2320fca chore: refine main configuration by standardizing application launch commands and enhancing window management key mappings for improved clarity and functionality
+* b208f2d chore: update main configuration with refined key mappings for application launchers and input source switching to enhance clarity and functionality
+* fdf66e7 chore: reorganize main configuration with enhanced key mappings for applications, window management, and input source switching to improve clarity and functionality
+* 7779d49 chore: update main configuration by removing deprecated raycast links and refining key mappings for improved clarity and functionality
+* dc0519f chore: enhance main configuration with new clipboard management templates and refined key mappings for improved functionality
+* 4f92ef9 chore: refine functional layer key mappings in main configuration for improved consistency and clarity
+* c2eb528 chore: update hyper layer key mappings in main configuration for improved consistency and functionality
+* 6fa2e7c chore: update period and slash key mappings in main configuration for improved consistency and clarity
+* 1353f7d chore: restore original numpad semicolon layer mappings in main configuration for consistency and clarity
+* df06df4 chore: update hyper launcher key mapping for 'raycast-notes' to improve consistency in main configuration
+* 0180468 chore: refine numpad semicolon layer mappings in main configuration for improved clarity and consistency
+* 7a5e2e6 chore: add new numpad semicolon layer to main configuration for enhanced key mapping options
+* 89d3d7f Revert "chore: update key mappings in main configuration by reorganizing numpad and shift numpad layers for improved clarity and functionality"
+* f94371d chore: remove redundant period mapping in main configuration to streamline key assignments and enhance clarity
+* 645fe4c chore: update key mappings in main configuration by adjusting assignments for hyper returns, brackets, and periods to enhance clarity and functionality
+* 1cf397e chore: update key mappings in main configuration by reorganizing numpad and shift numpad layers for improved clarity and functionality
+* f521eb9 chore: refine key mappings in main configuration by correcting backslash assignments for improved clarity and functionality
+* dfb13df chore: update key mappings in main configuration by adding period mappings and correcting slash assignments for improved clarity and functionality
+* 2e2e2d3 chore: update SCOT matrix documentation in main configuration to improve clarity and organization of key mappings, enhancing usability
+* 09dcfcc chore: simplify and enhance SCOT matrix documentation in main configuration for improved clarity and usability of key mappings
+* 5a14c40 chore: update SCOT matrix in main configuration to enhance clarity and detail of key mappings, improving overall readability and functionality
+* 1f67b7b chore: refine key mappings in main configuration by adjusting hyper deletion and word movement assignments for improved functionality and consistency
+* 0206e18 chore: enhance SCOT matrix documentation in main configuration by clarifying modifier key representations and improving overall readability
+* a26fe86 chore: update key mappings in main configuration to correct directional assignments for 'C' and 'O' keys, ensuring improved functionality and consistency
+* aa3a440 chore: correct key mapping for 'O' in main configuration to ensure accurate directional functionality and consistency
+* 8c29da6 chore: update key mappings in main configuration to correct directional assignments for improved functionality and consistency
+* 17af9d4 chore: refine key mappings in main configuration by consolidating redundant entries and enhancing functionality for improved clarity and consistency
+* 2b1aae3 chore: expand key mapping documentation in main configuration to include SCOT matrix for enhanced clarity and functional mapping
+* 44b30a2 chore: adjust key mappings for backslash in main configuration to enhance accuracy and consistency
+* f3a68a4 chore: remove redundant comma and period key mappings in main configuration for improved clarity and consistency
+* 040f325 chore: correct key mapping for 'S' in main configuration to ensure accurate functionality and consistency
+* e073bf0 chore: update key mappings in main configuration to correct slash and comma assignments, and introduce period mapping for improved clarity and consistency
+* a3bb91c chore: clean up key mapping comments and remove unnecessary lines in main configuration for improved clarity and consistency
+* 296bf08 chore: reorganize key mapping comments and streamline mouse control settings in main configuration for improved readability and consistency
+* 99a3435 chore: simplify mouse control mappings in main configuration by removing comments and redundant settings for improved clarity
+* fc03a56 chore: add detailed mouse control mappings and refine existing key assignments in main configuration for enhanced functionality
+* 88e4866 chore: add new key mapping for 'O' in Hyper Layer configuration to enhance keyboard functionality
+* c30a2e3 chore: update key mappings in main configuration to replace backslash commands with function key assignments for improved consistency
+* 7e8f35e chore: refine key mappings in main configuration for improved consistency and clarity across various assignments
+* 6c8884d chore: update main configuration to correct structure and enhance key mapping definitions for improved clarity
+* 4de6356 chore: add new key mapping for launchpad in main configuration to enhance Hyper Layer functionality
+* fd22070 chore: enhance key mappings in main configuration by adding new commands for display sleep and refining window management shortcuts for improved functionality
+* 2ac2c78 chore: update key mappings for window management in main configuration to enhance functionality and introduce new commands for better control
+* c87b700 chore: correct key mappings for Hyper Layer in main configuration to ensure accurate functionality and consistency across various assignments
+* b566c3e chore: refine key mappings for Hyper Layer and application window management in main configuration to enhance keyboard functionality and consistency
+* 6650122 chore: refine key mappings for Hyper Layer in main configuration to improve consistency and functionality across various key assignments
+* 8bc185a chore: update Hyper Layer key mappings in main configuration to enhance keyboard functionality with new function key assignments
+* 5298136 chore: add new Hyper and Fn Numpad key mappings in main configuration to enhance keyboard functionality
+* 21d33ff chore: add new backslash key mappings and refine existing rules in main configuration for improved keyboard functionality
+* 1673aa5 chore: update Hyper Return key mapping in main configuration for improved keyboard functionality
+* 305183d chore: refine Numpad and semicolon layer key mappings in main configuration for improved keyboard functionality and consistency
+* a9bca5f chore: add new key mappings for Numpad and refine semicolon layer rules in main configuration to enhance keyboard functionality
+* a40dcbf chore: update close bracket key remapping in main configuration for improved keyboard functionality
+* 27d7ab6 chore: add key definition comments and refine spacebar remapping in main configuration for improved clarity and keyboard functionality
+* 435d23f chore: update key remapping rules in main configuration to enhance application window management and improve keyboard navigation efficiency
+* 58f2392 chore: expand and reorganize key remapping rules in main configuration to enhance application launchers, navigation, and editing functionalities for improved keyboard efficiency
+* a8e4bee chore: reorganize and refine key remapping rules in main configuration for improved keyboard functionality and consistency
+* 06cdb04 chore: update Hyper Return and Symbols rules in main configuration for improved keyboard functionality and consistency
+* 60bdb0c chore: add new right_option rule for emoji search and refine existing right_shift remapping in main configuration for enhanced keyboard functionality
+* 5ddf324 chore: refine CapsLock and Fn Number remapping rules in main configuration for improved keyboard functionality and consistency
+* a044aaa chore: replace CapsLock and Fn remapping rules in main configuration with new Modifier Keys setup for improved keyboard functionality
+* b2f43c0 chore: add new Command layer and refine existing rules in main configuration for improved keyboard shortcut functionality
+* 14223b3 chore: add new semicolon-layer rule to main configuration for improved keyboard shortcut functionality
+* 267e0bf chore: update Fn Number rules in main configuration to use script commands for improved keyboard shortcut functionality and add new Hyper NumPad rules for enhanced numeric input
+* 4b7fdda chore: add new Fn Number rules to main configuration for enhanced keyboard shortcuts and improve application command efficiency
+* 5822ccf chore: enhance main configuration by refining command descriptions and improving application shortcut organization for better keyboard efficiency
+* 22bcdd0 chore: refine command remapping rules in main configuration for improved keyboard efficiency and consistency
+* 601d9e7 chore: update main configuration by refining command remapping rules and enhancing navigation shortcuts for improved keyboard efficiency
+* 07ee38f chore: simplify remapping rules in main configuration and refine tab navigation shortcuts for improved keyboard efficiency
+* 0b21056 chore: add new rule to remap 'a' to 'bbb' and expand delete shortcuts in main configuration for improved keyboard efficiency
+* d2c0b48 chore: modify application shortcuts in main configuration to enhance keyboard efficiency and streamline command actions
+* a69f78b chore: update main configuration by modifying application shortcuts for system commands and enhancing screen lock functionality
+* 5686f36 chore: refine main configuration by updating application shortcuts and enhancing tab navigation rules for improved keyboard efficiency
+* 629f32b chore: expand main configuration by adding new application shortcuts for Slack and Discord to enhance communication tool accessibility
+* cecb321 chore: add new rule to remap Fn key to Ctrl in main configuration for improved keyboard functionality
+* 70d59ae chore: update main configuration to streamline Launchpad shortcut for improved keyboard navigation
+* a7f8b2c chore: enhance main configuration by adding detailed comments for existing rules and expanding Hyper Application shortcuts for improved keyboard navigation
+* 75d22d0 chore: update main configuration by modifying application shortcuts and adding new Hyper Navigation rules for improved keyboard functionality
+* 97c3d34 chore: add new Hyper Navigation rules to main configuration for enhanced keyboard shortcuts and navigation efficiency
+* 85c2f95 chore: enhance main configuration by adding new rules for CapsLock and refining application shortcuts for better accessibility
+* 8310a6c chore: update main configuration with new application shortcuts and refine existing rules for improved usability
+* ae58585 chore: simplify main configuration by consolidating input source rules and enhancing media key functionality
+* e44f4db chore: remove obsolete language configuration files for English, Greek, and Japanese
+* a7cc1b2 chore: enhance main configuration with new input sources for Greek and Japanese layouts
+* bc3f9dc chore: consolidate and update main configuration by removing obsolete files and integrating their rules
+* 7935df9 chore: add profile to main configuration and include Hyper_Application.edn in inclusions
+* 73721fb chore: remove unused Virtual Numpad configuration and clean up Delete_amd_Function.edn formatting
+* 15a03d4 chore: update configuration files for improved performance and clarity
+* 2cb25af chore: initial commit with streamlined config files
