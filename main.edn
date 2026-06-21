@@ -26,12 +26,13 @@
  }
  
  :templates {
-  :clip-save "sleep 0.1 && pbpaste > ~/.clip%s"
-  :clip-load "cat ~/.clip%s | pbcopy && sleep 0.1"
+  :app        "open -a '%s'"
   :ray       "open -g 'raycast://extensions/%s'"
   :wm        "open -g 'raycast://extensions/raycast/window-management/%s'"
   :sys-evt   "osascript -e 'tell app \"System Events\" to %s'"
   :pwr       "pmset %s"
+  :clip-save "sleep 0.1 && pbpaste > ~/.clip%s"
+  :clip-load "cat ~/.clip%s | pbcopy && sleep 0.1"
  }
 
  :input-sources {:greek {:input_source_id "com.apple.keylayout.Greek"}}
