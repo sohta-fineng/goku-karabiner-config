@@ -50,7 +50,6 @@
     [:!QWERspacebar   :spacebar]
     [:##fn            :left_control]
     [:##right_shift   :!Sreturn_or_enter]
-    [:!Sright_option  [:ray "raycast/emoji-symbols/search-emoji-symbols"]]
    ]}
 
   {:des "Core: Input Source Toggles"
