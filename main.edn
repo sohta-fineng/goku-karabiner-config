@@ -236,22 +236,15 @@
 
   {:des "Text: Symbols, Punctuation & Returns"
    :rules [
-    ;; p / open_bracket / close_bracket / backslash
-    [:!QWERSp             :!Cslash]
-    [:!QWERSCp            :!Cslash]
-    [:!QWERSOp            :!Cslash]
+    ;; open_bracket / close_bracket / backslash
     [:!QWERopen_bracket   :!S9]
     [:!QWERSopen_bracket  :!Sopen_bracket]
     [:!QWERCopen_bracket  :!Scomma]
-    [:!QWEROopen_bracket  :!S3]
     [:!QWERclose_bracket  :!S0]
     [:!QWERSclose_bracket :!Sclose_bracket]
     [:!QWERCclose_bracket :!Speriod]
-    [:!QWEROclose_bracket :!S8]
-    [:!QWERbackslash      :grave_accent_and_tilde]
+    [:!QWERbackslash      [:period :return_or_enter]]
     [:!QWERSbackslash     :!Sbackslash]
-    [:!QWERObackslash     [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]]
-    [:!QWERCbackslash     :!Sgrave_accent_and_tilde]
 
     ;; semicolon / quote / period / slash
     [:!QWERsemicolon      :return_or_enter]
@@ -264,36 +257,44 @@
     [:!QWERCquote         :!Creturn_or_enter]
     [:!QWEROquote         :!Oreturn_or_enter]
     [:!QWERTquote         :!Treturn_or_enter]
-    [:!QWERperiod         :equal_sign]
-    [:!QWERCperiod        :!Sequal_sign]
+    [:!QWERperiod         :grave_accent_and_tilde]
+    [:!QWERSperiod        [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]]
+    [:!QWERCbackslash     :!Sgrave_accent_and_tilde]
     [:!QWERslash          :hyphen]
     [:!QWERSslash         :!Sslash]
-    [:!QWERCslash         :!Shyphen]
+    [:!QWERCslash         :!Cslash]
+    [:!QWEROslash         :equal_sign]
    ]}
 
   {:des "Text: Virtual Numpad Layers"
    :rules [
     ;; Shift Numpad - Hyper Layer
-    [:!QWERSm         :!S1]
-    [:!QWERScomma     :!S2]
-    [:!QWERSperiod    :!S3]
-    [:!QWERSj         :!S4]
-    [:!QWERSk         :!S5]
-    [:!QWERSl         :!S6]
-    [:!QWERSu         :!S7]
-    [:!QWERSi         :!S8]
-    [:!QWERSo         :!S9]
+    [:!QWERSb         :!S1]
+    [:!QWERSn         :!S2]
+    [:!QWERSm         :!S3]
+    [:!QWERScomma     :!S4]
+    [:!QWERSh         :!S5]
+    [:!QWERSj         :!S6]
+    [:!QWERSk         :!S7]
+    [:!QWERSl         :!S8]
+    [:!QWERSu         :!S9]
+    [:!QWERSi         :!S0]
+    [:!QWERSo         :!Shyphen]
+    [:!QWERSp         :!Sequal_sign]
 
     ;; Clip Numpad - Hyper Layer
-    [:!QWERSCm        [:recent-clip "1"]]
-    [:!QWERSCcomma    [:recent-clip "2"]]
-    [:!QWERSCperiod   [:recent-clip "3"]]
-    [:!QWERSCj        [:recent-clip "4"]]
-    [:!QWERSCk        [:recent-clip "5"]]
-    [:!QWERSCl        [:recent-clip "6"]]
-    [:!QWERSCu        [:recent-clip "7"]]
-    [:!QWERSCi        [:recent-clip "8"]]
-    [:!QWERSCo        [:recent-clip "9"]]
+    [:!QWERSCb        [:recent-clip "1"]]
+    [:!QWERSCn        [:recent-clip "2"]]
+    [:!QWERSCm        [:recent-clip "3"]]
+    [:!QWERSCcomma    [:recent-clip "4"]]
+    [:!QWERSCh        [:recent-clip "5"]]
+    [:!QWERSCj        [:recent-clip "6"]]
+    [:!QWERSCk        [:recent-clip "7"]]
+    [:!QWERSCl        [:recent-clip "8"]]
+    [:!QWERSCu        [:recent-clip "9"]]
+    [:!QWERSCi        [:recent-clip "10"]]
+    [:!QWERSCo        [:recent-clip "11"]]
+    [:!QWERSCp        [:recent-clip "12"]]
 
     ;; Numpad - Semicolon Layer
     [[:n       :semicolon]   :0]
@@ -306,6 +307,7 @@
     [[:u       :semicolon]   :7]
     [[:i       :semicolon]   :8]
     [[:o       :semicolon]   :9]
+    [[:h       :semicolon]   :delete_or_backspace]
     
     [:n                      :0   :semicolon-layer]
     [:m                      :1   :semicolon-layer]
@@ -317,6 +319,7 @@
     [:u                      :7   :semicolon-layer]
     [:i                      :8   :semicolon-layer]
     [:o                      :9   :semicolon-layer]
+    [:h                      :delete_or_backspace   :semicolon-layer]
    ]}
 
   ;; =================================================================================
