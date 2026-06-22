@@ -224,12 +224,16 @@
    :rules [
     [:!QWERb          :!Odelete_or_backspace]
     [:!QWERCb         :!Cdelete_or_backspace]
+    [:!QWERCOb        [:end :!Shome :!Shome :delete_or_backspace]]
     [:!QWERn          :delete_or_backspace]
     [:!QWERCn         [:!SCleft_arrow :delete_or_backspace]]
+    [:!QWERCOn        [:end :!Shome :delete_or_backspace]]
     [:!QWERm          :delete_forward]
     [:!QWERCm         [:!SCright_arrow :delete_or_backspace]]
+    [:!QWERCOm        [:home :!Send :delete_or_backspace]]
     [:!QWERcomma      :!Odelete_forward]
     [:!QWERCcomma     :!Cdelete_forward]
+    [:!QWERCOcomma    [:home :!Send :!Send :delete_or_backspace]]
    ]}
 
   {:des "Text: Symbols, Punctuation & Returns"
