@@ -27,7 +27,7 @@
  :templates {
   :app         "open -a '%s'"
   :ray         "open -g 'raycast://extensions/%s'"
-  :ray-ext     "open 'raycast://extensions/%s'"
+  :ray-ext     "open -g 'raycast://extensions/%s'"
   :wm          "open -g 'raycast://extensions/raycast/window-management/%s'"
   :sys-evt     "osascript -e 'tell app \"System Events\" to %s'"
   :pwr         "pmset %s"
@@ -66,43 +66,39 @@
    :rules [
     ;; e / r / t / y (Row 1)
     [:!QWERe          [:app "Dia"]]
-    [:!QWERCe         [:app "Google Chrome"]]
-    [:!QWEROe         [:app "Comet"]]
+    [:!QWERCe         [:app "Comet"]]
+    [:!QWEROe         [:app "Google Chrome"]]
+    [:!QWERCOe        [:app "Safari"]]
     [:!QWERSe         [:app "Cursor"]]
     [:!QWERSCe        [:app "Visual Studio Code"]]
     [:!QWERSOe        [:app "Notes"]]
     [:!QWERr          [:app "Finder"]]
-    [:!QWERCr         [:app "Preview"]]
+    [:!QWERCr         [:app "Spacedrive"]]
     [:!QWERSr         [:app "iTerm"]]
     [:!QWERSCr        [:app "Terminal"]]
-    [:!QWERt          [:app "Slack"]]
-    [:!QWERCt         [:app "Discord"]]
-    [:!QWERy          [:app "Reminders"]]
-    [:!QWERCy         [:app "Mail"]]
+    [:!QWERt          [:app "MacWhisper"]]
+    [:!QWERCt         [:ray-ext "mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D"]]
+    [:!QWEROt         [:ray-ext "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
+    [:!QWERSt         [:ray "mooxl/deepcast/index"]]
+    [:!QWERy          [:ray-ext "marcjulian/obsidian/openVaultCommand"]]
+    [:!QWERCy         [:app "Spark Desktop"]]
     [:!QWEROy         [:app "Calendar"]]
+    [:!QWERSy         [:app "Slack"]]
+    [:!QWERSCy        [:app "Discord"]]
 
     ;; d / f / g (Row 2)
-    [:!QWERd          [:app "Obsidian"]]
-    [:!QWERCd         [:app "Bear"]]
-    [:!QWEROd         [:app "Logseq"]]
-    [:!QWERSd         [:app "Notion"]]
+    [:!QWERd          [:ray-ext "raycast/raycast-notes/raycast-notes"]]
+    [:!QWERCd         [:app "Obsidian"]]
+    [:!QWEROd         [:app "Bear"]]
+    [:!QWERSd         [:app "Logseq"]]
+    [:!QWERSCd        [:app "Notion"]]
     [:!QWERf          [:app "Raycast"]]
-    [:!QWERCf         [:app "Karabiner-Elements"]]
-    [:!QWERSf         [:app "Maccy"]]
+    [:!QWERCf         [:app "Maccy"]]
     [:!QWERg          [:app "Claude"]]
     [:!QWERCg         [:app "ChatGPT"]]
     [:!QWEROg         [:app "Gemini"]]
     [:!QWERSg         [:app "Ollama"]]
     [:!QWERSCg        [:app "LM Studio"]]
-   ]}
-
-  {:des "Apps: Translation & Quick Notes"
-   :rules [
-    ;; x / c (Row 3)
-    [:!QWERSx         [:ray "mooxl/deepcast/index"]]
-    [:!QWERCx         [:ray-ext "mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D"]]
-    [:!QWEROx         [:ray-ext "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
-    [:!QWERSc         [:ray-ext "raycast/raycast-notes/raycast-notes"]]
    ]}
 
   ;; =================================================================================
@@ -112,7 +108,8 @@
    :rules [
     ;; q / w / a / s (Left-side Cluster)
     [:!QWERq          :!Cq]
-    [:!QWERCq         :!Ch]
+    [:!QWERCq         :!Cq]
+    [:!QWEROq         :!Ch]
     [:!QWERSq         [:sys-evt "restart"]]
     [:!QWERSCq        [:sys-evt "shut down"]]
     [:!QWERSOq        :!SCq]
@@ -122,14 +119,14 @@
     [:!QWERSCw        [:pwr "sleepnow"]]
     [:!QWERSOw        [:pwr "displaysleepnow"]]
     [:!QWERa          :!STtab]
-    [:!QWERCa         :!Copen_bracket]
-    [:!QWEROa         :!SOTbackslash]
-    [:!QWERSa         :!SCtab]
+    [:!QWERSa         :!Copen_bracket]
+    [:!QWERCa         :!SCtab]
+    [:!QWERCa         :!SOTbackslash]
     [:!QWERTa         :!Tright_arrow]
     [:!QWERs          :!Ttab]
-    [:!QWERCs         :!Cclose_bracket]
+    [:!QWERSs         :!Cclose_bracket]
+    [:!QWERCs         :!Ctab]
     [:!QWEROs         :!OTbackslash]
-    [:!QWERSs         :!Ctab]
     [:!QWERTs         :!Tleft_arrow]
    ]}
 
@@ -141,25 +138,25 @@
     ;; u / i / o / p (Page Nav / Mouse Buttons)
     [:!QWERu          :page_up]
     [:!QWERCu         :!Spage_up]
-    [:!QWERCOu        :!Oup_arrow]
+    [:!QWERCOu        :!SOup_arrow]
     [:!QWEROu         {:pkey :button1}]
     [:!QWERTu         {:pkey :button1}]
     [:!QWERSOu        {:mkey {:hwheel -128}}]
     [:!QWERi          :home]
     [:!QWERCi         :!Shome]
-    [:!QWERCOi        :!SOup_arrow]
+    [:!QWERCOi        :!Oup_arrow]
     [:!QWEROi         {:pkey :button2}]
     [:!QWERTi         {:pkey :button2}]
     [:!QWERSOi        {:mkey {:vwheel -128}}]
     [:!QWERo          :end]
     [:!QWERCo         :!Send]
-    [:!QWERCOo        :!SOdown_arrow]
+    [:!QWERCOo        :!Odown_arrow]
     [:!QWEROo         {:pkey :button4}]
     [:!QWERTo         {:pkey :button4}]
     [:!QWERSOo        {:mkey {:vwheel 128}}]
     [:!QWERp          :page_down]
     [:!QWERCp         :!Spage_down]
-    [:!QWERCOp        :!Odown_arrow]
+    [:!QWERCOp        :!SOdown_arrow]
     [:!QWEROp         {:pkey :button5}]
     [:!QWERTp         {:pkey :button5}]
     [:!QWERSOp        {:mkey {:hwheel 128}}]
@@ -332,9 +329,11 @@
     [:!QWERz          :!Cz]
     [:!QWERCz         :!SCz]
     [:!QWERx          :!Cx]
+    [:!QWERCx         [:!Ca :!Cx]]
     [:!QWERc          :!Cc]
     [:!QWERCc         [:!Ca :!Cc]]
     [:!QWERv          :!Cv]
+    [:!QWERCv         :!SCOv]
 
     ;; Save Clips (0-9 numerical order)
     [:!QWERC0 [:!Cc [:clip-save "0"]]]
