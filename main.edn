@@ -77,7 +77,7 @@
     [:!QWERSCr        [:app "Terminal"]]
     [:!QWERt          [:ray "marcjulian/obsidian/openVaultCommand"]]
     [:!QWERSt         [:app "MacWhisper"]]
-    [:!QWERCt         [:ray "mooxl/deepcast/englishUS?arguments=%7B%22text%ss22%3A%22%22%7D"]]
+    [:!QWERCt         [:ray "mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D"]]
     [:!QWEROt         [:ray "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
     [:!QWERCOt        [:ray "mooxl/deepcast/index"]]
     [:!QWERy          [:app "Slack"]]
@@ -200,23 +200,21 @@
 
     ;; u / i / o / p (Size & Placement)
     [:!QWERCTu        [:wm "toggle-fullscreen"]]
-    [:!QWEROTu        [:wm "toggle-fullscreen"]]
     [:!QWERCTi        [:wm "maximize"]]
-    [:!QWEROTi        [:wm "maximize"]]
     [:!QWERCTo        [:wm "almost-maximize"]]
-    [:!QWEROTo        [:wm "reasonable-size"]]
-    [:!QWERCTp        [:wm "center"]]
-    [:!QWEROTp        [:wm "center"]]
+    [:!QWERCTp        [:wm "restore"]]
 
     ;; h / j / k / l (Halves & Movement)
     [:!QWERCTh        [:wm "left-half"]]
-    [:!QWEROTh        [:wm "move-left"]]
     [:!QWERCTj        [:wm "make-smaller"]]
-    [:!QWEROTj        [:wm "move-up"]]
     [:!QWERCTk        [:wm "make-larger"]]
-    [:!QWEROTk        [:wm "move-down"]]
     [:!QWERCTl        [:wm "right-half"]]
-    [:!QWEROTl        [:wm "move-right"]]
+
+    ;; b / n / m / , (Halves & Movement)
+    [:!QWERCTb        [:wm "next-display"]]
+    [:!QWERCTn        [:wm "next-desktop"]]
+    [:!QWERCTm        [:wm "previous-desktop"]]
+    [:!QWERCTcomma    [:wm "previous-display"]]
    ]}
 
   ;; =================================================================================
