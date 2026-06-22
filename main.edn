@@ -27,7 +27,6 @@
  :templates {
   :app         "open -a '%s'"
   :ray         "open -g 'raycast://extensions/%s'"
-  :ray-ext     "open -g 'raycast://extensions/%s'"
   :wm          "open -g 'raycast://extensions/raycast/window-management/%s'"
   :sys-evt     "osascript -e 'tell app \"System Events\" to %s'"
   :pwr         "pmset %s"
@@ -76,18 +75,18 @@
     [:!QWERCr         [:app "Spacedrive"]]
     [:!QWERSr         [:app "iTerm"]]
     [:!QWERSCr        [:app "Terminal"]]
-    [:!QWERt          [:app "MacWhisper"]]
-    [:!QWERCt         [:ray-ext "mooxl/deepcast/englishUS?arguments=%7B%22text%22%3A%22%22%7D"]]
-    [:!QWEROt         [:ray-ext "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
-    [:!QWERSt         [:ray "mooxl/deepcast/index"]]
-    [:!QWERy          [:ray-ext "marcjulian/obsidian/openVaultCommand"]]
+    [:!QWERt          [:ray "marcjulian/obsidian/openVaultCommand"]]
+    [:!QWERSt         [:app "MacWhisper"]]
+    [:!QWERCt         [:ray "mooxl/deepcast/englishUS?arguments=%7B%22text%ss22%3A%22%22%7D"]]
+    [:!QWEROt         [:ray "mooxl/deepcast/japanese?arguments=%7B%22text%22%3A%22%22%7D"]]
+    [:!QWERCOt        [:ray "mooxl/deepcast/index"]]
+    [:!QWERy          [:app "Slack"]]
     [:!QWERCy         [:app "Spark Desktop"]]
     [:!QWEROy         [:app "Calendar"]]
-    [:!QWERSy         [:app "Slack"]]
     [:!QWERSCy        [:app "Discord"]]
 
     ;; d / f / g (Row 2)
-    [:!QWERd          [:ray-ext "raycast/raycast-notes/raycast-notes"]]
+    [:!QWERd          [:ray "raycast/raycast-notes/raycast-notes"]]
     [:!QWERCd         [:app "Obsidian"]]
     [:!QWEROd         [:app "Bear"]]
     [:!QWERSd         [:app "Logseq"]]
